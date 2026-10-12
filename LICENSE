@@ -1,0 +1,47 @@
+Formación Integral en Inteligencia Artificial
+Copyright (c) 2026 [AUTOR_PUBLICO]
+
+LICENCIA DEL CONTENIDO EDUCATIVO
+================================
+
+El contenido educativo ORIGINAL de este repositorio se distribuye bajo la
+licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional
+(CC BY-SA 4.0).
+
+Qué cubre esta licencia
+-----------------------
+- El programa académico (PROGRAMA.md).
+- Las lecciones, ejercicios, evaluaciones, proyectos y soluciones
+  (carpetas modulos/, soluciones/ y las que se agreguen con el mismo fin).
+- El glosario, las guías (README.md, COMO-EMPEZAR.md, TUTOR.md, CHANGELOG.md)
+  y las plantillas (carpeta plantillas/).
+
+Qué NO cubre esta licencia
+--------------------------
+- El código y los scripts originales (carpeta scripts/ y los fragmentos de
+  código de las lecciones), que se distribuyen bajo la licencia MIT
+  (ver LICENSE-CODE).
+- El material de terceros incorporado al curso (citas, marcas, nombres de
+  productos, capturas, ejemplos o fragmentos de otras fuentes). Ese material
+  conserva su propia licencia y se identifica junto con su fuente; esta
+  licencia no se extiende automáticamente a él.
+
+Resumen de la licencia (no reemplaza el texto legal)
+----------------------------------------------------
+Podés copiar, redistribuir, adaptar y usar el material con cualquier fin,
+incluso comercial, siempre que:
+- Atribución: des crédito adecuado, enlaces a la licencia e indiques si
+  hiciste cambios.
+- CompartirIgual: si adaptás el material, distribuyas tus contribuciones
+  bajo la misma licencia.
+
+Atribución sugerida:
+  "Formación Integral en Inteligencia Artificial", de [AUTOR_PUBLICO],
+  CC BY-SA 4.0, con enlace al repositorio.
+
+Texto legal
+-----------
+Resumen oficial (deed): https://creativecommons.org/licenses/by-sa/4.0/deed.es
+Texto legal completo:   https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+El texto legal completo es el que figura en las direcciones anteriores.

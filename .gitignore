@@ -1,0 +1,49 @@
+# ── Datos privados: nunca van a este repositorio ─────────────────────────
+# El cuaderno de cada estudiante vive FUERA de este repositorio.
+# Estas reglas evitan subirlo por error si alguien lo crea en la raíz.
+/cuaderno*/
+/mi-cuaderno*/
+/privado/
+/notas-privadas/
+*.privado.md
+*.local.md
+
+# Lista local de términos personales para la verificación de privacidad
+.verificar-terminos*.txt
+
+# ── Credenciales y secretos ──────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+secrets.*
+credentials*.json
+*secret*.json
+token*.txt
+
+# ── Archivos generados ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+node_modules/
+dist/
+build/
+*.log
+
+# ── Sistema operativo y editores ─────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~

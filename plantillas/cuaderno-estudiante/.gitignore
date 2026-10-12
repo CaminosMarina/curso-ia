@@ -1,0 +1,35 @@
+# Cuaderno privado: protección básica si lo versionás con Git.
+
+# Credenciales y secretos (nunca en el cuaderno ni en ningún repositorio)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+secrets.*
+credentials*.json
+*secret*.json
+token*.txt
+
+# Archivos generados de proyectos y prácticas
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+target/
+build/
+dist/
+*.log
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*~

@@ -1,0 +1,177 @@
+# Estudiar con un tutor de IA
+
+Esta guía explica cómo usar un asistente de IA (Claude, ChatGPT, Gemini, un modelo local u otro) como tutor del curso. **Es opcional:** todas las lecciones se pueden completar sin IA.
+
+## 1. Qué hace y qué no hace el tutor
+
+| El tutor sí | El tutor no |
+|---|---|
+| Explica la lección de a un concepto por vez y la adapta a tu nivel | Reemplaza el material: las lecciones del repositorio son la referencia |
+| Da ejemplos adicionales y propone prácticas | Avanza a la lección siguiente sin tu confirmación |
+| Corrige tus ejercicios y respuestas con fundamentos | Te da las soluciones antes de que intentes, salvo que se lo pidas expresamente |
+| Hace preguntas para comprobar comprensión y detecta dificultades | Inventa resultados de evaluaciones o da por aprobada una lección sin evidencia |
+| Propone cambios para tu cuaderno | Dice que guardó o modificó un archivo sin haberlo verificado |
+
+**Fuentes de verdad,** en este orden: `PROGRAMA.md` y la lección del repositorio, después tu cuaderno (`PROGRESO.md`, `REFUERZO.md`). La memoria del asistente no es una fuente de verdad: puede estar incompleta, desactualizada o mezclada con otras conversaciones.
+
+## 2. Qué le tenés que dar al tutor
+
+1. Las **instrucciones de tutor** (sección 4).
+2. **`PROGRAMA.md`**, para que respete el orden y los prerrequisitos.
+3. **La lección actual** (el archivo `.md`) y, si hay, su ejercicio.
+4. **Tu cuaderno:** `PROGRESO.md` y `REFUERZO.md`. Si no querés compartir algo, quitalo de una copia antes de subirla.
+5. Las **soluciones** de la lección solo cuando vayas a corregir. Si se las das desde el principio, pedile que no las use hasta que respondas.
+
+## 3. Qué puede hacer según la plataforma
+
+Las capacidades cambian entre plataformas, planes y versiones. Lo que importa es en qué **modo** puede trabajar tu tutor:
+
+| Modo | Cómo trabaja | Cómo se registra el progreso | Ejemplos |
+|---|---|---|---|
+| **A · Con acceso a la carpeta del cuaderno** | Lee y puede editar tus archivos | El tutor propone el cambio, vos lo autorizás, él lo aplica y lo verifica releyendo el archivo | Un agente que trabaja en una carpeta local, como Claude Code o Codex, con los permisos que le des |
+| **B · Con archivos subidos** | Lee copias de tus archivos, pero no puede modificar los originales | El tutor te da un **bloque de actualización**; lo pegás vos y volvés a subir el archivo actualizado | Proyectos de Claude o de ChatGPT con instrucciones y archivos |
+| **C · Solo chat** | Ve lo que pegás en la conversación | Igual que en B: bloque de actualización que aplicás vos | Cualquier chat, incluido un modelo local |
+
+En los tres modos, **el registro lo controlás vos**. En los modos B y C el tutor no puede modificar tus archivos: si dice que lo hizo, está equivocado.
+
+## 4. Instrucciones de tutor (para copiar)
+
+Pegá este bloque en el lugar de instrucciones persistentes de tu plataforma (instrucciones del proyecto, instrucciones personalizadas o primer mensaje de la conversación).
+
+```text
+Sos tutor del curso abierto "Formación Integral en Inteligencia Artificial".
+Tu tarea es acompañar a una persona que estudia el curso, una lección por vez.
+
+FUENTES
+- El programa (PROGRAMA.md) define el orden, los prerrequisitos y los criterios de evaluación.
+- La lección del repositorio es el material de referencia. Si no tenés el archivo, pedilo.
+  No inventes su contenido.
+- Si la lección todavía no tiene material en el repositorio, avisalo y enseñá a partir de su
+  descripción en el programa, aclarando que ese contenido no fue revisado por el curso.
+- El cuaderno de la persona (PROGRESO.md y REFUERZO.md) registra su avance. No uses tu memoria
+  como registro.
+
+AL INICIAR CADA SESIÓN
+1. Leé el PROGRESO.md: sesión en curso, próxima actividad y estado de la lección actual.
+   Si una sesión quedó abierta, proponé cerrarla primero.
+2. Revisá en REFUERZO.md si hay repasos espaciados pendientes y proponelos al comienzo
+   (máximo 5 minutos).
+3. Antes de una lección nueva, comprobá sus prerrequisitos duros en PROGRAMA.md. Si falta
+   alguno, decilo y proponé qué hacer.
+4. Confirmá con la persona qué lección o actividad trabajar.
+
+DURANTE LA LECCIÓN
+- Explicá primero el concepto, su propósito y su funcionamiento; después los ejemplos y las
+  aplicaciones con herramientas.
+- No des por conocido ningún término de IA. La persona sabe programar, pero no sabe IA.
+- Avanzá de a una sección por vez y comprobá la comprensión con preguntas cortas.
+- Diferenciá los conceptos generales de las implementaciones de cada plataforma.
+- Las afirmaciones sobre versiones, planes, precios o disponibilidad cambian seguido. Usá la
+  nota de herramientas de la lección o la documentación oficial. Si no podés verificar algo,
+  decilo. No inventes compatibilidades ni precios.
+- Proponé la práctica guiada y el ejercicio independiente de la lección.
+- No muestres soluciones ni respuestas antes de que la persona intente, salvo que te lo pida
+  expresamente.
+
+CORRECCIÓN Y EVALUACIÓN
+- Corregí con fundamentos: qué está bien, qué falta, por qué, y cómo mejorarlo.
+- Aplicá los criterios de la sección 9 de PROGRAMA.md según el tipo de lección:
+  [C] preguntas con 80% o más de respuestas correctas; [P] ejercicio funcionando y justificado;
+  [M] ambas cosas.
+- Nunca des una lección por aprobada solo porque fue explicada. Nunca inventes un resultado.
+- Si detectás una dificultad, describila (concepto, síntoma, severidad según la sección 9.4)
+  y proponé una actividad de refuerzo y una verificación distinta de la que la reveló.
+
+REGISTRO DEL PROGRESO
+- Solo proponés cambios al cuaderno. La persona decide si se aplican.
+- Si tenés acceso de escritura a los archivos y la persona te autoriza: aplicá el cambio,
+  volvé a leer el archivo y confirmá solo lo que verificaste.
+- Si no tenés acceso de escritura: entregá un "Bloque de actualización del cuaderno" con las
+  líneas exactas para copiar en cada archivo, e indicá que la persona debe aplicarlo.
+- Nunca digas que guardaste, modificaste o sincronizaste un archivo si no lo verificaste.
+
+AL CERRAR LA SESIÓN
+- Resumí lo trabajado, el estado propuesto para la lección con su evidencia, las dificultades
+  detectadas y la próxima actividad.
+- Pedí las horas reales dedicadas; no las estimes.
+- Preguntá si la persona quiere hacer ejercicios extra, profundizar o avanzar.
+  No avances a la lección siguiente sin su confirmación.
+
+PRIVACIDAD
+- No pidas credenciales, claves de API ni datos personales innecesarios.
+- Si la persona pega una credencial, avisale que la revoque y que no la vuelva a compartir.
+```
+
+### Formato del bloque de actualización (modos B y C)
+
+```text
+Bloque de actualización del cuaderno · 2026-01-15 (ejemplo ficticio)
+
+PROGRESO.md › Lecciones › agregar o reemplazar la fila:
+| L0.1.1 | C | 🛠️ | 2026-01-15 | Pregunta de aplicación en evidencias/L0.1.1-ruta.md |  |
+
+PROGRESO.md › Bitácora › agregar la fila:
+| 2026-01-15 | L0.1.1 | Lectura y práctica guiada; autoevaluación pendiente | 1,5 | L0.1.1 ⬜ → 🛠️ | Autoevaluación de L0.1.1 |
+
+PROGRESO.md › Encabezado › Sesión en curso: Ninguna · Próxima actividad: Autoevaluación de L0.1.1
+
+REFUERZO.md: sin cambios.
+```
+
+Después de pegarlo, guardá el archivo. Si trabajás en el modo B, volvé a subir la versión actualizada.
+
+## 5. Uso con Claude
+
+> [!NOTE]
+> Específico de herramienta · verificado el 2026-10-12 · fuente: [Claude Help Center: proyectos](https://support.claude.com/en/articles/9519177). Las funciones y los límites por plan pueden cambiar.
+
+**Modo B, con un proyecto de Claude:**
+
+1. En claude.ai, creá un proyecto, por ejemplo "Curso de IA".
+2. En las instrucciones del proyecto, pegá el bloque de la sección 4.
+3. En el conocimiento del proyecto, subí `PROGRAMA.md`, la lección actual, tu `PROGRESO.md` y tu `REFUERZO.md`.
+4. Abrí una conversación dentro del proyecto y pedí: "Iniciemos la sesión según el protocolo".
+5. Al cerrar, aplicá el bloque de actualización en tu cuaderno y reemplazá en el proyecto el `PROGRESO.md` viejo por el nuevo.
+
+Según su centro de ayuda, los proyectos están disponibles también para cuentas gratuitas, con un máximo de cinco proyectos. Las conversaciones de un mismo proyecto no comparten contexto entre sí, salvo lo que esté en su conocimiento. Por eso tu cuaderno, subido al proyecto, es la memoria que importa.
+
+**Modo A:** un agente como Claude Code, abierto en la carpeta de tu cuaderno, puede leer y editar tus archivos con tu autorización. Su uso, configuración y permisos se estudian en M4. Puede requerir un plan pago o una API: verificá las condiciones vigentes en su documentación oficial.
+
+## 6. Uso con ChatGPT
+
+> [!NOTE]
+> Específico de herramienta · verificado el 2026-10-12 · fuente: [OpenAI Help Center: proyectos en ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt). Las funciones y los límites por plan pueden cambiar.
+
+**Modo B, con un proyecto de ChatGPT:**
+
+1. Creá un proyecto, por ejemplo "Curso de IA".
+2. En la configuración del proyecto, pegá el bloque de la sección 4 como instrucciones. Según su centro de ayuda, las instrucciones del proyecto tienen prioridad sobre tus instrucciones personalizadas globales.
+3. Subí `PROGRAMA.md`, la lección actual, tu `PROGRESO.md` y tu `REFUERZO.md`. Según su centro de ayuda, el plan Free admite hasta 5 archivos por proyecto: estos cuatro entran.
+4. Si podés elegir, usá la **memoria solo del proyecto**: así el tutor no mezcla tus otras conversaciones con el curso.
+5. Al cerrar, aplicá el bloque de actualización y reemplazá el `PROGRESO.md` del proyecto.
+
+**Modo A:** un agente como Codex, abierto en la carpeta de tu cuaderno, puede leer y editar tus archivos con los permisos que configures. Su uso y sus modos de aislamiento se estudian en M4. Verificá las condiciones vigentes en su documentación oficial.
+
+## 7. Otras plataformas
+
+Cualquier asistente que acepte instrucciones y archivos (o texto pegado) sirve, por ejemplo Gemini o un modelo local con una interfaz de chat. Si la plataforma no tiene instrucciones persistentes, pegá el bloque de la sección 4 al comienzo de cada conversación.
+
+Un modelo local te da privacidad y costo cero, pero puede explicar con menos precisión: verificá más sus respuestas con el material de la lección.
+
+## 8. Privacidad y seguridad
+
+- Tu cuaderno puede tener información personal. Antes de subirlo, revisá qué contiene.
+- Revisá la configuración de privacidad de la plataforma, por ejemplo si tus conversaciones se usan para entrenar modelos. El tema se estudia en L3.8.1.
+- Nunca subas claves de API, contraseñas ni archivos `.env`.
+- En el modo A, dale al agente acceso solo a la carpeta del cuaderno, no a toda tu computadora.
+
+## 9. Señales de que el tutor no está funcionando bien
+
+- Dice que guardó o actualizó un archivo en los modos B o C.
+- Da por aprobada una lección sin preguntas ni ejercicio.
+- Te muestra las soluciones antes de que intentes.
+- Avanza a la lección siguiente sin preguntarte.
+- Afirma con seguridad precios, planes o compatibilidades sin fuente.
+- Contradice el programa o la lección sin explicar por qué.
+
+Si pasa alguna de estas cosas, recordale las instrucciones o empezá una conversación nueva con tu cuaderno actualizado.
