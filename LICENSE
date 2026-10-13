@@ -10,11 +10,10 @@ licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional
 
 Qué cubre esta licencia
 -----------------------
-- El programa académico (PROGRAMA.md).
-- Las lecciones, ejercicios, evaluaciones, proyectos y soluciones
-  (carpetas modulos/, soluciones/ y las que se agreguen con el mismo fin).
-- El glosario, las guías (README.md, COMO-EMPEZAR.md, TUTOR.md, CHANGELOG.md)
-  y las plantillas (carpeta plantillas/).
+- El programa académico, las lecciones, ejercicios, evaluaciones, proyectos,
+  soluciones, el glosario y las guías (carpeta docs/, que también se publica
+  como sitio web).
+- README.md, CHANGELOG.md y las plantillas (carpeta plantillas/).
 
 Qué NO cubre esta licencia
 --------------------------

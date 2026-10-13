@@ -1,6 +1,6 @@
 # Glosario
 
-> **Corresponde a:** `PROGRAMA.md`, versión académica 1.2 · **Última revisión:** 2026-10-12
+> **Corresponde a:** [programa](programa/index.md), versión académica 1.2 · **Última revisión:** 2026-10-12
 > El glosario crece con las lecciones publicadas: no se completa de antemano. Las definiciones son breves a propósito; la explicación completa está en el módulo indicado. Los términos se mantienen en inglés cuando ese es el uso habitual.
 
 ## Términos de IA
@@ -27,16 +27,16 @@
 
 | Término | Definición | Lección |
 |---|---|---|
-| **Programa académico** | Documento que define qué se aprende y en qué orden: módulos, unidades, lecciones, prerrequisitos, horas, proyectos y evaluación (`PROGRAMA.md`). Tiene su propia versión académica. | L0.1.1 |
-| **ID de lección** | Identificador estable con la forma `Lm.u.n` (módulo, unidad, lección), por ejemplo L4.2.3. Nunca se reutiliza. | L0.1.1 |
-| **Prerrequisito duro** | Conocimiento indispensable: sin él, el módulo no se puede seguir. | L0.1.1 |
-| **Prerrequisito recomendado** | Conocimiento que mejora la experiencia, pero no impide avanzar: se puede retomar después. | L0.1.1 |
-| **Nivel 1 / Nivel 2** | Nivel 1: usar y configurar una herramienta con criterio. Nivel 2: entender cómo está construida y desarrollar soluciones propias. | L0.1.1 |
-| **Estado de aprendizaje** | Situación de una lección en tu cuaderno: ⬜ pendiente, 📖 estudiada, 🛠️ practicada, ✅ aprobada o 🔁 necesita refuerzo. | L0.1.1 |
-| **Evidencia** | Lo que demuestra un estado: un archivo, una respuesta escrita, un *commit*, una captura o una salida de comando. Sin evidencia, no hay cambio de estado. | L0.1.1 |
-| **Cuaderno** | Conjunto de registros privados de cada estudiante (`PROGRESO.md`, `REFUERZO.md`, entregables), separado del repositorio del curso. | L0.1.1 |
-| **Protocolo de sesión** | Pasos fijos para iniciar, trabajar y cerrar una sesión de estudio, de modo que la siguiente pueda retomarse sin depender de la memoria. | L0.1.1 |
-| **Dificultad** | Brecha de comprensión detectada, registrada con un ID `D-NNN` y una severidad (🔴 bloqueante, 🟡 importante, 🟢 menor). | L0.1.1 |
-| **Repaso espaciado** | Repaso corto programado a intervalos crecientes (R1, R2, R3) para consolidar una dificultad ya superada. | L0.1.1 |
+| **Programa académico** | Documento que define qué se aprende y en qué orden: módulos, unidades, lecciones, prerrequisitos, horas, proyectos y evaluación (ver [El programa](programa/index.md)). Tiene su propia versión académica. | [L0.1.1](m00-orientacion/l0-1-1-mapa-del-curso.md) |
+| **ID de lección** | Identificador estable con la forma `Lm.u.n` (módulo, unidad, lección), por ejemplo L4.2.3. Nunca se reutiliza. | [L0.1.1](m00-orientacion/l0-1-1-mapa-del-curso.md) |
+| **Prerrequisito duro** | Conocimiento indispensable: sin él, el módulo no se puede seguir. | [L0.1.1](m00-orientacion/l0-1-1-mapa-del-curso.md) |
+| **Prerrequisito recomendado** | Conocimiento que mejora la experiencia, pero no impide avanzar: se puede retomar después. | [L0.1.1](m00-orientacion/l0-1-1-mapa-del-curso.md) |
+| **Nivel 1 / Nivel 2** | Nivel 1: usar y configurar una herramienta con criterio. Nivel 2: entender cómo está construida y desarrollar soluciones propias. | [L0.1.1](m00-orientacion/l0-1-1-mapa-del-curso.md) |
+| **Estado de aprendizaje** | Situación de una lección en tu cuaderno: ⬜ pendiente, 📖 estudiada, 🛠️ practicada, ✅ aprobada o 🔁 necesita refuerzo. | [L0.1.1](m00-orientacion/l0-1-1-mapa-del-curso.md) |
+| **Evidencia** | Lo que demuestra un estado: un archivo, una respuesta escrita, un *commit*, una captura o una salida de comando. Sin evidencia, no hay cambio de estado. | [L0.1.1](m00-orientacion/l0-1-1-mapa-del-curso.md) |
+| **Cuaderno** | Conjunto de registros privados de cada estudiante (`PROGRESO.md`, `REFUERZO.md`, entregables), separado del repositorio del curso. | [L0.1.1](m00-orientacion/l0-1-1-mapa-del-curso.md) |
+| **Protocolo de sesión** | Pasos fijos para iniciar, trabajar y cerrar una sesión de estudio, de modo que la siguiente pueda retomarse sin depender de la memoria. | [L0.1.1](m00-orientacion/l0-1-1-mapa-del-curso.md) |
+| **Dificultad** | Brecha de comprensión detectada, registrada con un ID `D-NNN` y una severidad (🔴 bloqueante, 🟡 importante, 🟢 menor). | [L0.1.1](m00-orientacion/l0-1-1-mapa-del-curso.md) |
+| **Repaso espaciado** | Repaso corto programado a intervalos crecientes (R1, R2, R3) para consolidar una dificultad ya superada. | [L0.1.1](m00-orientacion/l0-1-1-mapa-del-curso.md) |
 
 _Al agregar un término: definición y módulo como mínimo; ejemplo y "No confundir con" cuando el término sea fácil de confundir._

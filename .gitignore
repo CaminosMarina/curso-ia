@@ -37,6 +37,8 @@ venv/
 node_modules/
 dist/
 build/
+# Sitio generado por MkDocs (mkdocs build)
+site/
 *.log
 
 # ── Sistema operativo y editores ─────────────────────────────────────────

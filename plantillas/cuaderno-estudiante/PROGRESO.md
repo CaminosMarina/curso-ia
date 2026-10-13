@@ -1,7 +1,7 @@
 # Mi progreso
 
 > Cuaderno personal y privado. No lo subas al repositorio del curso ni a un fork público.
-> Estados y criterios: `PROGRAMA.md`, sección 9.
+> Estados y criterios: [Evaluación y estados](https://caminosmarina.github.io/curso-ia/programa/evaluacion/).
 
 ## Encabezado
 
@@ -90,5 +90,5 @@ Ejemplo ficticio de fila (no lo copies tal cual):
 
 ## Migraciones de versión académica
 
-| Fecha | De versión | A versión | Cambios aplicados (según PROGRAMA.md, sección 10.3) |
+| Fecha | De versión | A versión | Cambios aplicados (según la página Versiones y cambios del programa) |
 |---|---|---|---|

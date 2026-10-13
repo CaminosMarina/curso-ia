@@ -2,15 +2,23 @@
 """Verificaciones del repositorio del curso.
 
 Uso:
-    python scripts/verificar.py              # verificación normal
-    python scripts/verificar.py --publicar   # además, exige lo necesario para publicar
+    python scripts/verificar.py              # verificación normal (la ejecuta también la CI)
+    python scripts/verificar.py --publicar   # además, exige lo necesario para publicar una versión
 
 Variables de entorno opcionales:
     VERIFICAR_TERMINOS=<ruta>   Archivo de texto con términos personales a buscar (uno por línea).
                                 Debe estar FUERA del repositorio: la lista misma es privada.
 
-Solo usa la biblioteca estándar de Python (3.9 o superior).
-Código bajo licencia MIT (ver LICENSE-CODE).
+Qué revisa:
+    1. Archivos obligatorios.
+    2. Programa: IDs únicos, unidades, lecciones y horas por módulo contra la tabla del programa, proyectos.
+    3. Partes generadas al día (scripts/generar.py --comprobar).
+    4. Lecciones: front matter, coherencia con el programa, secciones obligatorias, soluciones separadas,
+       frases que dependen de contexto externo y notas de herramientas con fecha y fuente.
+    5. Enlaces internos y anclas (con las reglas de GitHub; el sitio las vuelve a revisar con mkdocs --strict).
+    6. Privacidad: secretos, rutas personales, correos y términos de la lista privada.
+
+Solo usa la biblioteca estándar de Python (3.9 o superior). Código bajo licencia MIT (ver LICENSE-CODE).
 """
 from __future__ import annotations
 
@@ -21,24 +29,25 @@ import sys
 import unicodedata
 from pathlib import Path
 
-RAIZ = Path(__file__).resolve().parent.parent
-ARCHIVOS_RAIZ = ["README.md", "PROGRAMA.md", "COMO-EMPEZAR.md", "TUTOR.md", "GLOSARIO.md",
-                 "LICENSE", "LICENSE-CODE", "CHANGELOG.md", ".gitignore"]
-CUADERNO = ["README.md", "PROGRESO.md", "REFUERZO.md", "PUNTO-DE-PARTIDA.md", ".gitignore"]
-SECCIONES_LECCION = [
-    "Objetivos", "Prerrequisitos", "1. Conceptos y definiciones", "2. Propósito y casos de uso",
-    "3. Explicación paso a paso", "4. Ejemplos", "5. Aplicación con herramientas reales",
-    "6. Práctica guiada", "7. Ejercicio independiente", "8. Autoevaluación",
-    "9. Errores frecuentes", "10. Resumen", "11. Referencias", "Términos nuevos",
-    "Registrar en tu cuaderno",
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import generar  # noqa: E402  (mismo directorio)
+
+RAIZ = generar.RAIZ
+DOCS = generar.DOCS
+OBLIGATORIOS = [
+    "README.md", "CHANGELOG.md", "LICENSE", "LICENSE-CODE", ".gitignore", "mkdocs.yml", "requirements.txt",
+    "hooks/callouts.py", ".github/workflows/sitio.yml",
+    "docs/index.md", "docs/empezar/index.md", "docs/empezar/tutor.md", "docs/glosario.md", "docs/electivas.md",
+    "docs/programa/index.md", "docs/programa/indice.md", "docs/programa/proyectos.md",
+    "docs/programa/evaluacion.md", "docs/programa/versiones.md",
+    "plantillas/leccion.md", "plantillas/evaluacion.md",
+    "plantillas/cuaderno-estudiante/README.md", "plantillas/cuaderno-estudiante/PROGRESO.md",
+    "plantillas/cuaderno-estudiante/REFUERZO.md", "plantillas/cuaderno-estudiante/PUNTO-DE-PARTIDA.md",
+    "plantillas/cuaderno-estudiante/.gitignore",
 ]
-SECCIONES_EJERCICIO = ["Objetivo", "Requisitos", "Preparación", "Consigna", "Criterios de aceptación",
-                       "Cómo verificar", "Qué guardar en tu cuaderno", "Pistas", "Solución"]
-CLAVES_LECCION = ["id", "titulo", "modulo", "unidad", "tipo", "horas_estimadas", "costo", "estado",
-                  "version_leccion", "ultima_revision", "version_academica", "soluciones"]
-CLAVES_EJERCICIO = ["id", "leccion", "titulo", "nivel", "tiempo_estimado", "costo", "estado",
-                    "ultima_revision", "soluciones"]
-ESTADOS = {"borrador": "📝", "revisada": "🔍", "publicada": "📗"}
+SECCIONES_LECCION = ["Teoría", "Práctica", "Autoevaluación", "Resumen", "Para profundizar"]
+CLAVES_LECCION = ["id", "titulo", "titulo_corto", "modulo", "unidad", "tipo", "horas_estimadas", "costo",
+                  "estado", "ultima_revision", "version_academica", "soluciones"]
 FRASES_DEPENDIENTES = [
     "como hablamos", "como charlamos", "como vimos en la conversación", "en nuestra conversación",
     "como te expliqué", "según tu experiencia personal", "tu profesor", "tu profesora",
@@ -58,6 +67,7 @@ RUTAS_PERSONALES = {
 }
 EMAIL = r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
 EMAIL_PERMITIDO = re.compile(r"(noreply|no-reply)@|@example\.(com|org|net)$", re.I)
+EXCLUIR_DIRS = {".git", "site", "__pycache__", ".venv", "venv", "node_modules"}
 DIAS_VIGENCIA_NOTA = 180
 
 errores: list[str] = []
@@ -80,125 +90,104 @@ def leer(p: Path) -> str:
     return p.read_text(encoding="utf-8")
 
 
-def front_matter(texto: str) -> dict[str, str]:
-    """Lee las claves de primer nivel de un front matter YAML simple."""
-    if not texto.startswith("---\n"):
-        return {}
-    fin = texto.find("\n---\n", 4)
-    if fin == -1:
-        return {}
-    datos = {}
-    for linea in texto[4:fin].splitlines():
-        m = re.match(r"^([a-z_]+):\s*(.*?)\s*(#.*)?$", linea)
-        if m:
-            datos[m.group(1)] = m.group(2).strip().strip('"')
-    return datos
+def archivos_del_repo():
+    """Archivos que se versionan: excluye carpetas generadas y notas locales (*.local.md)."""
+    for p in sorted(RAIZ.rglob("*")):
+        if not p.is_file() or EXCLUIR_DIRS & set(p.relative_to(RAIZ).parts) or p.name.endswith(".local.md"):
+            continue
+        yield p
 
 
 def encabezados(texto: str, nivel: int = 2) -> list[str]:
     marca = "#" * nivel + " "
-    return [l[len(marca):].strip() for l in texto.splitlines() if l.startswith(marca)]
+    return [l[len(marca):].strip() for l in sin_bloques_de_codigo(texto).splitlines() if l.startswith(marca)]
 
 
 def slug(titulo: str) -> str:
     """Aproxima el ancla que genera GitHub para un encabezado."""
-    t = titulo.strip().lower()
+    t = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", titulo.strip().lower())
     t = "".join(c for c in t if c.isalnum() or c in " -_" or unicodedata.category(c) == "Mn")
     return t.replace(" ", "-")
 
 
 def sin_bloques_de_codigo(texto: str) -> str:
-    return re.sub(r"```.*?```", "", texto, flags=re.S)
+    return re.sub(r"^ *(```|~~~).*?^ *\1", "", texto, flags=re.S | re.M)
 
 
 # ── 1. Archivos obligatorios ─────────────────────────────────────────────────
 def verificar_estructura() -> None:
-    for nombre in ARCHIVOS_RAIZ:
+    for nombre in OBLIGATORIOS:
         if not (RAIZ / nombre).exists():
             error(f"Falta el archivo obligatorio {nombre}")
-    for nombre in CUADERNO:
-        if not (RAIZ / "plantillas" / "cuaderno-estudiante" / nombre).exists():
-            error(f"Falta plantillas/cuaderno-estudiante/{nombre}")
-    for nombre in ["leccion.md", "ejercicio.md", "evaluacion.md"]:
-        if not (RAIZ / "plantillas" / nombre).exists():
-            error(f"Falta plantillas/{nombre}")
 
 
-# ── 2. Programa académico ───────────────────────────────────────────────────
-def verificar_programa() -> dict[str, dict]:
-    texto = leer(RAIZ / "PROGRAMA.md")
-    mv = re.search(r"\*\*Versión académica:\*\*\s*([0-9.]+)", texto)
-    version = mv.group(1) if mv else "?"
-    if not mv:
-        error("PROGRAMA.md: no se encontró la versión académica en el encabezado")
-    i6, i7 = texto.find("## 6. Temario detallado"), texto.find("## 7. Módulos electivos")
-    if i6 == -1 or i7 == -1:
-        error("PROGRAMA.md: no se encontraron las secciones 6 y 7")
-        return {}
-    temario = texto[i6:i7]
+# ── 2. Programa ─────────────────────────────────────────────────────────────
+def verificar_programa() -> dict[str, generar.Leccion]:
+    modulos = generar.leer_modulos()
+    lecciones: dict[str, generar.Leccion] = {}
+    for mod in modulos:
+        unidades = {u for u, _ in mod.unidades}
+        for lec in mod.lecciones:
+            if lec.id in lecciones:
+                error(f"{rel(mod.carpeta / 'index.md')}: ID duplicado {lec.id}")
+            lecciones[lec.id] = lec
+            m = re.match(r"L(\d+)\.(\d+)\.\d+$", lec.id)
+            if int(m.group(1)) != mod.n:
+                error(f"{rel(mod.carpeta / 'index.md')}: {lec.id} no pertenece al módulo {mod.id}")
+            if lec.unidad != f"U{m.group(1)}.{m.group(2)}" or lec.unidad not in unidades:
+                error(f"{rel(mod.carpeta / 'index.md')}: {lec.id} está bajo la unidad {lec.unidad or '(ninguna)'}")
 
-    lecciones: dict[str, dict] = {}
-    unidades = set(re.findall(r"^\*\*(U\d+\.\d+) ", temario, flags=re.M))
-    patron = re.compile(r"^- (L(\d+)\.(\d+)\.(\d+)) \[([CPM])\] (.+)$", re.M)
-    for m in patron.finditer(temario):
-        lid, mod, uni, _, tipo, resto = m.groups()
-        if lid in lecciones:
-            error(f"PROGRAMA.md: ID duplicado {lid}")
-        if f"U{mod}.{uni}" not in unidades:
-            error(f"PROGRAMA.md: {lid} pertenece a la unidad U{mod}.{uni}, que no existe")
-        enlace = re.search(r" · (📝|🔍|📗) \[(Borrador|Revisada|Publicada)\]\(([^)]+)\)$", resto)
-        titulo = resto[: enlace.start()] if enlace else resto
-        lecciones[lid] = {"modulo": f"M{mod}", "tipo": tipo, "titulo": titulo.strip(),
-                          "enlace": enlace.group(3) if enlace else None,
-                          "marca": enlace.group(1) if enlace else None}
-
-    # Tabla de la sección 4
-    i4, i5 = texto.find("## 4. Resumen"), texto.find("## 5. Hilos")
-    tabla = texto[i4:i5]
-    conteo: dict[str, int] = {}
-    for lec in lecciones.values():
-        conteo[lec["modulo"]] = conteo.get(lec["modulo"], 0) + 1
+    texto = leer(DOCS / "programa" / "index.md")
+    if not re.search(r"\*\*Versión académica 1\.\d+", texto):
+        error("docs/programa/index.md: no se encontró la versión académica en el encabezado")
+    tabla = {}
+    for m in re.finditer(r"^\| M(\d+) \| [^|]+\| [^|]*\| +(\d+) \| +(\d+) \| +(\d+) \| +(\d+) \|$", texto, re.M):
+        tabla[int(m.group(1))] = tuple(map(int, m.groups()[1:]))
     suma = [0, 0, 0, 0]
-    for m in re.finditer(r"^\| (M\d+) \| [^|]+\| [^|]*\| +(\d+) \| +(\d+) \| +(\d+) \| +(\d+) \|$", tabla, re.M):
-        mod, n, teo, pra, tot = m.group(1), *map(int, m.groups()[1:])
-        if conteo.get(mod, 0) != n:
-            error(f"PROGRAMA.md: {mod} declara {n} lecciones y el temario tiene {conteo.get(mod, 0)}")
+    for mod in modulos:
+        fila = tabla.get(mod.n)
+        if not fila:
+            error(f"docs/programa/index.md: falta {mod.id} en la tabla de módulos y horas")
+            continue
+        n, teo, pra, tot = fila
+        if n != len(mod.lecciones):
+            error(f"{mod.id}: la tabla del programa declara {n} lecciones y la portada tiene {len(mod.lecciones)}")
+        if (teo, pra) != (mod.horas_teoria, mod.horas_practica):
+            error(f"{mod.id}: horas de la portada ({mod.horas_teoria}+{mod.horas_practica}) ≠ tabla ({teo}+{pra})")
         if teo + pra != tot:
-            error(f"PROGRAMA.md: {mod} teoría + práctica ({teo}+{pra}) ≠ total ({tot})")
-        suma = [a + b for a, b in zip(suma, [n, teo, pra, tot])]
-    m = re.search(r"\*\*Núcleo obligatorio\*\* \| +\| \*\*(\d+)\*\* \| \*\*(\d+)\*\* \| \*\*(\d+)\*\* \| \*\*(\d+)\*\*", tabla)
+            error(f"{mod.id}: teoría + práctica ({teo}+{pra}) ≠ total ({tot}) en la tabla del programa")
+        suma = [a + b for a, b in zip(suma, fila)]
+    if set(tabla) - {m.n for m in modulos}:
+        error(f"docs/programa/index.md: la tabla tiene módulos sin portada: {sorted(set(tabla) - {m.n for m in modulos})}")
+    m = re.search(r"\*\*Núcleo obligatorio\*\* \| +\| \*\*(\d+)\*\* \| \*\*(\d+)\*\* \| \*\*(\d+)\*\* \| \*\*(\d+)\*\*", texto)
     if not m:
-        error("PROGRAMA.md: no se encontró la fila 'Núcleo obligatorio' en la sección 4")
+        error("docs/programa/index.md: no se encontró la fila 'Núcleo obligatorio'")
     elif list(map(int, m.groups())) != suma:
-        error(f"PROGRAMA.md: totales del núcleo {list(map(int, m.groups()))} ≠ suma de módulos {suma}")
-    if len(lecciones) != suma[0]:
-        error(f"PROGRAMA.md: {len(lecciones)} lecciones en el temario y {suma[0]} en la tabla")
+        error(f"docs/programa/index.md: totales del núcleo {list(map(int, m.groups()))} ≠ suma de módulos {suma}")
 
-    proyectos = set(re.findall(r"^\| (P\d+) \|", texto, re.M))
+    proyectos = set(re.findall(r"^\| (P\d+) \|", leer(DOCS / "programa" / "proyectos.md"), re.M))
     faltan = {f"P{i}" for i in range(1, 11)} - proyectos
     if faltan:
-        error(f"PROGRAMA.md: faltan proyectos en la sección 8: {sorted(faltan)}")
-
-    print(f"  Programa: versión académica {version}, "
-          f"{len(lecciones)} lecciones, {len(conteo)} módulos, horas del núcleo {suma[3]}, "
-          f"{len(proyectos & {f'P{i}' for i in range(1, 11)})} proyectos")
+        error(f"docs/programa/proyectos.md: faltan proyectos: {sorted(faltan)}")
+    print(f"  Programa: {len(lecciones)} lecciones, {len(modulos)} módulos, "
+          f"{suma[3]} h de núcleo, {len(proyectos)} proyectos")
     return lecciones
 
 
-# ── 3. Lecciones y ejercicios ───────────────────────────────────────────────
-def verificar_secciones(p: Path, texto: str, requeridas: list[str]) -> None:
-    presentes = encabezados(texto)
-    for s in requeridas:
-        if s not in presentes:
-            error(f"{rel(p)}: falta la sección '## {s}'")
+# ── 3. Partes generadas ─────────────────────────────────────────────────────
+def verificar_generados() -> None:
+    for archivo, contenido in generar.calcular().items():
+        if not archivo.exists() or leer(archivo) != contenido:
+            error(f"{rel(archivo)} está desactualizado: ejecutá python scripts/generar.py")
 
 
+# ── 4. Lecciones ────────────────────────────────────────────────────────────
 def verificar_comunes(p: Path, texto: str, hoy: dt.date) -> None:
     cuerpo = sin_bloques_de_codigo(texto).lower()
     for frase in FRASES_DEPENDIENTES:
         if frase in cuerpo:
             error(f"{rel(p)}: contiene una frase que depende de contexto externo: '{frase}'")
-    for m in re.finditer(r"Específico de herramienta · verificado el (\d{4}-\d{2}-\d{2})([^\n]*)", texto):
+    for m in re.finditer(r"Específico de herramienta\**\s*· verificado el (\d{4}-\d{2}-\d{2})([^\n]*)", texto):
         fecha = dt.date.fromisoformat(m.group(1))
         if "http" not in m.group(2):
             error(f"{rel(p)}: nota de herramienta sin fuente (URL) en la misma línea")
@@ -206,82 +195,60 @@ def verificar_comunes(p: Path, texto: str, hoy: dt.date) -> None:
             aviso(f"{rel(p)}: nota de herramienta verificada hace más de {DIAS_VIGENCIA_NOTA} días ({fecha})")
 
 
-def verificar_lecciones(programa: dict[str, dict], publicar: bool) -> None:
+def verificar_lecciones(programa: dict[str, generar.Leccion], publicar: bool) -> None:
     hoy = dt.date.today()
-    archivos = sorted((RAIZ / "modulos").glob("m*/l*.md"))
-    enlazados = {}
-    for lid, lec in programa.items():
-        if lec["enlace"]:
-            enlazados[(RAIZ / lec["enlace"]).resolve()] = lid
+    archivos = sorted(DOCS.glob("m[0-9][0-9]-*/l*.md"))
     for p in archivos:
         texto = leer(p)
-        fm = front_matter(texto)
+        fm = generar.front_matter(texto)
         for clave in CLAVES_LECCION:
             if clave not in fm:
                 error(f"{rel(p)}: falta '{clave}' en el front matter")
-        lid = fm.get("id", "")
-        lec = programa.get(lid)
+        lec = programa.get(fm.get("id", ""))
         if not lec:
-            error(f"{rel(p)}: el ID '{lid}' no existe en PROGRAMA.md")
+            error(f"{rel(p)}: el ID '{fm.get('id')}' no existe en ninguna portada de módulo")
             continue
-        if fm.get("tipo") != lec["tipo"]:
-            error(f"{rel(p)}: tipo '{fm.get('tipo')}' distinto del programa ('{lec['tipo']}')")
-        if fm.get("modulo") != lec["modulo"]:
-            error(f"{rel(p)}: módulo '{fm.get('modulo')}' distinto del programa ('{lec['modulo']}')")
-        if fm.get("titulo") != lec["titulo"]:
-            error(f"{rel(p)}: el título no coincide con PROGRAMA.md")
+        if lec.archivo is None or lec.archivo.resolve() != p.resolve():
+            error(f"{rel(p)}: la lección {lec.id} está en la carpeta de otro módulo")
+        if fm.get("modulo") != f"M{lec.id.split('.')[0][1:]}":
+            error(f"{rel(p)}: módulo '{fm.get('modulo')}' no coincide con el ID {lec.id}")
+        if fm.get("unidad") != lec.unidad:
+            error(f"{rel(p)}: unidad '{fm.get('unidad')}' distinta de la portada ('{lec.unidad}')")
+        if fm.get("tipo") != lec.tipo:
+            error(f"{rel(p)}: tipo '{fm.get('tipo')}' distinto de la portada ('{lec.tipo}')")
+        if fm.get("titulo") != lec.titulo:
+            error(f"{rel(p)}: 'titulo' no coincide con el de la portada del módulo")
         estado = fm.get("estado")
-        if estado not in ESTADOS:
+        if estado not in generar.ESTADOS:
             error(f"{rel(p)}: estado '{estado}' inválido (borrador, revisada o publicada)")
-        elif lec["marca"] != ESTADOS[estado]:
-            error(f"{rel(p)}: estado '{estado}' no coincide con la marca de PROGRAMA.md ({lec['marca'] or 'sin enlace'})")
         if publicar and estado != "publicada":
             error(f"{rel(p)}: está en '{estado}'; para publicar debe estar 'publicada'")
-        if p.resolve() not in enlazados:
-            error(f"{rel(p)}: no está enlazada desde PROGRAMA.md")
-        sol = (p.parent / fm.get("soluciones", "")).resolve()
-        if not sol.is_file():
+        if not (p.parent / fm.get("soluciones", "")).resolve().is_file():
             error(f"{rel(p)}: el archivo de soluciones '{fm.get('soluciones')}' no existe")
-        verificar_secciones(p, texto, SECCIONES_LECCION)
+        presentes = encabezados(texto)
+        for s in SECCIONES_LECCION:
+            if s not in presentes:
+                error(f"{rel(p)}: falta la sección '## {s}'")
+        if presentes[: len(SECCIONES_LECCION)] != SECCIONES_LECCION:
+            error(f"{rel(p)}: las secciones de nivel 2 deben ser, en orden: {', '.join(SECCIONES_LECCION)}")
         for h in encabezados(texto, 2) + encabezados(texto, 3):
             if re.match(r"(solución|soluciones|respuestas)\b", h, re.I):
                 error(f"{rel(p)}: la lección contiene una sección de soluciones ('{h}'); van en soluciones/")
         verificar_comunes(p, texto, hoy)
-    for destino, lid in enlazados.items():
-        if not destino.is_file():
-            error(f"PROGRAMA.md: el enlace de {lid} apunta a un archivo inexistente")
-
-    for p in sorted((RAIZ / "modulos").glob("m*/ejercicios/*.md")):
-        texto = leer(p)
-        fm = front_matter(texto)
-        for clave in CLAVES_EJERCICIO:
-            if clave not in fm:
-                error(f"{rel(p)}: falta '{clave}' en el front matter")
-        if fm.get("leccion") not in programa:
-            error(f"{rel(p)}: la lección '{fm.get('leccion')}' no existe en PROGRAMA.md")
-        if fm.get("estado") not in ESTADOS:
-            error(f"{rel(p)}: estado '{fm.get('estado')}' inválido")
-        if publicar and fm.get("estado") != "publicada":
-            error(f"{rel(p)}: está en '{fm.get('estado')}'; para publicar debe estar 'publicada'")
-        if not (p.parent / fm.get("soluciones", "")).resolve().is_file():
-            error(f"{rel(p)}: el archivo de soluciones '{fm.get('soluciones')}' no existe")
-        verificar_secciones(p, texto, SECCIONES_EJERCICIO)
-        sec = re.search(r"^## Solución\n(.*?)(?=^## |\Z)", texto, re.S | re.M)
-        if sec and ("soluciones/" not in sec.group(1) or len(sec.group(1).strip()) > 400):
-            error(f"{rel(p)}: la sección 'Solución' solo debe enlazar a soluciones/, no contener la solución")
-        verificar_comunes(p, texto, hoy)
-    print(f"  Lecciones con material: {len(archivos)} · ejercicios: "
-          f"{len(list((RAIZ / 'modulos').glob('m*/ejercicios/*.md')))}")
+    for p in sorted(DOCS.glob("m[0-9][0-9]-*/soluciones/*.md")):
+        verificar_comunes(p, leer(p), hoy)
+    print(f"  Lecciones con material: {len(archivos)}")
 
 
-# ── 4. Enlaces internos ─────────────────────────────────────────────────────
+# ── 5. Enlaces internos ─────────────────────────────────────────────────────
 def verificar_enlaces() -> None:
     total = 0
-    for p in sorted(RAIZ.rglob("*.md")):
-        if ".git" in p.parts or p.is_relative_to(RAIZ / "plantillas") and p.parent.name == "plantillas":
-            continue  # las plantillas de lección/ejercicio/evaluación usan rutas de ejemplo
-        texto = sin_bloques_de_codigo(leer(p))
-        texto = re.sub(r"<!--.*?-->", "", texto, flags=re.S)
+    cache: dict[Path, set[str]] = {}
+    for p in archivos_del_repo():
+        if p.suffix != ".md" or p.parent == RAIZ / "plantillas":
+            continue  # las plantillas usan rutas de ejemplo
+        texto = re.sub(r"<!--.*?-->", "", sin_bloques_de_codigo(leer(p)), flags=re.S)
+        texto = re.sub(r"`[^`\n]*`", "", texto)
         for m in re.finditer(r"\]\(([^)\s]+)\)", texto):
             destino = m.group(1)
             if re.match(r"^(https?:|mailto:)", destino):
@@ -293,13 +260,15 @@ def verificar_enlaces() -> None:
                 error(f"{rel(p)}: enlace roto → {destino}")
                 continue
             if ancla and objetivo.is_file() and objetivo.suffix == ".md":
-                anclas = {slug(h) for n in range(1, 7) for h in encabezados(leer(objetivo), n)}
-                if ancla not in anclas:
+                if objetivo not in cache:
+                    t = leer(objetivo)
+                    cache[objetivo] = {slug(h) for n in range(1, 7) for h in encabezados(t, n)}
+                if ancla not in cache[objetivo]:
                     error(f"{rel(p)}: el ancla '#{ancla}' no existe en {rel(objetivo)}")
     print(f"  Enlaces internos revisados: {total}")
 
 
-# ── 5. Privacidad y secretos ────────────────────────────────────────────────
+# ── 6. Privacidad y secretos ────────────────────────────────────────────────
 def verificar_privacidad(publicar: bool) -> None:
     terminos: list[str] = []
     ruta_terminos = os.environ.get("VERIFICAR_TERMINOS")
@@ -319,16 +288,15 @@ def verificar_privacidad(publicar: bool) -> None:
 
     marcador = 0
     revisados = 0
-    for p in sorted(RAIZ.rglob("*")):
-        if not p.is_file() or ".git" in p.parts or p.suffix in {".png", ".jpg", ".jpeg", ".gif", ".pdf", ".ico"}:
+    for p in archivos_del_repo():
+        if p.suffix in {".png", ".jpg", ".jpeg", ".gif", ".webp", ".pdf", ".ico", ".svg"}:
             continue
         try:
             texto = leer(p)
         except UnicodeDecodeError:
             continue
         revisados += 1
-        es_este_script = p.resolve() == Path(__file__).resolve()
-        if not es_este_script:
+        if p.resolve() != Path(__file__).resolve():
             for nombre, patron in SECRETOS.items():
                 if re.search(patron, texto):
                     error(f"{rel(p)}: posible {nombre}")
@@ -345,15 +313,16 @@ def verificar_privacidad(publicar: bool) -> None:
         marcador += texto.count("[AUTOR_PUBLICO]")
     if marcador:
         (error if publicar else aviso)(
-            f"El marcador [AUTOR_PUBLICO] aparece {marcador} veces: reemplazalo por el seudónimo antes de publicar")
+            f"El marcador [AUTOR_PUBLICO] aparece {marcador} veces: definí la autoría pública antes de publicar")
     print(f"  Archivos revisados por privacidad: {revisados} · términos privados: {len(terminos)}")
 
 
 def main() -> int:
     publicar = "--publicar" in sys.argv
-    print(f"Verificando {RAIZ.name} ({'modo publicación' if publicar else 'modo normal'})")
+    print(f"Verificando el curso ({'modo publicación' if publicar else 'modo normal'})")
     verificar_estructura()
     programa = verificar_programa()
+    verificar_generados()
     verificar_lecciones(programa, publicar)
     verificar_enlaces()
     verificar_privacidad(publicar)

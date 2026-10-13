@@ -1,6 +1,6 @@
 # Mis dificultades y repasos
 
-> Cuaderno personal y privado. Criterios de bloqueo: `PROGRAMA.md`, sección 9.4.
+> Cuaderno personal y privado. Criterios de bloqueo: [Evaluación y estados](https://caminosmarina.github.io/curso-ia/programa/evaluacion/).
 
 ## Cómo se usa
 

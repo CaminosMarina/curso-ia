@@ -1,0 +1,164 @@
+# Configuración del sitio del curso (Material for MkDocs).
+# Vista previa local:  pip install -r requirements.txt  y  mkdocs serve
+# El bloque "nav" del final lo genera scripts/generar.py: no lo edites a mano.
+
+site_name: Formación Integral en IA
+site_description: >-
+  Curso abierto y autodidacta de inteligencia artificial, de los fundamentos a agentes,
+  MCP y automatización, para personas que programan y no saben IA.
+site_url: https://caminosmarina.github.io/curso-ia/
+repo_url: https://github.com/CaminosMarina/curso-ia
+repo_name: curso-ia
+edit_uri: edit/main/docs/
+docs_dir: docs
+copyright: Contenido bajo CC BY-SA 4.0 · Código bajo MIT
+
+theme:
+  name: material
+  language: es
+  icon:
+    logo: material/school-outline
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Usar modo claro
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Usar modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Usar el modo del sistema
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - content.action.edit
+
+extra_css:
+  - assets/extra.css
+
+hooks:
+  - hooks/callouts.py
+
+plugins:
+  - search:
+      lang: es
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: warn
+    unrecognized_links: warn
+
+# ── Menú del sitio: generado por scripts/generar.py, no editar a mano ──
+nav:
+  - Inicio: index.md
+  - Cómo empezar:
+      - empezar/index.md
+      - Estudiar con un tutor de IA: empezar/tutor.md
+  - Programa:
+      - programa/index.md
+      - Índice de lecciones: programa/indice.md
+      - Proyectos: programa/proyectos.md
+      - Evaluación y estados: programa/evaluacion.md
+      - Versiones y cambios: programa/versiones.md
+  - Módulos:
+      - "Bloque I · Fundamentos y uso profesional":
+          - "M0 · Orientación, entorno y método":
+              - m00-orientacion/index.md
+              - "L0.1.1 · Mapa del curso y protocolo de sesión": m00-orientacion/l0-1-1-mapa-del-curso.md
+              - Soluciones:
+                  - "L0.1.1": m00-orientacion/soluciones/l0-1-1.md
+          - "M1 · Fundamentos de IA generativa y LLM":
+              - m01-fundamentos-llm/index.md
+          - "M2 · Prompt Engineering":
+              - m02-prompt-engineering/index.md
+          - "M3 · Asistentes de IA: uso profesional, contexto y delegación":
+              - m03-asistentes/index.md
+          - "M4 · Agentes de programación: uso guiado":
+              - m04-agentes-programacion/index.md
+          - "M5 · Automatización con n8n: workflows deterministas":
+              - m05-n8n/index.md
+      - "Bloque II · Construir con modelos":
+          - "M6 · Desarrollo con APIs de modelos":
+              - m06-apis-modelos/index.md
+          - "M7 · Context Engineering":
+              - m07-context-engineering/index.md
+          - "M8 · Embeddings, búsqueda semántica y RAG":
+              - m08-rag/index.md
+      - "Bloque III · Agentes e interoperabilidad":
+          - "M9 · Agentes desde cero":
+              - m09-agentes-desde-cero/index.md
+          - "M10 · Model Context Protocol: desarrollo":
+              - m10-mcp/index.md
+          - "M11 · Agentes de programación: arquitectura y configuración avanzada":
+              - m11-agentes-programacion-avanzado/index.md
+          - "M12 · Skills y plugins: desarrollo":
+              - m12-skills-plugins/index.md
+      - "Bloque IV · Automatización y sistemas avanzados":
+          - "M13 · n8n con IA y agentes":
+              - m13-n8n-ia/index.md
+          - "M14 · Frameworks y SDK de agentes para producción":
+              - m14-frameworks-agentes/index.md
+          - "M15 · Sistemas multiagente":
+              - m15-multiagente/index.md
+      - "Bloque V · Producción e integración":
+          - "M16 · Seguridad, evaluación, observabilidad y operación":
+              - m16-produccion/index.md
+          - "M17 · Proyecto final integrador":
+              - m17-proyecto-final/index.md
+  - Electivas: electivas.md
+  - Glosario: glosario.md

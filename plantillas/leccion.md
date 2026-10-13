@@ -1,103 +1,124 @@
 ---
 id: Lm.u.n
-titulo: "<título exacto de la lección en PROGRAMA.md>"
+titulo: "<título exacto de la lección, igual que en la portada del módulo>"
+titulo_corto: "<3 a 6 palabras para el menú del sitio>"
 modulo: Mm
 unidad: Um.u
-tipo: C            # C conceptual · P práctica o de herramienta · M mixta (igual que en PROGRAMA.md)
+tipo: C            # C conceptual · P práctica o de herramienta · M mixta (igual que en la portada del módulo)
 horas_estimadas: 1.5
-prerrequisitos:
-  duros: []        # IDs de lecciones o módulos
-  recomendados: []
 costo: gratis      # gratis · opcional-pago · requiere-pago
 estado: borrador   # borrador · revisada · publicada
-version_leccion: 0.1.0
 ultima_revision: AAAA-MM-DD
 version_academica: "1.2"
-soluciones: ../../soluciones/mMM/lm-u-n.md
+soluciones: soluciones/lm-u-n.md
 ---
 
 <!--
 CÓMO USAR ESTA PLANTILLA
-- Copiala a modulos/mMM-<slug>/lm-u-n-<slug>.md y completá el front matter.
-- Mantené TODOS los encabezados de nivel 2 (los verifica scripts/verificar.py). Si una sección
-  no corresponde, dejá el encabezado y escribí "No aplica en esta lección" con el motivo.
-- La lección tiene que entenderse sin conocer ninguna conversación ni el cuaderno de nadie.
-  Evitá frases como "como vimos antes" (si hace falta, citá la lección: "ver L1.2.1").
-- Las secciones 1 a 6 son conceptuales y estables. Todo lo que depende de versiones, planes,
-  precios, API o disponibilidad va en la sección 7, con fuente oficial y fecha de verificación.
-- Ninguna respuesta ni solución va en este archivo: van en la carpeta soluciones/.
+- Copiala a docs/mNN-<slug>/lm-u-n-<slug>.md, completá el front matter y ejecutá
+  python scripts/generar.py: la lección aparece en el menú, en el índice y en la portada del módulo.
+- Mantené los seis encabezados de nivel 2 (los verifica scripts/verificar.py). Los de nivel 3 son libres.
+- Autodidacta: la lección se tiene que entender sola, sin conversaciones ni tutor. No uses frases
+  como "como vimos" sin citar la lección ("ver L1.2.1").
+- Teoría clara y concisa: cada término se define antes de usarse; un ejemplo por idea importante;
+  diagramas mermaid cuando ayuden. Lo que cambia seguido (versiones, planes, precios, pantallas)
+  va en un aviso "Específico de herramienta" con fecha y fuente oficial.
+- Práctica paso a paso: un paso = una acción + el resultado esperado. Comandos para Bash y
+  PowerShell cuando difieran (pestañas). Capturas solo donde hay que tocar una interfaz.
+- Capturas: en docs/mNN-<slug>/img/, nombre lm-u-n-paso-N.png, texto alternativo descriptivo,
+  clase "captura" y sin datos personales (correos, nombres de cuenta, rutas).
+    ![Botón "New project" en la barra lateral](img/l3-2-3-paso-1.png){ .captura }
+- Ninguna respuesta va en este archivo: van en soluciones/.
 - Borrá este comentario al terminar.
 -->
 
-# Lm.u.n · Título de la lección
-
-> 📝 **Borrador.** Todavía no pasó la revisión para publicarse.
-
-## Objetivos
-
-Al terminar esta lección vas a poder:
-
-1. <Verbo observable: explicar, distinguir, configurar, decidir, diagnosticar…> …
-2. …
-
-## Prerrequisitos
-
-- **Prerrequisitos:** <lecciones o módulos, indicando si son duros o recomendados; "ninguno" si no hay>.
-- **Requisitos:** <software y versión mínima, cuentas, sistema operativo>.
-- **Costo:** <gratis / opcional pago / requiere pago, con alternativa gratuita si existe>.
-- **Tiempo estimado:** <lectura + práctica>.
-
-## 1. Conceptos y definiciones
-
-<Cada término nuevo se define antes de usarse. Las definiciones son independientes de las herramientas.>
-
-## 2. Propósito y casos de uso
-
-<Qué problema resuelve, cuándo conviene y cuándo NO conviene. Casos de uso concretos.>
-
-## 3. Explicación paso a paso
-
-<Cómo funciona, de lo simple a lo complejo. Diagramas mermaid si ayudan.>
-
-## 4. Ejemplos
-
-<Ejemplos trabajados, con datos ficticios.>
-
-## 5. Aplicación con herramientas reales
+# Lm.u.n · Título corto de la lección
 
 > [!NOTE]
-> Específico de herramienta · verificado el AAAA-MM-DD · <herramienta y versión> · fuente: <URL oficial>
+> **Antes de empezar**
+>
+> - **Vas a aprender a:** <2 a 5 objetivos con verbos observables: explicar, distinguir, configurar, decidir…>
+> - **Necesitás:** <lecciones previas, software y versión mínima, cuentas>
+> - **Tiempo:** <lectura + práctica> · **Costo:** <gratis / opcional pago / requiere pago, con alternativa gratuita>
 
-<Cómo se aplica en herramientas concretas. Distinguir lo común de lo específico de cada plataforma, sus restricciones y alternativas. No inventar compatibilidades ni precios.>
+## Teoría
 
-## 6. Práctica guiada
+### 1. <Primer concepto>
 
-<Pasos con resultado observable en cada uno. Indicá dónde comprobar los resultados en soluciones/.>
+<Qué es, para qué sirve y cómo funciona. Corto. Un ejemplo concreto.>
 
-## 7. Ejercicio independiente
+### 2. <Segundo concepto>
 
-<Enlace al ejercicio en ejercicios/ (formato de plantillas/ejercicio.md) o enunciado breve con criterios de aceptación.>
+<…>
 
-## 8. Autoevaluación
+> [!TIP]
+> **Errores frecuentes:** <errores típicos y cómo detectarlos>
 
-<3 a 5 preguntas para [C] y [M], al menos una de diagnóstico ("¿por qué pasa X?"). Para [P], preguntas sobre alternativas o riesgos del ejercicio. Indicar el umbral (80%) y el enlace a las respuestas en soluciones/.>
+## Práctica
 
-## 9. Errores frecuentes
+<Si la lección es conceptual [C], la práctica es la pregunta de aplicación. Si no hace falta práctica, escribí "Esta lección no tiene práctica" y el motivo.>
 
-<Errores típicos y cómo detectarlos. Sin datos de estudiantes reales.>
+### Práctica guiada
 
-## 10. Resumen
+1. **<Acción>.** <Detalle.>
 
-<5 a 8 viñetas con lo esencial.>
+    **Resultado esperado:** <qué tenés que ver.>
+2. …
 
-## 11. Referencias
+=== "Bash (Linux, macOS, Git Bash)"
 
-<Lecciones relacionadas del curso y fuentes externas. Las fuentes oficiales son obligatorias en la sección 5; las explicaciones conceptuales estables no necesitan una URL por afirmación.>
+    ```bash
+    comando
+    ```
 
-## Términos nuevos
+=== "PowerShell (Windows)"
 
-<Términos agregados a GLOSARIO.md en esta lección.>
+    ```powershell
+    comando
+    ```
 
-## Registrar en tu cuaderno
+### Ejercicio
 
-<Qué estado corresponde a cada situación y qué evidencia guardar.>
+**Objetivo:** <qué demostrás.>
+
+1. …
+
+**Criterios de aceptación:**
+
+- [ ] <condición observable>
+
+**Cómo verificar:** <comandos y salida esperada, o lista de comprobación.>
+
+<details markdown>
+<summary>Pista 1</summary>
+
+…
+
+</details>
+
+## Autoevaluación
+
+Respondé por escrito en tu cuaderno, **sin mirar las soluciones**.
+
+1. …
+2. … (al menos una pregunta de diagnóstico: "¿por qué pasa X?")
+
+**Aprobación:** 80% o más. Corregí con las [soluciones](soluciones/lm-u-n.md).
+
+### Registrá tu avance
+
+| Situación | Estado | Evidencia |
+|---|---|---|
+| Leíste la lección | 📖 | — |
+| Hiciste la práctica | 🛠️ | <archivo o salida> |
+| Superaste la autoevaluación | ✅ | Tus respuestas corregidas |
+| No la superaste | 🔁 | Registrá la dificultad en tu `REFUERZO.md` |
+
+## Resumen
+
+- <4 a 7 viñetas con lo esencial.>
+
+## Para profundizar
+
+- <Lecciones relacionadas y fuentes oficiales.>
+- **Términos nuevos en el [glosario](../glosario.md):** <lista.>

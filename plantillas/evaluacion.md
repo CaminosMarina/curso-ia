@@ -7,15 +7,15 @@ tiempo_estimado: 90 min
 estado: borrador      # borrador · revisada · publicada
 ultima_revision: AAAA-MM-DD
 version_academica: "1.2"
-soluciones: ../../soluciones/mMM/evaluacion.md
+soluciones: soluciones/evaluacion.md
 ---
 
 <!--
 CÓMO USAR ESTA PLANTILLA
-- Copiala a modulos/mMM-<slug>/evaluacion.md.
-- Cubrí todos los objetivos del módulo (PROGRAMA.md) con al menos un ítem cada uno.
-- Incluí preguntas conceptuales, de criterio y de diagnóstico de casos (PROGRAMA.md, sección 9.3).
-- La guía de corrección y las respuestas van en soluciones/, nunca acá.
+- Copiala a docs/mNN-<slug>/evaluacion.md. Las respuestas van en docs/mNN-<slug>/soluciones/evaluacion.md.
+- Cubrí todos los objetivos del módulo (su portada, index.md) con al menos un ítem cada uno.
+- Incluí preguntas conceptuales, de criterio y de diagnóstico de casos (docs/programa/evaluacion.md).
+- La guía de corrección y las respuestas van en la carpeta soluciones/ del módulo, nunca acá.
 - Borrá este comentario al terminar.
 -->
 
@@ -41,7 +41,7 @@ CÓMO USAR ESTA PLANTILLA
 
 ## Parte D · Práctica (… puntos)
 
-<Tarea práctica con criterios de aceptación comprobables, en el formato de plantillas/ejercicio.md.>
+<Tarea práctica con pasos, criterios de aceptación comprobables y cómo verificar, como en la sección Práctica de plantillas/leccion.md.>
 
 ## Rúbrica
 
@@ -55,7 +55,7 @@ CÓMO USAR ESTA PLANTILLA
 |---|---|
 | A.1 | Lm.u.n |
 
-Registrá cada dificultad en el `REFUERZO.md` de tu cuaderno y repetí la evaluación con ítems distintos (la guía de corrección incluye variantes).
+Registrá cada dificultad en el `REFUERZO.md` de tu cuaderno y repetí la evaluación con ítems distintos (la guía de corrección incluye variantes): ver [soluciones](soluciones/evaluacion.md).
 
 ## Registrar en tu cuaderno
 

@@ -1,0 +1,4 @@
+# Dependencias para construir el sitio del curso (versiones fijas para builds reproducibles).
+# MkDocs 2.0 no es compatible con Material for MkDocs: se fija la serie 1.x.
+mkdocs==1.6.1
+mkdocs-material==9.7.7
