@@ -24,21 +24,7 @@
 
 ## Procedencia
 
-Este programa es la versión pública de la versión académica 1.2 (12/10/2026) del curso de origen. Las únicas adaptaciones fueron:
-
-1. **Encabezado:** se quitaron el perfil de la persona para la que se diseñó originalmente, la fecha de aprobación individual y las referencias a sus documentos privados; se agregaron público destinatario, procedencia y disponibilidad.
-2. **Principio 5:** "el profesor" de la instancia original pasa a "un tutor de IA opcional".
-3. **Principio 7:** la justificación de Java ya no se refiere al trabajo de una persona concreta.
-4. **Redacción inclusiva:** "como usuaria" pasa a "como persona usuaria" y "experiencia de usuaria" a "experiencia de uso".
-5. **Referencias a documentos privados:** las menciones a `DIAGNOSTICO.md` pasan a la nota de herramientas de cada lección; `PROGRESO.md` y `REFUERZO.md` pasan a ser los del cuaderno de cada estudiante. "Al dictar" pasa a "al preparar".
-6. **L0.1.2 y U17.2:** "tu profesor" y "revisión del profesor" pasan a tutor, par o autoevaluación con rúbrica.
-7. **Estado 📖:** "Explicada (el profesor desarrolló la lección)" pasa a "Estudiada (por tu cuenta o con un tutor)", con el mismo símbolo y el mismo lugar en la secuencia de estados.
-8. **E3 y P10-C:** la normativa de datos personales se generaliza al país de cada estudiante (con Argentina como ejemplo), y "tu stack Java" pasa a "Java".
-9. **Entregables (proyectos):** viven en el cuaderno de cada estudiante, no en el repositorio del curso.
-10. **Resumen de horas:** se quitó el párrafo sobre la evolución de horas entre versiones de diseño. **Sección de versiones:** se reemplazó por esta página.
-11. **Organización en páginas (13/10/2026):** el programa, que era un único archivo, se dividió en estas páginas del sitio y en la portada de cada módulo. Los contenidos, IDs, tipos, prerrequisitos, horas y proyectos no cambiaron.
-
-Las versiones de diseño 1.0 (200 lecciones) y 1.1 (227 lecciones) no tuvieron estudiantes con progreso en este repositorio; por eso no se incluyen sus tablas de equivalencias.
+Versión académica 1.2 del programa, publicada el 12/10/2026. Las versiones de diseño anteriores (1.0 y 1.1) no tuvieron estudiantes con progreso registrado, por eso no se incluyen sus tablas de equivalencias.
 
 ## Registro de cambios académicos
 

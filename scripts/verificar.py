@@ -310,7 +310,8 @@ def verificar_privacidad(publicar: bool) -> None:
             # palabra completa, sin distinguir mayúsculas: "Ana" no coincide con "análisis"
             if re.search(r"(?<!\w)" + re.escape(t) + r"(?!\w)", texto, re.I):
                 error(f"{rel(p)}: contiene un término de tu lista privada (no se muestra)")
-        marcador += texto.count("[AUTOR_PUBLICO]")
+        if p.resolve() != Path(__file__).resolve():
+            marcador += texto.count("[AUTOR_PUBLICO]")
     if marcador:
         (error if publicar else aviso)(
             f"El marcador [AUTOR_PUBLICO] aparece {marcador} veces: definí la autoría pública antes de publicar")

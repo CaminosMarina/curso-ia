@@ -71,11 +71,11 @@ Además: tres [electivas](docs/electivas.md) y diez [proyectos](docs/programa/pr
 
 Estas licencias cubren **solo el material original**. El material de terceros conserva su licencia y se identifica junto con su fuente.
 
-**Atribución sugerida:** "Formación Integral en Inteligencia Artificial", de [AUTOR_PUBLICO], CC BY-SA 4.0, con enlace a este repositorio.
+**Atribución sugerida:** "Formación Integral en Inteligencia Artificial", de Marina Caminos, CC BY-SA 4.0, con enlace a este repositorio.
 
 ## Autoría y uso de IA
 
-Autoría: **[AUTOR_PUBLICO]**.
+Autoría: **Marina Caminos**.
 
 Este material se redacta y revisa con asistencia de herramientas de IA. Cada lección pasa por revisión humana antes de publicarse: verificación de las afirmaciones técnicas en fuentes oficiales, ejecución de los ejercicios desde cero y revisión pedagógica.
 

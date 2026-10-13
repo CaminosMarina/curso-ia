@@ -69,4 +69,4 @@ Además hay tres [electivas](electivas.md) y diez [proyectos](programa/proyectos
 
 ## Licencia
 
-El contenido es libre bajo [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) y el código, bajo [MIT](https://opensource.org/license/mit). El material se redacta con asistencia de herramientas de IA y cada lección pasa por revisión humana antes de publicarse.
+Curso creado por **Marina Caminos**. El contenido es libre bajo [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es) y el código, bajo [MIT](https://opensource.org/license/mit). El material se redacta con asistencia de herramientas de IA y cada lección pasa por revisión humana antes de publicarse.

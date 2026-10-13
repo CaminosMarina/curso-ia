@@ -11,7 +11,8 @@ repo_url: https://github.com/CaminosMarina/curso-ia
 repo_name: curso-ia
 edit_uri: edit/main/docs/
 docs_dir: docs
-copyright: Contenido bajo CC BY-SA 4.0 · Código bajo MIT
+site_author: Marina Caminos
+copyright: © 2026 Marina Caminos · Contenido bajo CC BY-SA 4.0 · Código bajo MIT
 
 theme:
   name: material
