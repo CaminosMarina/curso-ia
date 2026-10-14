@@ -1,0 +1,207 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   Estilo "Latte" · identidad del curso de Marina Caminos.
+   Concepto: una mesa de café para estudiar. Tonos de leche, crema y espresso,
+   de bajo brillo y contraste cómodo (texto entre 11:1 y 13:1, nunca 21:1).
+   Tres modos de lectura: Latte (claro), Cortado (intermedio) y Espresso (oscuro).
+   Tipografías: Lexend (texto; diseñada a partir de investigación sobre fluidez
+   lectora), Fraunces suave (títulos) y JetBrains Mono (código).
+   ───────────────────────────────────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..700,100&family=Lexend:wght@300..700&family=JetBrains+Mono:wght@400;600&display=swap");
+
+/* ── Paletas ──────────────────────────────────────────────────────────────── */
+/* Latte: leche espumada, luminoso. */
+[data-md-color-scheme="default"] {
+  --la-fondo: #fbf7f1;
+  --la-tarjeta: #ffffff;
+  --la-cabecera: #f1e4d2;       /* banda de espuma del encabezado */
+  --la-texto: #3b2c22;
+  --la-titulo: #2a1d15;
+  --la-suave: #6f5f52;
+  --la-linea: #e8dccb;
+  --la-crema: #f3e6d4;          /* fondos de resalte */
+  --la-caramelo: #965221;       /* acento principal: enlaces, activo */
+  --la-pistacho: #4d6a2c;       /* consejos y "hecho" */
+  --la-canela: #a5431f;         /* avisos */
+  --la-espresso: #2b1f18;       /* pie */
+  --la-sombra: rgba(70, 45, 25, 0.08);
+}
+/* Cortado: ámbar tostado, sin brillo, para sesiones largas. */
+[data-md-color-scheme="cortado"] {
+  --la-fondo: #e0caab;
+  --la-tarjeta: #ead9c0;
+  --la-cabecera: #d3b994;
+  --la-texto: #2b1e15;
+  --la-titulo: #21160f;
+  --la-suave: #5c4a3a;
+  --la-linea: #c9b08c;
+  --la-crema: #d6bf9d;
+  --la-caramelo: #713c12;
+  --la-pistacho: #3f5523;
+  --la-canela: #86331a;
+  --la-espresso: #2b1f18;
+  --la-sombra: rgba(60, 35, 15, 0.14);
+}
+/* Espresso: café profundo; títulos color crema. */
+[data-md-color-scheme="slate"] {
+  --la-fondo: #16100d;
+  --la-tarjeta: #211813;
+  --la-cabecera: #0e0a08;
+  --la-texto: #e9dccb;
+  --la-titulo: #f5e6cf;
+  --la-suave: #b5a28f;
+  --la-linea: #33271f;
+  --la-crema: #2c2119;
+  --la-caramelo: #e8ad74;
+  --la-pistacho: #a9c784;
+  --la-canela: #ef9a7a;
+  --la-espresso: #0e0a08;
+  --la-sombra: rgba(0, 0, 0, 0.35);
+  --md-hue: 25;
+}
+
+[data-md-color-scheme] {
+  --md-default-bg-color: var(--la-fondo);
+  --md-default-fg-color: var(--la-texto);
+  --md-default-fg-color--light: var(--la-suave);
+  --md-default-fg-color--lighter: color-mix(in srgb, var(--la-suave) 70%, var(--la-fondo));
+  --md-default-fg-color--lightest: var(--la-linea);
+  --md-primary-fg-color: var(--la-fondo);
+  --md-primary-fg-color--light: var(--la-tarjeta);
+  --md-primary-fg-color--dark: var(--la-linea);
+  --md-primary-bg-color: var(--la-texto);
+  --md-primary-bg-color--light: var(--la-suave);
+  --md-accent-fg-color: var(--la-caramelo);
+  --md-accent-fg-color--transparent: color-mix(in srgb, var(--la-caramelo) 12%, transparent);
+  --md-typeset-a-color: var(--la-caramelo);
+  --md-code-bg-color: var(--la-crema);
+  --md-code-fg-color: var(--la-texto);
+  --md-footer-bg-color: var(--la-espresso);
+  --md-footer-bg-color--dark: #120d0b;
+  --md-footer-fg-color: #eadfcf;
+  --md-footer-fg-color--light: #c9b8a4;
+  --md-footer-fg-color--lighter: #9c8a77;
+  --md-text-font-family: "Lexend", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --md-code-font-family: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  --la-titulos: "Fraunces", Georgia, "Times New Roman", serif;
+}
+
+body, input, .md-typeset { font-family: var(--md-text-font-family); }
+body { background: var(--la-fondo); }
+
+/* ── Lectura cómoda: ancho de línea ~70 caracteres, interlineado amplio ──── */
+.md-typeset { font-size: 0.84rem; line-height: 1.8; font-weight: 350; letter-spacing: 0.005em; }
+.md-content__inner { max-width: 44rem; }
+.md-typeset p, .md-typeset li { hyphens: auto; }
+.md-typeset ::selection { background: var(--la-crema); color: var(--la-texto); }
+
+/* ── Encabezado: la línea de crema ───────────────────────────────────────── */
+.md-header {
+  background: var(--la-cabecera);
+  color: var(--la-texto);
+  box-shadow: none;
+  border-bottom: 1px solid var(--la-linea);
+}
+.md-header--shadow { box-shadow: 0 1px 0 var(--la-linea), 0 6px 18px -12px var(--la-sombra); }
+.md-header__topic:first-child { font-family: var(--la-titulos); font-weight: 650; font-size: 0.95rem; font-variation-settings: "SOFT" 100; }
+.md-header__button.md-logo { color: var(--la-caramelo); }
+.md-header__button.md-logo img, .md-header__button.md-logo svg { height: 1.7rem; width: auto; }
+.md-tabs { background: var(--la-cabecera); color: var(--la-texto); border-bottom: 1px solid var(--la-linea); }
+.md-tabs__link { font-weight: 600; font-size: 0.7rem; opacity: 0.72; }
+.md-tabs__link:hover, .md-tabs__item--active .md-tabs__link { opacity: 1; color: var(--la-caramelo); }
+.md-tabs__item--active .md-tabs__link {
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.45em;
+  text-decoration-color: var(--la-crema);
+}
+.md-search__form { background: var(--la-tarjeta); border: 1px solid var(--la-linea); border-radius: 999px; }
+.md-search__input { color: var(--la-texto); }
+.md-search__input::placeholder, .md-search__icon { color: var(--la-suave); }
+
+/* ── Títulos ──────────────────────────────────────────────────────────────── */
+.md-typeset :is(h1, h2, h3) { font-family: var(--la-titulos); color: var(--la-titulo); text-wrap: balance; letter-spacing: -0.01em; font-variation-settings: "SOFT" 100, "WONK" 0; }
+.md-typeset h1 { font-weight: 650; font-size: 2.15rem; line-height: 1.12; margin-bottom: 1.1rem; }
+.md-typeset h2 { font-weight: 600; font-size: 1.4rem; margin-top: 2.6rem; }
+.md-typeset h3 { font-weight: 600; font-size: 1.1rem; margin-top: 1.9rem; }
+/* Grano de café antes de cada sección. */
+.md-typeset h2::before {
+  content: ""; display: inline-block; width: 0.5em; height: 0.72em; margin-right: 0.5em;
+  vertical-align: -0.04em; border-radius: 50%; transform: rotate(28deg);
+  background:
+    linear-gradient(90deg, transparent 46%, var(--la-fondo) 46% 54%, transparent 54%),
+    var(--la-caramelo);
+}
+.md-typeset h4 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--la-suave); }
+
+/* ── Enlaces y texto ─────────────────────────────────────────────────────── */
+.md-typeset a {
+  text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, var(--la-caramelo) 35%, transparent);
+}
+.md-typeset a:hover { text-decoration-color: var(--la-caramelo); }
+.md-typeset .headerlink { text-decoration: none; }
+.md-typeset strong { font-weight: 600; }
+.md-typeset code { border-radius: 4px; font-size: 0.86em; padding: 0.05em 0.35em; }
+.md-typeset mark { background: var(--la-crema); color: inherit; border-radius: 3px; }
+
+/* ── Navegación ───────────────────────────────────────────────────────────── */
+.md-nav { font-size: 0.7rem; }
+.md-nav__title { font-family: var(--la-titulos); font-weight: 700; }
+.md-nav__link--active { color: var(--la-caramelo); font-weight: 700; }
+.md-nav__link:is(:focus, :hover) { color: var(--la-caramelo); }
+.md-nav--secondary .md-nav__link--active { color: var(--la-caramelo); }
+.md-path { font-size: 0.66rem; }
+
+/* ── Tablas: menú de cafetería ───────────────────────────────────────────── */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--la-linea); border-radius: 10px; overflow: hidden;
+  background: var(--la-tarjeta); box-shadow: none; font-size: 0.78rem;
+}
+.md-typeset table:not([class]) th {
+  background: var(--la-crema); color: var(--la-texto); font-weight: 700; font-size: 0.7rem;
+  border-bottom: 1px solid var(--la-linea);
+}
+.md-typeset table:not([class]) td { border-top: 1px dotted var(--la-linea); vertical-align: top; }
+.md-typeset table:not([class]) tbody tr:hover { background: color-mix(in srgb, var(--la-crema) 45%, transparent); box-shadow: none; }
+
+/* ── Recuadros: tarjetas de mesa ─────────────────────────────────────────── */
+.md-typeset :is(.admonition, details) {
+  border: 1px solid var(--la-linea) !important;
+  border-radius: 12px;
+  background: var(--la-tarjeta);
+  box-shadow: 0 1px 0 var(--la-linea), 0 8px 20px -16px var(--la-sombra);
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+.md-typeset :is(.admonition-title, summary) {
+  background: color-mix(in srgb, var(--la-caramelo) 9%, var(--la-tarjeta)) !important;
+  font-family: var(--la-titulos); font-weight: 700; font-size: 0.78rem; color: var(--la-texto);
+  border-bottom: 1px dashed var(--la-linea);
+}
+.md-typeset :is(.admonition, details) > :is(.admonition-title, summary)::before { background-color: var(--la-caramelo) !important; }
+.md-typeset :is(.tip, .success) > :is(.admonition-title, summary) { background: color-mix(in srgb, var(--la-pistacho) 11%, var(--la-tarjeta)) !important; }
+.md-typeset :is(.tip, .success) > :is(.admonition-title, summary)::before { background-color: var(--la-pistacho) !important; }
+.md-typeset :is(.warning, .danger, .failure, .bug) > :is(.admonition-title, summary) { background: color-mix(in srgb, var(--la-canela) 10%, var(--la-tarjeta)) !important; }
+.md-typeset :is(.warning, .danger, .failure, .bug) > :is(.admonition-title, summary)::before { background-color: var(--la-canela) !important; }
+.md-typeset .info > :is(.admonition-title, summary) { background: var(--la-crema) !important; }
+.md-typeset .info > :is(.admonition-title, summary)::before { background-color: var(--la-suave) !important; }
+.md-typeset details > summary::after { color: var(--la-suave); }
+
+/* ── Código y pestañas ────────────────────────────────────────────────────── */
+.md-typeset pre > code { border-radius: 10px; border: 1px solid var(--la-linea); }
+.md-typeset .highlight { --md-code-bg-color: var(--la-tarjeta); }
+.md-typeset .tabbed-labels > label { font-weight: 600; font-size: 0.7rem; }
+.md-typeset .tabbed-labels::before { background: var(--la-caramelo); }
+.md-typeset .tabbed-set { border-radius: 10px; }
+
+/* ── Listas de verificación ───────────────────────────────────────────────── */
+.md-typeset .task-list-control [type="checkbox"]:checked + .task-list-indicator::before { background-color: var(--la-pistacho); }
+
+/* ── Pie: barra de espresso ───────────────────────────────────────────────── */
+.md-footer-meta { font-size: 0.66rem; }
+.md-footer__title { font-family: var(--la-titulos); }
+
+/* ── Capturas ─────────────────────────────────────────────────────────────── */
+.md-typeset img.captura { border: 1px solid var(--la-linea); border-radius: 10px; max-width: 100%; box-shadow: 0 8px 20px -16px var(--la-sombra); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

@@ -11,6 +11,14 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 **Versión académica:** 1.2 (sin cambios académicos)
 
+### Cambiado (13/10/2026): identidad visual "Latte"
+
+- Estilo propio con temática café (`docs/assets/estilo-latte.css`), en lugar de los colores por defecto de Material.
+- Tres modos de lectura que se alternan con el botón de la taza: Latte (claro), Cortado (ámbar, menos brillo) y Espresso (oscuro). Contraste del texto entre 10:1 y 14:1 en todos.
+- Tipografías: Lexend (texto), Fraunces (títulos) y JetBrains Mono (código).
+- Logo propio (taza con tres nodos conectados) y favicon.
+- Autoría pública: Marina Caminos. La sección Procedencia del programa se simplificó.
+
 ### Cambiado (13/10/2026): el curso pasa a ser un sitio web
 
 - Todo el contenido se movió a `docs/` y se publica como sitio con Material for MkDocs en GitHub Pages (`mkdocs.yml`, `requirements.txt`, `.github/workflows/sitio.yml`).

@@ -16,29 +16,34 @@ copyright: © 2026 Marina Caminos · Contenido bajo CC BY-SA 4.0 · Código bajo
 
 theme:
   name: material
+  custom_dir: overrides
   language: es
+  favicon: assets/favicon.svg
   icon:
-    logo: material/school-outline
+    logo: curso/logo
     repo: fontawesome/brands/github
+  font:
+    text: Lexend
+    code: JetBrains Mono
   palette:
-    - media: "(prefers-color-scheme)"
+    - scheme: default
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-auto
-        name: Usar modo claro
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
+        icon: material/coffee-outline
+        name: "Modo Cortado: menos brillo"
+    - scheme: cortado
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-7
-        name: Usar modo oscuro
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: indigo
+        icon: material/coffee
+        name: "Modo Espresso: oscuro"
+    - scheme: slate
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-4
-        name: Usar el modo del sistema
+        icon: material/coffee-to-go-outline
+        name: "Modo Latte: claro"
   features:
     - navigation.tabs
     - navigation.indexes
@@ -54,7 +59,7 @@ theme:
     - content.action.edit
 
 extra_css:
-  - assets/extra.css
+  - assets/estilo-latte.css
 
 hooks:
   - hooks/callouts.py
