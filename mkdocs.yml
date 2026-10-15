@@ -43,6 +43,12 @@ theme:
       accent: custom
       toggle:
         icon: material/coffee-to-go-outline
+        name: "Modo Lofi: café de medianoche"
+    - scheme: lofi
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/headphones
         name: "Modo Latte: claro"
   features:
     - navigation.tabs

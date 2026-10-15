@@ -11,6 +11,10 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 **Versión académica:** 1.3
 
+### Agregado (15/10/2026): modo de lectura "Lofi"
+
+- Cuarto modo de lectura, después de Espresso: *café de medianoche*, inspirado en la estética lofi para estudiar. Fondo índigo, títulos durazno, luz de lámpara en los granos de café, cielo con estrellas en el encabezado y grano de cinta muy suave. Contraste del texto 13:1.
+
 ### Cambiado (15/10/2026): curso más amigable e interactivo · versión académica 1.3
 
 - **Nombres más claros:** los bloques pasan a ser *etapas*; varios módulos tienen nombres más cortos (por ejemplo, "Asistentes de IA en la práctica"); cada lección tiene un título corto con su descripción completa debajo; "prerrequisito duro" pasa a "indispensable". Los IDs, contenidos, horas y prerrequisitos no cambian.
