@@ -7,9 +7,9 @@ horas_teoria: 7
 horas_practica: 17
 ---
 
-# M13 · n8n con IA y agentes
+# Módulo 13 · n8n con IA y agentes
 
-**Bloque IV** · **Nivel 2 (construir y profundizar)** · 24 h (7 h de teoría y 17 h de práctica) · 10 lecciones
+**Etapa 4** · **Nivel 2 (construir y profundizar)** · 24 h (7 h de teoría y 17 h de práctica) · 10 lecciones
 
 ## Objetivo
 
@@ -21,42 +21,42 @@ Nodos de LLM con salida estructurada; patrones de workflows con LLM aplicados en
 
 ## Antes de empezar
 
-- **Prerrequisitos:** [M5](../m05-n8n/index.md), [M6](../m06-apis-modelos/index.md) y [M9](../m09-agentes-desde-cero/index.md) (duros); [M8](../m08-rag/index.md) y [M10](../m10-mcp/index.md) (recomendados, para L13.3.1 y L13.3.2).
+- **Prerrequisitos:** [Módulo 5](../m05-n8n/index.md), [Módulo 6](../m06-apis-modelos/index.md) y [Módulo 9](../m09-agentes-desde-cero/index.md) (indispensables); [Módulo 8](../m08-rag/index.md) y [Módulo 10](../m10-mcp/index.md) (recomendados, para L13.3.1 y L13.3.2).
 - **Herramientas:** n8n Community autohospedado, PostgreSQL + pgvector, Ollama o API de LLM.
 
 ## Lecciones
 
-Las lecciones con material tienen enlace. Las demás forman parte del programa, pero su material todavía se está escribiendo.
+Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya forman parte del programa y se están escribiendo. Las de la **ruta esencial** son el núcleo del módulo; las marcadas para **profundizar** amplían el tema y se pueden hacer después.
 
-### U13.1 · LLM en workflows
+### 13.1 · LLM en workflows
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L13.1.1 | Nodos de LLM con salida estructurada y validación: clasificación, extracción y resumen (amplía L5.3.3). | P | — |
-| L13.1.2 | Patrones de workflows con LLM en n8n: encadenamiento, enrutamiento, paralelización y evaluador-optimizador (mapeo con L9.1.3). | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L13.1.1 | **Nodos LLM con salida estructurada**<br>Nodos de LLM con salida estructurada y validación: clasificación, extracción y resumen (amplía L5.3.3). | Práctica | Esencial | Próximamente |
+| L13.1.2 | **Patrones de workflows con LLM en n8n**<br>Encadenamiento, enrutamiento, paralelización y evaluador-optimizador (mapeo con L9.1.3). | Mixta | Esencial | Próximamente |
 
-### U13.2 · Agentes en n8n
+### 13.2 · Agentes en n8n
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L13.2.1 | Nodo AI Agent: modelo, memoria y herramientas. Mapeo con el bucle de M9. | M | — |
-| L13.2.2 | Herramientas del agente: nodos, HTTP y workflows como herramientas. | P | — |
-| L13.2.3 | Aprobación humana dentro de workflows (esperar confirmación por correo o chat). | P | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L13.2.1 | **Nodo AI Agent**<br>Modelo, memoria y herramientas. Mapeo con el bucle de M9. | Mixta | Esencial | Próximamente |
+| L13.2.2 | **Herramientas del agente**<br>Nodos, HTTP y workflows como herramientas. | Práctica | Esencial | Próximamente |
+| L13.2.3 | **Aprobación humana en workflows**<br>Aprobación humana dentro de workflows (esperar confirmación por correo o chat). | Práctica | Esencial | Próximamente |
 
-### U13.3 · Conocimiento e integración
+### 13.3 · Conocimiento e integración
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L13.3.1 | RAG en n8n: ingesta a un vector store y agente con recuperación. | P | — |
-| L13.3.2 | MCP en n8n: consumir servidores MCP (MCP Client Tool) y exponer workflows como servidor MCP (MCP Server Trigger). | P | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L13.3.1 | **RAG en n8n**<br>Ingesta a un vector store y agente con recuperación. | Práctica | Esencial | Próximamente |
+| L13.3.2 | **MCP en n8n**<br>Consumir servidores MCP (MCP Client Tool) y exponer workflows como servidor MCP (MCP Server Trigger). | Práctica | Esencial | Próximamente |
 
-### U13.4 · Operación
+### 13.4 · Operación
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L13.4.1 | Monitoreo de ejecuciones, 💰 costos de LLM y límites. | P | — |
-| L13.4.2 | Escalado y entornos: modo cola, réplicas y consideraciones para endpoints MCP `[Verificar]`. | M | — |
-| L13.4.3 | 🧭 Workflow determinista + LLM puntual vs. agente autónomo; n8n vs. código propio. | C | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L13.4.1 | **Monitoreo, costos y límites**<br>Monitoreo de ejecuciones, costos de LLM y límites. | Práctica | Esencial | Próximamente |
+| L13.4.2 | **Escalado y entornos**<br>Modo cola, réplicas y consideraciones para endpoints MCP `[Verificar]`. | Mixta | Profundizar | Próximamente |
+| L13.4.3 | **Workflow con LLM vs. agente**<br>Workflow determinista + LLM puntual vs. agente autónomo; n8n vs. código propio. | Conceptual | Esencial | Próximamente |
 
 ## Práctica del módulo
 
@@ -73,7 +73,7 @@ Las lecciones con material tienen enlace. Las demás forman parte del programa, 
 
 P8 ≥ 80% en la rúbrica con casos de error probados; evaluación de módulo ≥ 80%.
 
-Las reglas generales están en [Evaluación y estados](../programa/evaluacion.md).
+Las reglas generales están en [Evaluación y estados](../sobre/evaluacion.md).
 
 ## Hilos transversales
 

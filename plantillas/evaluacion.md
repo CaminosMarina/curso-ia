@@ -6,7 +6,7 @@ umbral_aprobacion: 80
 tiempo_estimado: 90 min
 estado: borrador      # borrador · revisada · publicada
 ultima_revision: AAAA-MM-DD
-version_academica: "1.2"
+version_academica: "1.3"
 soluciones: soluciones/evaluacion.md
 ---
 
@@ -14,7 +14,7 @@ soluciones: soluciones/evaluacion.md
 CÓMO USAR ESTA PLANTILLA
 - Copiala a docs/mNN-<slug>/evaluacion.md. Las respuestas van en docs/mNN-<slug>/soluciones/evaluacion.md.
 - Cubrí todos los objetivos del módulo (su portada, index.md) con al menos un ítem cada uno.
-- Incluí preguntas conceptuales, de criterio y de diagnóstico de casos (docs/programa/evaluacion.md).
+- Incluí preguntas conceptuales, de criterio y de diagnóstico de casos (docs/sobre/evaluacion.md).
 - La guía de corrección y las respuestas van en la carpeta soluciones/ del módulo, nunca acá.
 - Borrá este comentario al terminar.
 -->

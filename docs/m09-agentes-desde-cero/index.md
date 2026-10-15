@@ -7,9 +7,9 @@ horas_teoria: 12
 horas_practica: 18
 ---
 
-# M9 · Agentes desde cero
+# Módulo 9 · Agentes desde cero
 
-**Bloque III** · 30 h (12 h de teoría y 18 h de práctica) · 13 lecciones
+**Etapa 3** · 30 h (12 h de teoría y 18 h de práctica) · 13 lecciones
 
 ## Objetivo
 
@@ -21,45 +21,45 @@ Agente vs. workflow y niveles de autonomía; bucle agéntico (razonar → actuar
 
 ## Antes de empezar
 
-- **Prerrequisitos:** [M6](../m06-apis-modelos/index.md) y [M7](../m07-context-engineering/index.md) (duros), [M8](../m08-rag/index.md) (recomendado).
+- **Prerrequisitos:** [Módulo 6](../m06-apis-modelos/index.md) y [Módulo 7](../m07-context-engineering/index.md) (indispensables), [Módulo 8](../m08-rag/index.md) (recomendado).
 - **Herramientas:** Python (sin frameworks), API de un proveedor o modelo local con soporte de herramientas.
 
 ## Lecciones
 
-Las lecciones con material tienen enlace. Las demás forman parte del programa, pero su material todavía se está escribiendo.
+Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya forman parte del programa y se están escribiendo. Las de la **ruta esencial** son el núcleo del módulo; las marcadas para **profundizar** amplían el tema y se pueden hacer después.
 
-### U9.1 · Qué es un agente
+### 9.1 · Qué es un agente
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L9.1.1 | Workflows vs. agentes: control determinístico vs. control del modelo. Niveles de autonomía (de sugerir a actuar sin supervisión). | C | — |
-| L9.1.2 | 🧭 Cuándo NO construir un agente: el costo de la autonomía (latencia, gasto, impredecibilidad). | C | — |
-| L9.1.3 | Patrones de workflows con LLM: encadenamiento, enrutamiento, paralelización, orquestador-trabajadores y evaluador-optimizador. | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L9.1.1 | **Workflows vs. agentes**<br>Workflows vs. agentes: control determinístico vs. control del modelo. Niveles de autonomía (de sugerir a actuar sin supervisión). | Conceptual | Esencial | Próximamente |
+| L9.1.2 | **Cuándo no construir un agente**<br>Cuándo NO construir un agente: el costo de la autonomía (latencia, gasto, impredecibilidad). | Conceptual | Esencial | Próximamente |
+| L9.1.3 | **Patrones de workflows con LLM**<br>Encadenamiento, enrutamiento, paralelización, orquestador-trabajadores y evaluador-optimizador. | Mixta | Esencial | Próximamente |
 
-### U9.2 · Construir el bucle
+### 9.2 · Construir el bucle
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L9.2.1 | El bucle agéntico mínimo en ~100 líneas: modelo, herramientas, observación y parada. | P | — |
-| L9.2.2 | ReAct y razonamiento intercalado; uso de *thinking* entre llamadas a herramientas. | M | — |
-| L9.2.3 | Diseño de herramientas para agentes: granularidad, idempotencia y errores informativos. | P | — |
-| L9.2.4 | Condiciones de parada, límites de pasos y presupuesto, bucles infinitos y recuperación de errores. | P | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L9.2.1 | **El bucle agéntico mínimo en ~100 líneas**<br>Modelo, herramientas, observación y parada. | Práctica | Esencial | Próximamente |
+| L9.2.2 | **ReAct y razonamiento intercalado**<br>ReAct y razonamiento intercalado; uso de *thinking* entre llamadas a herramientas. | Mixta | Profundizar | Próximamente |
+| L9.2.3 | **Diseño de herramientas para agentes**<br>Granularidad, idempotencia y errores informativos. | Práctica | Esencial | Próximamente |
+| L9.2.4 | **Condiciones de parada y presupuesto**<br>Condiciones de parada, límites de pasos y presupuesto, bucles infinitos y recuperación de errores. | Práctica | Esencial | Próximamente |
 
-### U9.3 · Planificación y memoria
+### 9.3 · Planificación y memoria
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L9.3.1 | Planificación explícita: planes, listas de tareas y re-planificación. | P | — |
-| L9.3.2 | Memoria del agente: *scratchpad*, archivos de estado y memoria a largo plazo con RAG. | P | — |
-| L9.3.3 | Tareas de larga duración: checkpoints y reanudación (concepto; se implementa en M14). | C | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L9.3.1 | **Planificación explícita**<br>Planes, listas de tareas y re-planificación. | Práctica | Esencial | Próximamente |
+| L9.3.2 | **Memoria del agente**<br>*scratchpad*, archivos de estado y memoria a largo plazo con RAG. | Práctica | Esencial | Próximamente |
+| L9.3.3 | **Tareas de larga duración**<br>Checkpoints y reanudación (concepto; se implementa en M14). | Conceptual | Profundizar | Próximamente |
 
-### U9.4 · Supervisión humana y confiabilidad
+### 9.4 · Supervisión humana y confiabilidad
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L9.4.1 | *Human-in-the-loop*: aprobaciones, puntos de control e interrupciones. | P | — |
-| L9.4.2 | 🔒 Agencia excesiva: permisos mínimos, *sandboxing*, acciones reversibles vs. irreversibles. | M | — |
-| L9.4.3 | 📏 Evaluar agentes: éxito de la tarea, trayectoria, costo y pasos. | P | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L9.4.1 | **Human-in-the-loop**<br>*Human-in-the-loop*: aprobaciones, puntos de control e interrupciones. | Práctica | Esencial | Próximamente |
+| L9.4.2 | **Agencia excesiva**<br>Permisos mínimos, *sandboxing*, acciones reversibles vs. irreversibles. | Mixta | Esencial | Próximamente |
+| L9.4.3 | **Evaluar agentes**<br>Éxito de la tarea, trayectoria, costo y pasos. | Práctica | Esencial | Próximamente |
 
 ## Práctica del módulo
 
@@ -76,7 +76,7 @@ Las lecciones con material tienen enlace. Las demás forman parte del programa, 
 
 P5 ≥ 80% en la rúbrica; *teach-back* del bucle completo; evaluación de módulo ≥ 80%.
 
-Las reglas generales están en [Evaluación y estados](../programa/evaluacion.md).
+Las reglas generales están en [Evaluación y estados](../sobre/evaluacion.md).
 
 ## Hilos transversales
 

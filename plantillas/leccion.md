@@ -1,15 +1,14 @@
 ---
 id: Lm.u.n
-titulo: "<título exacto de la lección, igual que en la portada del módulo>"
-titulo_corto: "<3 a 6 palabras para el menú del sitio>"
+titulo: "<título corto, igual que en la portada del módulo>"
 modulo: Mm
 unidad: Um.u
-tipo: C            # C conceptual · P práctica o de herramienta · M mixta (igual que en la portada del módulo)
+tipo: C            # C conceptual · P práctica · M mixta (igual que en la portada del módulo)
 horas_estimadas: 1.5
 costo: gratis      # gratis · opcional-pago · requiere-pago
 estado: borrador   # borrador · revisada · publicada
 ultima_revision: AAAA-MM-DD
-version_academica: "1.2"
+version_academica: "1.3"
 soluciones: soluciones/lm-u-n.md
 ---
 
@@ -17,6 +16,7 @@ soluciones: soluciones/lm-u-n.md
 CÓMO USAR ESTA PLANTILLA
 - Copiala a docs/mNN-<slug>/lm-u-n-<slug>.md, completá el front matter y ejecutá
   python scripts/generar.py: la lección aparece en el menú, en el índice y en la portada del módulo.
+  El selector de estado (Por hacer / En curso / Completada) se agrega solo al final de la página.
 - Mantené los seis encabezados de nivel 2 (los verifica scripts/verificar.py). Los de nivel 3 son libres.
 - Autodidacta: la lección se tiene que entender sola, sin conversaciones ni tutor. No uses frases
   como "como vimos" sin citar la lección ("ver L1.2.1").
@@ -32,7 +32,7 @@ CÓMO USAR ESTA PLANTILLA
 - Borrá este comentario al terminar.
 -->
 
-# Lm.u.n · Título corto de la lección
+# Título corto de la lección
 
 > [!NOTE]
 > **Antes de empezar**
@@ -98,21 +98,18 @@ CÓMO USAR ESTA PLANTILLA
 
 ## Autoevaluación
 
-Respondé por escrito en tu cuaderno, **sin mirar las soluciones**.
+Elegí una respuesta en cada pregunta. La página te corrige al instante. Para completar la lección necesitás 80% o más.
 
-1. …
-2. … (al menos una pregunta de diagnóstico: "¿por qué pasa X?")
+<!-- 3 a 5 preguntas, al menos una de diagnóstico ("¿por qué pasa X?"). Una sola opción correcta,
+     marcada con [x]. La línea con ">" es la explicación que se muestra al responder. -->
 
-**Aprobación:** 80% o más. Corregí con las [soluciones](soluciones/lm-u-n.md).
-
-### Registrá tu avance
-
-| Situación | Estado | Evidencia |
-|---|---|---|
-| Leíste la lección | 📖 | — |
-| Hiciste la práctica | 🛠️ | <archivo o salida> |
-| Superaste la autoevaluación | ✅ | Tus respuestas corregidas |
-| No la superaste | 🔁 | Registrá la dificultad en tu `REFUERZO.md` |
+```quiz
+¿Pregunta?
+- [ ] Opción incorrecta, pero creíble
+- [x] Opción correcta
+- [ ] Otra opción incorrecta
+> Por qué la correcta es correcta y por qué las otras no.
+```
 
 ## Resumen
 

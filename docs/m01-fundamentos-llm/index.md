@@ -7,9 +7,9 @@ horas_teoria: 12
 horas_practica: 12
 ---
 
-# M1 · Fundamentos de IA generativa y modelos de lenguaje
+# Módulo 1 · Fundamentos de IA generativa y LLM
 
-**Bloque I** · 24 h (12 h de teoría y 12 h de práctica) · 16 lecciones
+**Etapa 1** · 24 h (12 h de teoría y 12 h de práctica) · 16 lecciones
 
 ## Objetivo
 
@@ -21,53 +21,53 @@ Diferencias entre IA, ML, deep learning e IA generativa; tokens y tokenización 
 
 ## Antes de empezar
 
-- **Prerrequisitos:** [M0](../m00-orientacion/index.md) (duro).
+- **Prerrequisitos:** [Módulo 0](../m00-orientacion/index.md) (indispensable).
 - **Herramientas:** Ollama, tokenizadores (por ejemplo `tiktoken` y el conteo de tokens de las API), *playgrounds* de proveedores, Python con notebooks.
 
 ## Lecciones
 
-Las lecciones con material tienen enlace. Las demás forman parte del programa, pero su material todavía se está escribiendo.
+Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya forman parte del programa y se están escribiendo. Las de la **ruta esencial** son el núcleo del módulo; las marcadas para **profundizar** amplían el tema y se pueden hacer después.
 
-### U1.1 · Del aprendizaje automático a la IA generativa
+### 1.1 · Del aprendizaje automático a la IA generativa
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L1.1.1 | IA, ML, deep learning e IA generativa: definiciones precisas y qué problema resuelve cada uno. | C | — |
-| L1.1.2 | Redes neuronales en 90 minutos: parámetros, entrenamiento y generalización (lo justo para entender LLM, sin matemática innecesaria). | C | — |
-| L1.1.3 | Qué es un modelo de lenguaje: predecir el próximo token. Por qué algo tan simple produce comportamientos complejos. | C | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L1.1.1 | **IA, ML, deep learning e IA generativa**<br>Definiciones precisas y qué problema resuelve cada uno. | Conceptual | Esencial | Próximamente |
+| L1.1.2 | **Redes neuronales en 90 minutos**<br>Parámetros, entrenamiento y generalización (lo justo para entender LLM, sin matemática innecesaria). | Conceptual | Profundizar | Próximamente |
+| L1.1.3 | **Qué es un modelo de lenguaje**<br>Predecir el próximo token. Por qué algo tan simple produce comportamientos complejos. | Conceptual | Esencial | Próximamente |
 
-### U1.2 · Cómo "ve" la información un modelo
+### 1.2 · Cómo "ve" la información un modelo
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L1.2.1 | Tokens y tokenización: BPE, por qué el español "cuesta" más tokens, cómo se tokenizan imágenes y otros formatos, impacto en costo y límites. | M | — |
-| L1.2.2 | Embeddings: el contenido como vectores, similitud semántica (intro práctica; se profundiza en M8). | M | — |
-| L1.2.3 | Transformers y atención: intuición del mecanismo, por qué permite contexto largo y qué significa "ventana de contexto". | C | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L1.2.1 | **Tokens y tokenización**<br>BPE, por qué el español "cuesta" más tokens, cómo se tokenizan imágenes y otros formatos, impacto en costo y límites. | Mixta | Esencial | Próximamente |
+| L1.2.2 | **Embeddings**<br>El contenido como vectores, similitud semántica (intro práctica; se profundiza en M8). | Mixta | Esencial | Próximamente |
+| L1.2.3 | **Transformers y atención**<br>Intuición del mecanismo, por qué permite contexto largo y qué significa "ventana de contexto". | Conceptual | Esencial | Próximamente |
 
-### U1.3 · Cómo se construye un LLM
+### 1.3 · Cómo se construye un LLM
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L1.3.1 | Preentrenamiento: datos, escala y fecha de corte de conocimiento. | C | — |
-| L1.3.2 | Post-entrenamiento: ajuste por instrucciones, RLHF y técnicas afines, *system prompts*. Por qué un modelo "asistente" se comporta distinto que un modelo base. | C | — |
-| L1.3.3 | Modelos de razonamiento (*thinking*): qué cambia, cuándo convienen y su costo. | C | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L1.3.1 | **Preentrenamiento**<br>Datos, escala y fecha de corte de conocimiento. | Conceptual | Profundizar | Próximamente |
+| L1.3.2 | **Post-entrenamiento**<br>Ajuste por instrucciones, RLHF y técnicas afines, *system prompts*. Por qué un modelo "asistente" se comporta distinto que un modelo base. | Conceptual | Esencial | Próximamente |
+| L1.3.3 | **Modelos de razonamiento**<br>Modelos de razonamiento (*thinking*): qué cambia, cuándo convienen y su costo. | Conceptual | Esencial | Próximamente |
 
-### U1.4 · Inferencia: qué pasa cuando le pedís algo
+### 1.4 · Inferencia: qué pasa cuando le pedís algo
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L1.4.1 | Generación token a token y muestreo: temperatura, top-p, top-k, *stop sequences* y máximo de tokens. Determinismo y por qué no está garantizado. | M | — |
-| L1.4.2 | Ventana de contexto en la práctica: entrada, salida, efecto "perdido en el medio" y degradación con contextos largos. | M | — |
-| L1.4.3 | Latencia, *throughput* y costos: tokens de entrada, salida y razonamiento; *streaming*. | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L1.4.1 | **Generación token a token y muestreo**<br>Temperatura, top-p, top-k, *stop sequences* y máximo de tokens. Determinismo y por qué no está garantizado. | Mixta | Esencial | Próximamente |
+| L1.4.2 | **Ventana de contexto en la práctica**<br>Entrada, salida, efecto "perdido en el medio" y degradación con contextos largos. | Mixta | Esencial | Próximamente |
+| L1.4.3 | **Latencia, throughput y costos**<br>Latencia, *throughput* y costos: tokens de entrada, salida y razonamiento; *streaming*. | Mixta | Esencial | Próximamente |
 
-### U1.5 · Capacidades, limitaciones y panorama
+### 1.5 · Capacidades, limitaciones y panorama
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L1.5.1 | Alucinaciones: por qué ocurren (no es un bug, es la naturaleza del modelo) y estrategias de mitigación. | M | — |
-| L1.5.2 | Multimodalidad: visión, audio, generación de imágenes. Qué es nativo y qué es un sistema combinado. | C | — |
-| L1.5.3 | Panorama de modelos: cerrados (Claude, GPT, Gemini) y abiertos (Llama, Qwen, Mistral, DeepSeek, Gemma); niveles de tamaño; cómo leer (y desconfiar de) los *benchmarks*. Versiones vigentes verificadas al preparar la lección. | C | — |
-| L1.5.4 | Modelo vs. producto vs. *harness*: la diferencia entre un modelo, la app que lo envuelve y el agente que lo usa. Clave para todo el curso. | C | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L1.5.1 | **Alucinaciones**<br>Por qué ocurren (no es un bug, es la naturaleza del modelo) y estrategias de mitigación. | Mixta | Esencial | Próximamente |
+| L1.5.2 | **Multimodalidad**<br>Visión, audio, generación de imágenes. Qué es nativo y qué es un sistema combinado. | Conceptual | Profundizar | Próximamente |
+| L1.5.3 | **Panorama de modelos**<br>Cerrados (Claude, GPT, Gemini) y abiertos (Llama, Qwen, Mistral, DeepSeek, Gemma); niveles de tamaño; cómo leer (y desconfiar de) los *benchmarks*. Versiones vigentes verificadas al preparar la lección. | Conceptual | Esencial | Próximamente |
+| L1.5.4 | **Modelo, producto y harness**<br>Modelo vs. producto vs. *harness*: la diferencia entre un modelo, la app que lo envuelve y el agente que lo usa. Clave para todo el curso. | Conceptual | Esencial | Próximamente |
 
 ## Práctica del módulo
 
@@ -84,7 +84,7 @@ Las lecciones con material tienen enlace. Las demás forman parte del programa, 
 
 Evaluación de módulo ≥ 80%; *teach-back* aprobado de token, ventana de contexto, temperatura y alucinación; entregable revisado.
 
-Las reglas generales están en [Evaluación y estados](../programa/evaluacion.md).
+Las reglas generales están en [Evaluación y estados](../sobre/evaluacion.md).
 
 ## Hilos transversales
 

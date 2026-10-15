@@ -7,9 +7,9 @@ horas_teoria: 10
 horas_practica: 16
 ---
 
-# M15 · Sistemas multiagente
+# Módulo 15 · Sistemas multiagente
 
-**Bloque IV** · 26 h (10 h de teoría y 16 h de práctica) · 11 lecciones
+**Etapa 4** · 26 h (10 h de teoría y 16 h de práctica) · 11 lecciones
 
 ## Objetivo
 
@@ -21,43 +21,43 @@ Motivos para usar varios agentes (paralelismo, aislamiento de contexto, especial
 
 ## Antes de empezar
 
-- **Prerrequisitos:** [M14](../m14-frameworks-agentes/index.md) (duro).
+- **Prerrequisitos:** [Módulo 14](../m14-frameworks-agentes/index.md) (indispensable).
 - **Herramientas:** Claude Agent SDK, LangGraph u OpenAI Agents SDK; SDK de A2A; subagentes de Claude Code.
 
 ## Lecciones
 
-Las lecciones con material tienen enlace. Las demás forman parte del programa, pero su material todavía se está escribiendo.
+Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya forman parte del programa y se están escribiendo. Las de la **ruta esencial** son el núcleo del módulo; las marcadas para **profundizar** amplían el tema y se pueden hacer después.
 
-### U15.1 · Fundamentos
+### 15.1 · Fundamentos
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L15.1.1 | 🧭 Cuándo varios agentes superan a uno (y cuándo no): evidencia, costos y la regla de "empezar con uno". | C | — |
-| L15.1.2 | Topologías y patrones de coordinación. | C | — |
-| L15.1.3 | Delegación efectiva entre agentes: qué contexto pasar, formato de resultados y criterios de terminación (versión programática de L3.7.1). | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L15.1.1 | **Cuándo usar varios agentes**<br>Cuándo varios agentes superan a uno (y cuándo no): evidencia, costos y la regla de "empezar con uno". | Conceptual | Esencial | Próximamente |
+| L15.1.2 | **Topologías y patrones de coordinación** | Conceptual | Esencial | Próximamente |
+| L15.1.3 | **Delegación efectiva entre agentes**<br>Qué contexto pasar, formato de resultados y criterios de terminación (versión programática de L3.7.1). | Mixta | Esencial | Próximamente |
 
-### U15.2 · Implementación
+### 15.2 · Implementación
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L15.2.1 | Orquestador-trabajadores con investigación en paralelo. | P | — |
-| L15.2.2 | *Handoffs* entre agentes especializados y estado compartido. | P | — |
-| L15.2.3 | Evaluador-optimizador y revisión cruzada entre agentes. | P | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L15.2.1 | **Orquestador y trabajadores**<br>Orquestador-trabajadores con investigación en paralelo. | Práctica | Esencial | Próximamente |
+| L15.2.2 | **Handoffs y estado compartido**<br>*Handoffs* entre agentes especializados y estado compartido. | Práctica | Esencial | Próximamente |
+| L15.2.3 | **Evaluador-optimizador**<br>Evaluador-optimizador y revisión cruzada entre agentes. | Práctica | Profundizar | Próximamente |
 
-### U15.3 · Interoperabilidad: A2A
+### 15.3 · Interoperabilidad: A2A
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L15.3.1 | El protocolo A2A 1.0: Agent Cards (incluidas las firmadas), tareas, mensajes y artefactos. | C | — |
-| L15.3.2 | Exponer y consumir un agente vía A2A; A2A + MCP en una misma arquitectura. | P | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L15.3.1 | **El protocolo A2A**<br>El protocolo A2A 1.0: Agent Cards (incluidas las firmadas), tareas, mensajes y artefactos. | Conceptual | Profundizar | Próximamente |
+| L15.3.2 | **A2A en la práctica**<br>Exponer y consumir un agente vía A2A; A2A + MCP en una misma arquitectura. | Práctica | Profundizar | Próximamente |
 
-### U15.4 · Operación
+### 15.4 · Operación
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L15.4.1 | 📏 Evaluar sistemas multiagente: éxito global, contribución de cada agente y trazas. | P | — |
-| L15.4.2 | Fallos típicos: duplicación de trabajo, delegación vaga, bucles entre agentes y explosión de costos. 💰 Presupuestos por agente. | M | — |
-| L15.4.3 | 🔒 Confianza entre agentes: propagación de *prompt injection*, identidad y permisos por agente. | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L15.4.1 | **Evaluar sistemas multiagente**<br>Éxito global, contribución de cada agente y trazas. | Práctica | Esencial | Próximamente |
+| L15.4.2 | **Fallos típicos**<br>Duplicación de trabajo, delegación vaga, bucles entre agentes y explosión de costos. Presupuestos por agente. | Mixta | Esencial | Próximamente |
+| L15.4.3 | **Confianza entre agentes**<br>Propagación de *prompt injection*, identidad y permisos por agente. | Mixta | Esencial | Próximamente |
 
 ## Práctica del módulo
 
@@ -73,7 +73,7 @@ Las lecciones con material tienen enlace. Las demás forman parte del programa, 
 
 P9 ≥ 80% en la rúbrica con comparación cuantitativa; evaluación de módulo ≥ 80%.
 
-Las reglas generales están en [Evaluación y estados](../programa/evaluacion.md).
+Las reglas generales están en [Evaluación y estados](../sobre/evaluacion.md).
 
 ## Hilos transversales
 

@@ -1,0 +1,179 @@
+/* Componentes interactivos del curso (progreso, mapa, autoevaluaciones).
+   Usa los colores del estilo Latte (--la-*), definidos en estilo-latte.css. */
+
+.cu-sinjs { color: var(--la-suave); }
+.cu-nota { color: var(--la-suave); font-size: 0.74rem; }
+.cu-oculto { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+
+/* ── Chips de estado ─────────────────────────────────────────────────────── */
+.cu-chip {
+  display: inline-block; margin-left: 0.4em; padding: 0.05em 0.6em; border-radius: 999px;
+  font-size: 0.64rem; font-weight: 600; line-height: 1.6; white-space: nowrap; vertical-align: 0.1em;
+}
+.cu-chip--por-hacer { background: var(--la-crema); color: var(--la-suave); }
+.cu-chip--en-curso { background: color-mix(in srgb, var(--la-caramelo) 16%, transparent); color: var(--la-caramelo); }
+.cu-chip--completada { background: color-mix(in srgb, var(--la-pistacho) 18%, transparent); color: var(--la-pistacho); }
+.cu-estado-titulo { margin: -0.6rem 0 1rem; }
+.cu-estado-titulo .cu-chip { margin-left: 0; }
+
+/* ── Barras de avance ────────────────────────────────────────────────────── */
+.cu-barra { height: 8px; border-radius: 4px; background: var(--la-crema); overflow: hidden; min-width: 4rem; }
+.cu-barra-relleno { display: block; height: 100%; border-radius: 4px; background: var(--la-pistacho); transition: width 0.4s ease; }
+.cu-modulo-avance { display: flex; flex-direction: column; gap: 0.3rem; margin: -0.4rem 0 1.2rem; max-width: 26rem; }
+
+/* ── Tarjetas ────────────────────────────────────────────────────────────── */
+.md-typeset .cu-tarjeta {
+  background: var(--la-tarjeta); border: 1px solid var(--la-linea); border-radius: 12px;
+  padding: 1rem 1.2rem; margin: 1.6rem 0; display: flex; flex-direction: column; gap: 0.6rem;
+}
+.md-typeset .cu-tarjeta-titulo { margin: 0; font-size: 1.05rem; }
+.md-typeset .cu-tarjeta-titulo::before { display: none; }
+.md-typeset .cu-tarjeta p { margin: 0; }
+.cu-botones { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.md-typeset .cu-botones .md-button {
+  margin: 0; font-size: 0.7rem; padding: 0.4em 1em; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--la-caramelo); color: var(--la-caramelo); background: transparent;
+}
+.md-typeset .cu-botones .md-button:hover { background: var(--la-caramelo); color: var(--la-tarjeta); }
+.md-typeset .cu-botones .md-button--primary { background: var(--la-pistacho); border-color: var(--la-pistacho); color: var(--la-tarjeta); }
+.md-typeset .cu-botones .md-button--primary:hover { background: var(--la-texto); border-color: var(--la-texto); }
+.md-typeset .md-button.cu-peligro { color: var(--la-canela); border-color: var(--la-canela); }
+.md-typeset .md-button.cu-peligro:hover { background: var(--la-canela); color: var(--la-tarjeta); }
+
+/* ── Selector de estado ──────────────────────────────────────────────────── */
+.cu-selector { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--la-linea); border-radius: 999px; overflow: hidden; background: var(--la-fondo); }
+.cu-selector-op {
+  font: inherit; font-size: 0.7rem; font-weight: 600; padding: 0.35em 0.9em; border: 0; background: transparent;
+  color: var(--la-suave); cursor: pointer;
+}
+.cu-selector-op + .cu-selector-op { border-left: 1px solid var(--la-linea); }
+.cu-selector-op:hover { color: var(--la-texto); background: var(--la-crema); }
+.cu-selector-op:focus-visible { outline: 2px solid var(--la-caramelo); outline-offset: -2px; }
+.cu-selector-op[aria-checked="true"].cu-selector-op--por-hacer { background: var(--la-crema); color: var(--la-texto); }
+.cu-selector-op[aria-checked="true"].cu-selector-op--en-curso { background: var(--la-caramelo); color: var(--la-tarjeta); }
+.cu-selector-op[aria-checked="true"].cu-selector-op--completada { background: var(--la-pistacho); color: var(--la-tarjeta); }
+
+/* ── Mi progreso ─────────────────────────────────────────────────────────── */
+.cu-progreso-total { max-width: 34rem; }
+.cu-cifra { display: flex; align-items: baseline; gap: 0.2rem; flex-wrap: wrap; }
+.cu-cifra-num { font-family: var(--la-titulos); font-size: 2.4rem; font-weight: 650; color: var(--la-titulo); line-height: 1; }
+.cu-cifra-de { color: var(--la-suave); }
+.md-typeset .cu-etapa h2 { margin-top: 2rem; }
+.cu-fila-avance { display: grid; grid-template-columns: 1fr auto; gap: 0.8rem; align-items: center; margin-bottom: 0.6rem; max-width: 34rem; }
+.md-typeset details.cu-mod {
+  border: 1px solid var(--la-linea) !important; border-radius: 10px; background: var(--la-tarjeta);
+  margin: 0.5rem 0; box-shadow: none; font-size: 0.8rem; overflow: visible;
+}
+.md-typeset details.cu-mod > summary {
+  display: grid; grid-template-columns: 1fr auto minmax(5rem, 9rem); gap: 0.8rem; align-items: center;
+  font-family: inherit; font-size: 0.8rem; font-weight: 600; text-transform: none; letter-spacing: 0;
+  background: transparent !important; border-bottom: 0; padding: 0.7rem 2.2rem 0.7rem 0.9rem; cursor: pointer;
+}
+.md-typeset details.cu-mod > summary::before { display: none; }
+.md-typeset details.cu-mod[open] > summary { border-bottom: 1px dashed var(--la-linea); }
+.cu-mod-cuenta { color: var(--la-suave); font-variant-numeric: tabular-nums; font-weight: 400; }
+.md-typeset .cu-lista { list-style: none; margin: 0.4rem 0; padding: 0 0.9rem; }
+.md-typeset .cu-lista li {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 0.3rem 0.6rem; margin: 0; padding: 0.45rem 0;
+  border-bottom: 1px dotted var(--la-linea);
+}
+.md-typeset .cu-lista li .cu-selector { margin-left: auto; }
+.cu-lista-id { font-family: var(--md-code-font-family); font-size: 0.68rem; color: var(--la-suave); min-width: 3.6rem; }
+.md-typeset details.cu-mod > p { padding: 0 0.9rem 0.6rem; margin: 0.4rem 0 0; }
+@media (max-width: 44em) {
+  .md-typeset details.cu-mod > summary { grid-template-columns: 1fr auto; }
+  .md-typeset details.cu-mod > summary .cu-barra { grid-column: 1 / -1; }
+  .md-typeset .cu-lista li .cu-selector { margin-left: 0; }
+}
+
+/* ── Mapa de la ruta ─────────────────────────────────────────────────────── */
+#cu-mapa { position: relative; margin: 1.2rem 0 1.6rem; }
+.cu-mapa-svg { display: block; overflow: visible; }
+.cu-mapa-etapa { font-family: var(--la-titulos); font-weight: 650; font-size: 15px; fill: var(--la-titulo); }
+.cu-mapa-etapa-nombre { font-size: 11px; fill: var(--la-suave); }
+.cu-nodo rect:first-child { fill: var(--la-tarjeta); stroke: var(--la-linea); stroke-width: 1; transition: stroke 0.15s, fill 0.15s; }
+.cu-nodo:hover rect:first-child, .cu-nodo:focus rect:first-child { stroke: var(--la-caramelo); stroke-width: 1.5; }
+.cu-nodo:focus { outline: none; }
+.cu-nodo--en-curso rect:first-child { fill: color-mix(in srgb, var(--la-caramelo) 9%, var(--la-tarjeta)); }
+.cu-nodo--completo rect:first-child { fill: color-mix(in srgb, var(--la-pistacho) 14%, var(--la-tarjeta)); stroke: var(--la-pistacho); }
+.md-typeset a.cu-nodo, .cu-nodo text { text-decoration: none; }
+.cu-nodo-num { font-size: 10.5px; fill: var(--la-suave); font-weight: 600; letter-spacing: 0.02em; }
+.cu-nodo-titulo { font-size: 12.5px; fill: var(--la-texto); font-weight: 600; }
+.cu-nodo-barra { fill: var(--la-crema); }
+.cu-nodo-relleno { fill: var(--la-pistacho); }
+.cu-arista { fill: none; stroke: var(--la-linea); stroke-width: 1.4; transition: stroke 0.15s, opacity 0.15s; }
+.cu-arista--recomienda { stroke-dasharray: 4 4; }
+.cu-mapa--foco .cu-nodo:not(.cu-activo) { opacity: 0.35; }
+.cu-mapa--foco .cu-arista { opacity: 0.15; }
+.cu-mapa--foco .cu-arista.cu-activo { opacity: 1; stroke: var(--la-caramelo); stroke-width: 2; }
+.cu-mapa-tip {
+  position: absolute; z-index: 3; width: 16rem; pointer-events: none; display: flex; flex-direction: column; gap: 0.2rem;
+  background: var(--la-tarjeta); border: 1px solid var(--la-linea); border-radius: 10px; padding: 0.6rem 0.8rem;
+  box-shadow: 0 10px 24px -14px var(--la-sombra); font-size: 0.7rem; color: var(--la-texto);
+}
+.cu-mapa-tip[hidden] { display: none; }
+.cu-mapa-leyenda { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 0.8rem; font-size: 0.7rem; color: var(--la-suave); }
+.cu-mapa-leyenda span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.cu-ley { display: inline-block; width: 1.6rem; border-top: 2px solid var(--la-suave); }
+.cu-ley--recomienda { border-top-style: dashed; }
+.cu-ley-nodo { display: inline-block; width: 0.9rem; height: 0.9rem; border-radius: 3px; border: 1px solid var(--la-linea); }
+.cu-ley-nodo.cu-nodo--en-curso { background: color-mix(in srgb, var(--la-caramelo) 25%, var(--la-tarjeta)); }
+.cu-ley-nodo.cu-nodo--completo { background: color-mix(in srgb, var(--la-pistacho) 35%, var(--la-tarjeta)); border-color: var(--la-pistacho); }
+.md-typeset .cu-mapa-lista h3 { margin-top: 1.2rem; }
+.md-typeset a.cu-mapa-item {
+  display: flex; flex-direction: column; gap: 0.3rem; padding: 0.7rem 0.9rem; margin: 0.4rem 0; border-radius: 10px;
+  border: 1px solid var(--la-linea); background: var(--la-tarjeta); color: var(--la-texto); text-decoration: none;
+}
+.md-typeset a.cu-mapa-item:hover { border-color: var(--la-caramelo); }
+
+/* ── Autoevaluaciones ────────────────────────────────────────────────────── */
+.md-typeset .cu-quiz {
+  border: 1px solid var(--la-linea); border-radius: 12px; background: var(--la-tarjeta);
+  padding: 0.9rem 1.1rem; margin: 1rem 0;
+}
+.cu-quiz-num { display: block; font-size: 0.66rem; font-weight: 600; color: var(--la-suave); text-transform: uppercase; letter-spacing: 0.06em; }
+.md-typeset .cu-quiz-pregunta { font-weight: 600; margin: 0.3rem 0 0.7rem; }
+.cu-quiz-opciones { display: flex; flex-direction: column; gap: 0.45rem; }
+.md-typeset .cu-quiz-opcion {
+  font: inherit; text-align: left; padding: 0.55rem 0.8rem; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--la-linea); background: var(--la-fondo); color: var(--la-texto); line-height: 1.5;
+  transition: border-color 0.15s, background 0.15s;
+}
+.md-typeset .cu-quiz-opcion:hover:not(:disabled) { border-color: var(--la-caramelo); background: var(--la-crema); }
+.md-typeset .cu-quiz-opcion:focus-visible { outline: 2px solid var(--la-caramelo); outline-offset: 1px; }
+.md-typeset .cu-quiz-opcion:disabled { cursor: default; opacity: 0.6; }
+.md-typeset .cu-quiz-opcion.cu-ok { opacity: 1; border-color: var(--la-pistacho); background: color-mix(in srgb, var(--la-pistacho) 13%, var(--la-tarjeta)); }
+.md-typeset .cu-quiz-opcion.cu-ok::before { content: "✓ "; color: var(--la-pistacho); font-weight: 700; }
+.md-typeset .cu-quiz-opcion.cu-mal { opacity: 1; border-color: var(--la-canela); background: color-mix(in srgb, var(--la-canela) 10%, var(--la-tarjeta)); }
+.md-typeset .cu-quiz-opcion.cu-mal::before { content: "✗ "; color: var(--la-canela); font-weight: 700; }
+.md-typeset .cu-quiz-explicacion {
+  margin-top: 0.7rem; padding: 0.6rem 0.8rem; border-radius: 8px; background: var(--la-crema); font-size: 0.78rem;
+}
+.md-typeset .cu-quiz-explicacion[hidden] { display: none; }
+.cu-quiz-resumen .cu-quiz-resumen-texto { font-weight: 600; }
+
+/* ── Glosario al pasar el mouse ──────────────────────────────────────────── */
+.md-typeset abbr[title] { text-decoration: underline dotted; text-decoration-color: var(--la-caramelo); text-underline-offset: 0.2em; cursor: help; border: 0; }
+
+/* ── Listas tildables ────────────────────────────────────────────────────── */
+.md-typeset .task-list-control input[type="checkbox"] { cursor: pointer; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cu-barra-relleno, .cu-nodo rect, .cu-arista { transition: none; }
+}
+
+/* ── Ruta esencial ───────────────────────────────────────────────────────── */
+.cu-ruta-esencial { display: grid; grid-template-columns: auto 1fr; gap: 0.8rem; align-items: center; font-size: 0.74rem; font-weight: 600; }
+.cu-filtro { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.74rem; color: var(--la-suave); cursor: pointer; }
+.cu-etiqueta {
+  display: inline-block; padding: 0 0.5em; border-radius: 999px; font-size: 0.62rem; font-weight: 600;
+  border: 1px solid var(--la-linea); color: var(--la-suave);
+}
+.cu-solo-esenciales .cu-profundizar { display: none !important; }
+.cu-etiqueta--esencial { border-color: color-mix(in srgb, var(--la-pistacho) 45%, transparent); color: var(--la-pistacho); }
+.cu-tenue { color: var(--la-suave); }
+.md-typeset .cu-tabla-lecciones table:not([class]) { font-size: 0.74rem; }
+.md-typeset .cu-tabla-lecciones :is(td, th) { padding: 0.7em 0.65em !important; }
+.md-typeset .cu-tabla-lecciones td:nth-child(2) { min-width: 13rem; }
+.md-typeset .cu-tabla-lecciones :is(td, th):not(:nth-child(2)) { white-space: nowrap; }
+.md-typeset .cu-tabla-lecciones td:first-child { font-family: var(--md-code-font-family); font-size: 0.68rem; color: var(--la-suave); }

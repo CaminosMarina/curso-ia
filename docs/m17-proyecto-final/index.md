@@ -7,9 +7,9 @@ horas_teoria: 5
 horas_practica: 45
 ---
 
-# M17 · Proyecto final integrador
+# Módulo 17 · Proyecto final integrador
 
-**Bloque V** · 50 h (5 h de teoría y 45 h de práctica) · 8 lecciones
+**Etapa 5** · 50 h (5 h de teoría y 45 h de práctica) · 8 lecciones
 
 ## Objetivo
 
@@ -17,37 +17,37 @@ Diseñar, construir, evaluar y documentar una solución completa que integre los
 
 ## Antes de empezar
 
-- **Prerrequisitos:** [M16](../m16-produccion/index.md) (duro).
+- **Prerrequisitos:** [Módulo 16](../m16-produccion/index.md) (indispensable).
 - **Herramientas:** a elección, justificadas.
 
 ## Lecciones
 
-Las lecciones con material tienen enlace. Las demás forman parte del programa, pero su material todavía se está escribiendo.
+Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya forman parte del programa y se están escribiendo. Las de la **ruta esencial** son el núcleo del módulo; las marcadas para **profundizar** amplían el tema y se pueden hacer después.
 
-### U17.1 · Diseño
+### 17.1 · Diseño
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L17.1.1 | Elección del problema y definición de requisitos, métricas de éxito y restricciones (costo, privacidad). | M | — |
-| L17.1.2 | Arquitectura y decisiones técnicas documentadas (ADR): qué es determinista, qué es agente, qué es RAG, qué es MCP y qué es n8n. | M | — |
-| L17.1.3 | Modelo de amenazas y plan de evaluación antes de construir. | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L17.1.1 | **Elegir el problema y los requisitos**<br>Elección del problema y definición de requisitos, métricas de éxito y restricciones (costo, privacidad). | Mixta | Esencial | Próximamente |
+| L17.1.2 | **Arquitectura y decisiones (ADR)**<br>Arquitectura y decisiones técnicas documentadas (ADR): qué es determinista, qué es agente, qué es RAG, qué es MCP y qué es n8n. | Mixta | Esencial | Próximamente |
+| L17.1.3 | **Amenazas y plan de evaluación**<br>Modelo de amenazas y plan de evaluación antes de construir. | Mixta | Esencial | Próximamente |
 
-### U17.2 · Construcción
+### 17.2 · Construcción
 
 Iterativa, con revisión en cada hito: tutor, par o autoevaluación con la rúbrica.
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L17.2.1 | Hito 1: núcleo funcional mínimo con evals. | P | — |
-| L17.2.2 | Hito 2: integraciones (MCP, n8n y datos). | P | — |
-| L17.2.3 | Hito 3: seguridad, observabilidad y costos. | P | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L17.2.1 | **Hito 1: núcleo funcional**<br>Hito 1: núcleo funcional mínimo con evals. | Práctica | Esencial | Próximamente |
+| L17.2.2 | **Hito 2: integraciones**<br>Hito 2: integraciones (MCP, n8n y datos). | Práctica | Esencial | Próximamente |
+| L17.2.3 | **Hito 3: seguridad, observabilidad y costos**<br>Hito 3: seguridad, observabilidad y costos. | Práctica | Esencial | Próximamente |
 
-### U17.3 · Cierre
+### 17.3 · Cierre
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L17.3.1 | Evaluación final, informe de métricas y análisis de costos. | P | — |
-| L17.3.2 | Documentación, demostración y retrospectiva. | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L17.3.1 | **Evaluación final y métricas**<br>Evaluación final, informe de métricas y análisis de costos. | Práctica | Esencial | Próximamente |
+| L17.3.2 | **Documentación, demostración y retrospectiva** | Mixta | Esencial | Próximamente |
 
 ## Proyecto o entregable
 
@@ -61,4 +61,4 @@ Iterativa, con revisión en cada hito: tutor, par o autoevaluación con la rúbr
 
 P10 ≥ 80% en la rúbrica; demostración funcional; documentación que permita a otra persona entender, ejecutar y mantener el sistema.
 
-Las reglas generales están en [Evaluación y estados](../programa/evaluacion.md).
+Las reglas generales están en [Evaluación y estados](../sobre/evaluacion.md).

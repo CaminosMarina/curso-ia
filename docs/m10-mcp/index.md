@@ -1,15 +1,15 @@
 ---
 modulo: M10
-titulo: "Model Context Protocol: desarrollo"
+titulo: "Model Context Protocol (MCP)"
 bloque: III
 nivel: N2
 horas_teoria: 11
 horas_practica: 21
 ---
 
-# M10 · Model Context Protocol: desarrollo
+# Módulo 10 · Model Context Protocol (MCP)
 
-**Bloque III** · **Nivel 2 (construir y profundizar)** · 32 h (11 h de teoría y 21 h de práctica) · 16 lecciones
+**Etapa 3** · **Nivel 2 (construir y profundizar)** · 32 h (11 h de teoría y 21 h de práctica) · 16 lecciones
 
 ## Objetivo
 
@@ -21,48 +21,48 @@ El problema N×M; arquitectura host-cliente-servidor; primitivas (herramientas, 
 
 ## Antes de empezar
 
-- **Prerrequisitos:** [M9](../m09-agentes-desde-cero/index.md) (duro), [M3](../m03-asistentes/index.md) (recomendado: uso de connectors y MCP en Nivel 1).
+- **Prerrequisitos:** [Módulo 9](../m09-agentes-desde-cero/index.md) (indispensable), [Módulo 3](../m03-asistentes/index.md) (recomendado: uso de connectors y MCP en Nivel 1).
 - **Herramientas:** SDK oficial de MCP para Python o TypeScript, MCP Java SDK / Spring AI 2.0, MCP Inspector; hosts: app Claude, Claude Code, Codex, ChatGPT (según plan), VS Code o Copilot, Gemini CLI y n8n. **Versión de especificación por SDK:** se verifica al iniciar el módulo (ver la nota de herramientas de cada lección).
 
 ## Lecciones
 
-Las lecciones con material tienen enlace. Las demás forman parte del programa, pero su material todavía se está escribiendo.
+Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya forman parte del programa y se están escribiendo. Las de la **ruta esencial** son el núcleo del módulo; las marcadas para **profundizar** amplían el tema y se pueden hacer después.
 
-### U10.1 · Arquitectura y conceptos
+### 10.1 · Arquitectura y conceptos
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L10.1.1 | Repaso del Nivel 1 y qué problema resuelve MCP. Historia, gobernanza (Agentic AI Foundation) y adopción. | C | — |
-| L10.1.2 | Host, cliente y servidor: quién hace qué. MCP como "tool calling estandarizado y descubrible". | C | — |
-| L10.1.3 | Primitivas del servidor: herramientas, recursos y prompts. Cuándo usar cada una. | M | — |
-| L10.1.4 | Interacción con el cliente: elicitación mediante el patrón *multi round-trip requests* (MRTR). Roots, Sampling y Logging: qué eran, por qué se deprecan y con qué se reemplazan. | C | — |
-| L10.1.5 | Transportes: stdio vs. Streamable HTTP (HTTP+SSE deprecado). Núcleo sin estado de la especificación 2026-07-28 (`server/discover`, sin sesiones de protocolo) y qué cambia respecto de la 2025-11-25. | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L10.1.1 | **Qué problema resuelve MCP**<br>Repaso del Nivel 1 y qué problema resuelve MCP. Historia, gobernanza (Agentic AI Foundation) y adopción. | Conceptual | Esencial | Próximamente |
+| L10.1.2 | **Host, cliente y servidor**<br>Quién hace qué. MCP como "tool calling estandarizado y descubrible". | Conceptual | Esencial | Próximamente |
+| L10.1.3 | **Primitivas del servidor**<br>Herramientas, recursos y prompts. Cuándo usar cada una. | Mixta | Esencial | Próximamente |
+| L10.1.4 | **Interacción con el cliente**<br>Elicitación mediante el patrón *multi round-trip requests* (MRTR). Roots, Sampling y Logging: qué eran, por qué se deprecan y con qué se reemplazan. | Conceptual | Esencial | Próximamente |
+| L10.1.5 | **Transportes y especificación vigente**<br>Transportes: stdio vs. Streamable HTTP (HTTP+SSE deprecado). Núcleo sin estado de la especificación 2026-07-28 (`server/discover`, sin sesiones de protocolo) y qué cambia respecto de la 2025-11-25. | Mixta | Esencial | Próximamente |
 
-### U10.2 · Construir servidores
+### 10.2 · Construir servidores
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L10.2.1 | Primer servidor en Python: herramientas y recursos, probado con MCP Inspector. | P | — |
-| L10.2.2 | Servidor en Java con Spring AI (`@McpTool`, `@McpResource`) sobre una API REST o base de datos existente. | P | — |
-| L10.2.3 | Diseño de servidores para agentes: pocas herramientas bien descritas vs. "envolver toda la API". Errores, paginación, orden determinista y caché de listas. | M | — |
-| L10.2.4 | Extensiones oficiales: Tasks (operaciones largas), MCP Apps (interfaces interactivas) y Skills over MCP. Concepto y ejemplo según soporte de SDK y host `[Verificar]`. | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L10.2.1 | **Primer servidor en Python**<br>Herramientas y recursos, probado con MCP Inspector. | Práctica | Esencial | Próximamente |
+| L10.2.2 | **Servidor en Java con Spring AI**<br>Servidor en Java con Spring AI (`@McpTool`, `@McpResource`) sobre una API REST o base de datos existente. | Práctica | Profundizar | Próximamente |
+| L10.2.3 | **Diseño de servidores para agentes**<br>Pocas herramientas bien descritas vs. "envolver toda la API". Errores, paginación, orden determinista y caché de listas. | Mixta | Esencial | Próximamente |
+| L10.2.4 | **Extensiones oficiales**<br>Tasks (operaciones largas), MCP Apps (interfaces interactivas) y Skills over MCP. Concepto y ejemplo según soporte de SDK y host `[Verificar]`. | Mixta | Profundizar | Próximamente |
 
-### U10.3 · Clientes e integración
+### 10.3 · Clientes e integración
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L10.3.1 | Configuración avanzada en hosts: ámbitos, servidores remotos con OAuth, variables y depuración (amplía L3.5.2 y L4.3.2). | P | — |
-| L10.3.2 | Construir un cliente MCP propio e integrarlo al agente de P5. | P | — |
-| L10.3.3 | Ecosistema: registros de servidores y cómo evaluarlos antes de instalarlos. | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L10.3.1 | **Configuración avanzada en hosts**<br>Ámbitos, servidores remotos con OAuth, variables y depuración (amplía L3.5.2 y L4.3.2). | Práctica | Esencial | Próximamente |
+| L10.3.2 | **Cliente MCP propio**<br>Construir un cliente MCP propio e integrarlo al agente de P5. | Práctica | Esencial | Próximamente |
+| L10.3.3 | **Ecosistema y registros de servidores**<br>Ecosistema: registros de servidores y cómo evaluarlos antes de instalarlos. | Mixta | Profundizar | Próximamente |
 
-### U10.4 · Seguridad y despliegue
+### 10.4 · Seguridad y despliegue
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L10.4.1 | 🔒 Autorización en servidores remotos: OAuth 2.1/OIDC, *scopes*, tokens y registro de clientes (Client ID Metadata Documents; Dynamic Client Registration deprecado). | M | — |
-| L10.4.2 | 🔒 Amenazas: *tool poisoning*, *prompt injection* indirecta vía resultados, *confused deputy*, robo de credenciales y servidores maliciosos. Mitigaciones. | M | — |
-| L10.4.3 | Despliegue remoto (contenedor, *serverless*), observabilidad con trazas (OpenTelemetry) y versionado. | P | — |
-| L10.4.4 | 🧭 MCP vs. API directa vs. skill vs. A2A: cuándo usar cada uno. | C | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L10.4.1 | **Autorización en servidores remotos**<br>OAuth 2.1/OIDC, *scopes*, tokens y registro de clientes (Client ID Metadata Documents; Dynamic Client Registration deprecado). | Mixta | Esencial | Próximamente |
+| L10.4.2 | **Amenazas y mitigaciones**<br>Amenazas: *tool poisoning*, *prompt injection* indirecta vía resultados, *confused deputy*, robo de credenciales y servidores maliciosos. Mitigaciones. | Mixta | Esencial | Próximamente |
+| L10.4.3 | **Despliegue y observabilidad**<br>Despliegue remoto (contenedor, *serverless*), observabilidad con trazas (OpenTelemetry) y versionado. | Práctica | Profundizar | Próximamente |
+| L10.4.4 | **MCP vs. API, skills y A2A**<br>MCP vs. API directa vs. skill vs. A2A: cuándo usar cada uno. | Conceptual | Esencial | Próximamente |
 
 ## Práctica del módulo
 
@@ -79,7 +79,7 @@ Las lecciones con material tienen enlace. Las demás forman parte del programa, 
 
 P6 ≥ 80% en la rúbrica con análisis de seguridad; *teach-back* de la arquitectura; evaluación de módulo ≥ 80%.
 
-Las reglas generales están en [Evaluación y estados](../programa/evaluacion.md).
+Las reglas generales están en [Evaluación y estados](../sobre/evaluacion.md).
 
 ## Hilos transversales
 

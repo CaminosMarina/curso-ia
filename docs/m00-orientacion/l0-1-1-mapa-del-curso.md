@@ -1,296 +1,202 @@
 ---
 id: L0.1.1
-titulo: "Mapa del curso, niveles 1 y 2, estados de aprendizaje y protocolo de sesión (inicio, cierre y sincronización de registros)."
-titulo_corto: "Mapa del curso y protocolo de sesión"
+titulo: "Cómo funciona este curso"
 modulo: M0
 unidad: U0.1
 tipo: C
-horas_estimadas: 1.5
+horas_estimadas: 1
 costo: gratis
 estado: borrador
 ultima_revision: 2026-10-13
-version_academica: "1.2"
+version_academica: "1.3"
 soluciones: soluciones/l0-1-1.md
 ---
 
-# L0.1.1 · Mapa del curso y protocolo de sesión
+# Cómo funciona este curso
 
 > [!NOTE]
 > **Antes de empezar**
 >
-> - **Vas a aprender a:** ubicar cualquier lección por su ID; decidir si podés empezar un módulo según sus prerrequisitos; explicar por qué se usa una herramienta antes de construirla; asignar el estado correcto a una lección según la evidencia; y aplicar el protocolo de sesión para registrar tu avance.
-> - **Necesitás:** nada previo. Es la primera lección. Un editor de texto para el ejercicio (Git se instala en L0.2.1).
-> - **Tiempo:** 1 h 30 min (45 min de lectura y 45 de práctica) · **Costo:** gratis.
+> - **Vas a aprender a:** recorrer el curso, decidir qué módulo podés empezar según sus prerrequisitos, entender por qué primero se usa una herramienta y después se construye, y llevar tu avance.
+> - **Necesitás:** nada previo. Es la primera lección.
+> - **Tiempo:** 1 hora (30 min de lectura y 30 de práctica) · **Costo:** gratis.
 
 > [!WARNING]
 > 📝 **Borrador.** Esta lección todavía no pasó la revisión final.
 
 ## Teoría
 
-### 1. Cómo está organizado el curso
+### 1. Etapas, módulos y lecciones
 
-El curso tiene cuatro niveles de organización:
+El curso se organiza en tres niveles:
 
 | Nivel | Qué es | Ejemplo |
 |---|---|---|
-| **Bloque** | Grupo de módulos con un propósito común | Bloque I · Fundamentos y uso profesional |
-| **Módulo** | Tema grande, con objetivo, horas, evaluación y, en general, un proyecto | M4 · Agentes de programación: uso guiado |
-| **Unidad** | Subtema dentro de un módulo | U4.2 · Flujo de trabajo profesional |
-| **Lección** | Unidad mínima de estudio, de 1 a 3 horas | L4.2.3 · Instrucciones persistentes |
+| **Etapa** | Un tramo del recorrido con un propósito | Etapa 1 · Fundamentos y uso profesional |
+| **Módulo** | Un tema completo, con objetivo, horas y, en general, un proyecto | Módulo 4 · Agentes de programación |
+| **Lección** | Una sesión de estudio de 1 a 3 horas | Instrucciones persistentes |
 
-Además hay **electivas** (E1 a E3), que son especializaciones opcionales, y **proyectos** (P1 a P10), que integran varios módulos.
+Cada lección tiene un **ID** con la forma `Lm.u.n`: módulo `m`, unidad `u` (un grupo de lecciones dentro del módulo) y lección `n`. Por ejemplo, `L4.2.3` es la lección 3 del grupo 2 del Módulo 4. Los IDs no cambian aunque el curso se actualice, así que sirven para referirse a una lección sin ambigüedad.
 
-**El ID de una lección** tiene la forma `Lm.u.n`: módulo `m`, unidad `u`, lección `n`. L4.2.3 es la lección 3 de la unidad 2 del módulo 4. Un ID **nunca se reutiliza**, aunque el programa cambie.
+Además hay **proyectos** (P1 a P10), que integran varios módulos, y tres **electivas**, que son especializaciones opcionales.
 
-**El tipo de lección** indica cómo se verifica lo aprendido:
+Dentro de cada módulo, las lecciones de la **ruta esencial** son el núcleo; las marcadas **para profundizar** amplían el tema y se pueden hacer después. La ruta esencial suma unas 390 horas de las 486 del curso completo.
 
-- `C` **conceptual:** con preguntas.
-- `P` **práctica:** con un ejercicio que funciona y que sabés justificar.
-- `M` **mixta:** de las dos formas.
+El [mapa de la Ruta](../ruta/index.md) muestra las cinco etapas y sus dieciocho módulos.
 
-Los cinco bloques:
+### 2. Tipos de lección
 
-| Bloque | Módulos | Idea central |
+El tipo indica cómo comprobás que aprendiste:
+
+- **Conceptual:** con una autoevaluación de preguntas.
+- **Práctica:** con un ejercicio que funciona y que sabés explicar.
+- **Mixta:** de las dos formas.
+
+### 3. Prerrequisitos
+
+Cada módulo dice qué conviene saber antes:
+
+- **Indispensable:** sin ese conocimiento el módulo no se puede seguir.
+- **Recomendado:** mejora la experiencia, pero podés avanzar sin él y retomarlo después.
+
+Si todos los prerrequisitos indispensables de un módulo están completos, podés empezarlo. En el mapa de la Ruta, al pasar el mouse por un módulo, se marcan los suyos.
+
+El curso permite recorridos en paralelo: por ejemplo, el Módulo 5 (n8n) solo necesita el Módulo 0, y los Módulos 3 y 4 se pueden hacer juntos después del Módulo 2.
+
+### 4. Primero usar, después construir
+
+Cada herramienta importante se estudia dos veces: primero aprendés a **usarla y configurarla** con criterio (Nivel 1) y más adelante a **construir** algo equivalente (Nivel 2).
+
+| Herramienta | Nivel 1: usar | Nivel 2: construir |
 |---|---|---|
-| I · Fundamentos y uso profesional | M0 a M5 | Cómo funciona un modelo de lenguaje, cómo darle instrucciones y cómo usar asistentes, agentes de programación y automatizaciones simples |
-| II · Construir con modelos | M6 a M8 | API, gestión del contexto y RAG |
-| III · Agentes e interoperabilidad | M9 a M12 | Agentes desde cero, MCP, agentes de programación por dentro, skills y plugins |
-| IV · Automatización y sistemas avanzados | M13 a M15 | n8n con agentes, frameworks y sistemas multiagente |
-| V · Producción e integración | M16 y M17 | Seguridad, evaluación, operación y proyecto final |
+| Asistentes, proyectos y memoria | Módulo 3 | Módulo 7 |
+| Connectors y servidores MCP | Módulo 3 | Módulo 10 |
+| Agentes de programación | Módulo 4 | Módulo 11 |
+| Skills y plugins | Módulos 3 y 4 | Módulos 11 y 12 |
+| Automatización con n8n | Módulo 5 | Módulo 13 |
 
-**Dónde buscar cada cosa:** la portada de cada módulo tiene su objetivo, prerrequisitos y lecciones. El [índice de lecciones](../programa/indice.md) tiene las 233 juntas. [El programa](../programa/index.md) tiene el mapa de dependencias y las horas.
+Hay tres razones para este orden:
 
-### 2. Prerrequisitos y rutas
+- **Te sirve antes.** Al terminar la Etapa 1 ya usás la IA en tu trabajo.
+- **Llegás con preguntas concretas.** Usar una herramienta genera preguntas ("¿por qué olvidó esto?", "¿por qué me pidió permiso?") que el Nivel 2 responde.
+- **Ganás criterio.** Después de construir tu propia versión, sabés cuándo conviene la existente y cuándo una propia.
 
-- **Prerrequisito duro:** conocimiento indispensable. Sin él, el módulo no se puede seguir.
-- **Prerrequisito recomendado:** mejora la experiencia, pero no impide empezar. Se puede retomar después.
+### 5. Cómo está armada cada lección
 
-En el [mapa de aprendizaje](../programa/index.md#mapa-de-aprendizaje), una flecha continua es un prerrequisito duro y una punteada, uno recomendado. Cada módulo también los enumera en su portada.
+1. **Antes de empezar:** qué vas a aprender, qué necesitás, cuánto lleva y si tiene costo.
+2. **Teoría:** los conceptos, para qué sirven y cómo funcionan, con ejemplos.
+3. **Práctica:** pasos numerados, cada uno con el resultado esperado.
+4. **Autoevaluación:** preguntas que se corrigen al instante y explican cada respuesta.
+5. **Resumen** y enlaces **para profundizar**.
 
-**Para decidir si podés empezar un módulo:** si todos sus prerrequisitos duros están aprobados, podés. Si falta solo un recomendado, también podés: anotá que conviene retomarlo. Si falta un duro, todavía no.
+Lo que cambia seguido, como versiones de herramientas, planes o precios, va en recuadros *Específico de herramienta* con la fecha en que se verificó y la fuente oficial.
 
-El programa permite rutas en paralelo:
+### 6. Tu avance
 
-- **M5** (n8n) solo exige M0: se puede hacer en cualquier momento del Bloque I.
-- **M3 y M4** se pueden cursar juntos después de M2.
-- **M15 y M16** se pueden cursar en cualquier orden después de M14.
+Cada lección puede estar en uno de tres estados:
 
-### 3. Nivel 1 y Nivel 2: usar antes de construir
+| Estado | Cuándo |
+|---|---|
+| **Por hacer** | Todavía no la empezaste |
+| **En curso** | La estás estudiando o repasando |
+| **Completada** | Superaste su autoevaluación con 80% o más, o hiciste su práctica, según el tipo |
 
-Cada herramienta importante se estudia dos veces:
+Leer una lección no alcanza para completarla. Mientras leés, una explicación clara da la sensación de haberla entendido, pero eso no garantiza poder aplicarla. Por eso cada lección termina con una comprobación.
 
-| Herramienta | Nivel 1: usar y configurar | Nivel 2: construir y profundizar |
-|---|---|---|
-| Asistentes, proyectos y memoria | M3 | M7 |
-| Connectors y servidores MCP | M3 | M10 |
-| Agentes de programación | M4 | M11 |
-| Skills y plugins | M3 y M4 | M11 y M12 |
-| Automatización con n8n | M5 | M13 |
+Al final de cada lección hay un selector para marcar su estado, y en [Mi progreso](../progreso.md) ves tu avance por módulo y por etapa. Todo se guarda **en tu navegador**: no se envía a ningún lado. Desde *Mi progreso* podés descargar una copia para no perderla.
 
-**Por qué en ese orden:**
-
-- **Utilidad temprana:** al terminar el Bloque I ya usás la IA en tu trabajo.
-- **Preguntas concretas:** usar una herramienta genera preguntas ("¿por qué olvidó esto?", "¿por qué me pidió permiso?") que el Nivel 2 responde abriendo la caja.
-- **Criterio:** después de construir tu propio equivalente, sabés cuándo conviene la herramienta existente y cuándo una solución propia.
-
-### 4. Estados de aprendizaje y evidencia
-
-Cada lección tiene un estado en tu **cuaderno**: tus registros privados, en una carpeta separada del curso.
-
-| Estado | Significado | Cuándo se alcanza |
-|---|---|---|
-| ⬜ Pendiente | No empezada | — |
-| 📖 Estudiada | Recorriste la lección completa | La leíste de punta a punta. No implica comprensión |
-| 🛠️ Practicada | Hiciste la actividad mínima | Hay evidencia de la práctica |
-| ✅ Aprobada | La comprensión está verificada | Superaste la verificación según el tipo de lección |
-| 🔁 Necesita refuerzo | No superaste la verificación de una lección **todavía no aprobada** | Registraste una dificultad |
-
-**Evidencia** es lo que demuestra un estado: una respuesta escrita, un archivo, un *commit*, una captura o la salida de un comando. **Sin evidencia, el estado no cambia.**
-
-¿Por qué tanto cuidado? Leer una explicación clara da la sensación de haberla entendido, pero eso no garantiza poder aplicarla. A esa trampa se la suele llamar **ilusión de fluidez**. Separar "lo estudié" (📖), "lo practiqué" (🛠️) y "lo demostré" (✅) te protege de ella.
-
-**Verificación según el tipo:**
-
-| Tipo | Actividad mínima (🛠️) | Verificación (✅) |
-|---|---|---|
-| `C` | Una pregunta de aplicación respondida por escrito | 3 a 5 preguntas con 80% o más de respuestas correctas, incluida una de diagnóstico ("¿por qué pasa X?") |
-| `P` | El ejercicio hecho, con evidencia | El ejercicio funcionando y justificado: qué hiciste, por qué, alternativas y riesgos |
-| `M` | Ejercicio o pregunta de aplicación | Las dos verificaciones anteriores |
-
-**Tres reglas:**
-
-1. Una lección **nunca** pasa a ✅ solo porque la leíste.
-2. Si más adelante descubrís un error sobre una lección ya aprobada, la lección **conserva** su ✅. Solo se registra la dificultad.
-3. Un **módulo** está aprobado cuando todas sus lecciones están en ✅, la evaluación del módulo alcanza el 80% o más, el proyecto (si tiene) también, y no queda ninguna dificultad bloqueante abierta.
-
-### 5. Dificultades
-
-Una **dificultad** es una brecha de comprensión. Se registra en tu `REFUERZO.md` con un ID (`D-001`, `D-002`…) y una severidad:
-
-- 🔴 **Bloqueante:** afecta un prerrequisito duro de lo que sigue. Bloquea solo lo que depende de ese conocimiento.
-- 🟡 **Importante:** no impide avanzar; se trabaja en paralelo.
-- 🟢 **Menor:** un detalle para pulir.
-
-Para superarla hace falta una verificación **distinta** de la que la reveló. Después se hacen **repasos espaciados**: repasos cortos a intervalos crecientes.
-
-### 6. Protocolo de sesión
-
-Con pocas horas por semana, las sesiones quedan separadas por días. El protocolo de sesión es una rutina fija para que cada sesión retome donde quedó la anterior sin depender de tu memoria.
-
-```mermaid
-flowchart LR
-    A[Inicio<br/>5 min] --> B[Trabajo] --> C[Cierre<br/>10 min]
-    C --> D[(Cuaderno<br/>actualizado)]
-    D --> A
-```
-
-**Inicio** (5 minutos):
-
-1. Abrí tu `PROGRESO.md` y mirá "Sesión en curso". Si figura una sesión abierta, cerrala primero con lo que recuerdes.
-2. Si tu `REFUERZO.md` tiene repasos pendientes, hacelos primero (5 minutos como máximo).
-3. Leé la "Próxima actividad". Si vas a empezar una lección nueva, confirmá sus prerrequisitos.
-4. Anotá "Sesión en curso: Abierta · fecha · lección".
-
-**Trabajo:** estudiá y practicá. Anotá las dudas en el momento y guardá la evidencia a medida que la producís.
-
-**Cierre** (10 minutos):
-
-1. Actualizá el estado de la lección, **solo con evidencia**.
-2. Registrá las dificultades nuevas en `REFUERZO.md`.
-3. Agregá una fila a la bitácora: fecha, qué hiciste, **horas reales**, cambios de estado y próxima actividad.
-4. Dejá "Sesión en curso: Ninguna".
-5. Si usás Git (desde L0.2.1), hacé un *commit*.
-
-**Tu cuaderno es la única fuente de verdad sobre tu progreso.** Si estudiás con un asistente de IA, tené en cuenta que no recuerda las conversaciones anteriores de forma confiable (lo vas a entender a fondo en M1 y M3). Por eso el asistente puede proponer cambios, pero el registro es tu cuaderno, y comprobás cada cambio abriendo el archivo. Cómo trabajar con un tutor de IA está en [Estudiar con un tutor de IA](../empezar/tutor.md).
+Si preferís llevar tu propio registro, con apuntes, horas y repasos, la guía opcional [Cómo estudiar](../empezar/metodo.md) propone un cuaderno de estudio.
 
 > [!NOTE]
 > **Específico de herramienta** · verificado el 2026-10-12 · fuentes: [Claude Help Center: proyectos](https://support.claude.com/en/articles/9519177) · [OpenAI Help Center: proyectos en ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt)
 >
-> Claude y ChatGPT permiten crear **proyectos** con instrucciones y archivos, también en sus planes gratuitos (con límites: en Claude, hasta cinco proyectos; en ChatGPT Free, hasta 5 archivos por proyecto). Un tutor configurado así lee **copias** de tus archivos, pero no puede modificar tu cuaderno: te da un bloque de texto para que lo pegues vos.
+> Si estudiás con un asistente de IA como tutor, Claude y ChatGPT permiten crear **proyectos** con instrucciones y archivos, también en sus planes gratuitos, con límites: en Claude, hasta cinco proyectos; en ChatGPT Free, hasta 5 archivos por proyecto. El asistente no recuerda tus sesiones de forma confiable y no puede modificar tu progreso: el registro es tuyo. Más detalle en [Estudiar con un tutor de IA](../empezar/tutor.md).
 
 > [!TIP]
 > **Errores frecuentes**
 >
-> - Marcar ✅ al terminar de leer. Leer da 📖.
-> - Tratar un prerrequisito recomendado como duro (y frenar sin necesidad), o al revés.
-> - Saltear el cierre de sesión: la sesión siguiente empieza sin saber dónde quedaste.
-> - Guardar el cuaderno dentro de la carpeta del curso o en un fork público: se mezclan o se publican tus datos.
-> - Tomar la palabra de un asistente ("listo, lo guardé") como registro.
-> - Anotar horas estimadas en lugar de reales.
+> - Marcar una lección como completada apenas terminás de leerla.
+> - Tratar un prerrequisito recomendado como indispensable y frenar sin necesidad, o al revés: empezar un módulo sin uno indispensable y trabarse.
+> - Tomar la palabra de un asistente de IA ("listo, actualicé tu progreso") como registro.
 
 ## Práctica
 
-### Práctica guiada
+Abrí la [Ruta](../ruta/index.md) y [Todas las lecciones](../ruta/lecciones.md) en otra pestaña.
 
-Abrí el [índice de lecciones](../programa/indice.md) y [El programa](../programa/index.md) en otra pestaña.
+1. **Ubicá la lección `L3.5.2`.** Anotá a qué módulo y etapa pertenece, cómo se llama y de qué tipo es.
 
-1. **Ubicá L3.5.2.** Anotá su módulo, su unidad (con el nombre), su tipo, su nivel y su bloque.
+    **Resultado esperado:** cuatro datos, sacados de *Todas las lecciones*.
 
-    **Resultado esperado:** cinco datos, sacados del índice y de la tabla de bloques de esta lección.
-2. **Leé dependencias.** En la portada de M10 y en la de M13, anotá los prerrequisitos duros y los recomendados.
+2. **Leé prerrequisitos.** En el mapa de la Ruta, pasá el mouse por el Módulo 10 y por el Módulo 13. Anotá cuáles son indispensables y cuáles recomendados para cada uno.
 
     **Resultado esperado:** dos listas por módulo.
-3. **Estimá el tiempo del Bloque I.** Sumá las horas de M0 a M5 (tabla [Módulos y horas](../programa/index.md#módulos-y-horas)) y dividí por las horas que le vas a dedicar por semana. Sumá un 10% de margen para repasos.
 
-    **Resultado esperado:** un total de horas y una cantidad de semanas.
-4. **Clasificá situaciones.** ¿Qué estado corresponde en cada caso?
-    - a) Hiciste el ejercicio de una lección `P`, funciona, pero todavía no sabés explicar por qué elegiste esa configuración.
-    - b) En una lección `M` respondiste bien las preguntas, y el ejercicio funciona y está justificado.
-    - c) En una lección `C` respondiste bien 3 de 5 preguntas.
+3. **Armá tu ruta para la Etapa 1.** Decidí en qué orden vas a hacer los Módulos 0 a 5 y qué vas a hacer en paralelo. Sumá sus horas, que figuran en la portada de cada módulo, y dividí por las horas que le vas a dedicar por semana. Agregá un 10% de margen para repasos.
 
-Comprobá tus resultados en las [soluciones de la práctica guiada](soluciones/l0-1-1.md#práctica-guiada).
+    **Resultado esperado:** un orden, un total de horas y una cantidad de semanas. Guardalo donde quieras: en un archivo, en tu cuaderno o en un papel.
 
-### Ejercicio: armar tu cuaderno y probar el protocolo
+4. **Probá tu avance.** Bajá hasta el final de esta lección y marcala como *En curso*. Después abrí [Mi progreso](../progreso.md) y comprobá que aparece en el Módulo 0.
 
-**Objetivo:** crear tu registro privado, separado del curso, y registrar una sesión completa con estados respaldados por evidencia.
+    **Resultado esperado:** el Módulo 0 muestra la lección *Cómo funciona este curso* en curso.
 
-1. **Creá tu cuaderno fuera del curso,** con la plantilla del cuaderno, siguiendo los pasos 1 a 4 de [Cómo empezar](../empezar/index.md). Al final tenés una carpeta `mi-cuaderno/` con `PROGRESO.md`, `REFUERZO.md` y `PUNTO-DE-PARTIDA.md`.
-2. **Completá `PUNTO-DE-PARTIDA.md`,** sin datos sensibles.
-3. **Completá el encabezado de `PROGRESO.md`:** versión académica del programa (1.2), modalidad, dedicación semanal y fecha de inicio.
-4. **Abrí la sesión:** en "Sesión en curso", escribí `Abierta · <fecha> · L0.1.1`.
-5. **Escribí tu ruta para el Bloque I** en un archivo nuevo, `mi-cuaderno/evidencias/L0.1.1-ruta.md`: en qué orden vas a hacer M0 a M5, qué vas a hacer en paralelo, cuántas semanas estimás (con el cálculo) y por qué, según los prerrequisitos. Esta es la **pregunta de aplicación** de la lección.
-6. **Registrá la lección:** en `PROGRESO.md`, sección Lecciones, agregá la fila de L0.1.1 con el estado que corresponde **a lo que hiciste hasta ahora** y el enlace a la evidencia.
-7. **Cerrá la sesión:** agregá una fila a la bitácora, dejá "Sesión en curso: Ninguna" y completá "Próxima actividad".
-
-**Criterios de aceptación:**
-
-- [ ] `mi-cuaderno/` está **fuera** de la carpeta del curso.
-- [ ] `mi-cuaderno/` contiene `PROGRESO.md`, `REFUERZO.md`, `PUNTO-DE-PARTIDA.md` y `evidencias/L0.1.1-ruta.md`.
-- [ ] El encabezado de `PROGRESO.md` indica la versión académica, la modalidad y la dedicación semanal.
-- [ ] La ruta respeta los prerrequisitos duros, y el cálculo de semanas usa las horas del programa.
-- [ ] La fila de L0.1.1 tiene un estado coherente con la evidencia: 🛠️ si hiciste solo la pregunta de aplicación, o ✅ si además corregiste la autoevaluación con 4 o más de 5. **Nunca ✅ sin autoevaluación.**
-- [ ] La bitácora tiene una fila de esta sesión, con horas reales y próxima actividad, y "Sesión en curso" dice `Ninguna`.
-- [ ] Ningún archivo contiene credenciales ni datos sensibles.
-
-**Cómo verificar** (desde la carpeta que contiene `mi-cuaderno/` y la copia del curso):
-
-=== "PowerShell (Windows)"
-
-    ```powershell
-    Get-ChildItem mi-cuaderno, mi-cuaderno\evidencias
-    Select-String -Path mi-cuaderno\PROGRESO.md -Pattern "Versión académica", "^\| L0.1.1", "Sesión en curso"
-    ```
-
-=== "Bash (Linux, macOS, Git Bash)"
-
-    ```bash
-    ls mi-cuaderno mi-cuaderno/evidencias
-    grep -n -e "Versión académica" -e "^| L0.1.1" -e "Sesión en curso" mi-cuaderno/PROGRESO.md
-    ```
-
-**Resultado esperado:** se listan los archivos del cuaderno y aparecen la línea de la versión académica, la fila de L0.1.1 y "Sesión en curso" con `Ninguna`. Sin terminal, abrí cada archivo y recorré los criterios uno por uno.
-
-<details markdown>
-<summary>Pista 1 · ¿Qué estado pongo si todavía no hice la autoevaluación?</summary>
-
-La pregunta de aplicación es la actividad mínima de una lección `C`. Mirá la tabla "Registrá tu avance" al final de la autoevaluación.
-
-</details>
-
-<details markdown>
-<summary>Pista 2 · ¿Puedo poner M5 antes que M1?</summary>
-
-Mirá cuáles son los prerrequisitos duros de M5 en su portada.
-
-</details>
-
-La guía de corrección y un ejemplo resuelto están en las [soluciones del ejercicio](soluciones/l0-1-1.md#ejercicio). Consultalas después de intentar.
+Comprobá los pasos 1 a 3 en las [soluciones de la práctica](soluciones/l0-1-1.md#práctica).
 
 ## Autoevaluación
 
-Respondé por escrito en tu cuaderno, **sin mirar las soluciones**. Podés consultar el programa.
+Elegí una respuesta en cada pregunta. La página te corrige al instante y explica por qué. Para completar la lección necesitás 4 de 5 correctas.
 
-1. **Ubicar.** ¿Qué indica el ID L11.3.5? ¿A qué nivel y bloque pertenece, y qué hace falta para aprobarla?
-2. **Prerrequisitos.** Aprobaste M0, M1 y M2. ¿Cuáles de estos módulos podés empezar: M3, M4, M5, M6? Justificá cada caso.
-3. **Estados.**
-    - a) En L1.2.1 (tipo `M`) hiciste el ejercicio y guardaste la evidencia, pero todavía no respondiste las preguntas. ¿Qué estado corresponde?
-    - b) Semanas después de aprobar L1.4.2, descubrís que confundís el límite de salida con el tamaño total de la ventana de contexto. ¿Qué pasa con el estado de L1.4.2 y qué registrás?
-4. **Diagnóstico.** Otra persona propone saltear M3 e ir directo a M10 para "aprender MCP de verdad". ¿Lo permite el programa? ¿Qué argumentos da el curso para hacer primero el Nivel 1?
-5. **Diagnóstico.** Estudiás con un asistente de IA en un chat sin acceso a tus archivos. Al cerrar, te dice: "Listo, actualicé tu `PROGRESO.md`". ¿Qué está mal y qué hacés?
+```quiz
+Terminaste de leer una lección conceptual, pero todavía no hiciste su autoevaluación. ¿Qué estado le corresponde?
+- [ ] Completada, porque ya la leíste entera
+- [x] En curso
+- [ ] Por hacer
+> Leer no alcanza para completarla: una lección conceptual se completa al superar su autoevaluación con 80% o más. Mientras tanto está *En curso*.
+```
 
-**Aprobación:** 4 o más respuestas correctas de 5 (80%). Corregí con las [respuestas y la guía de corrección](soluciones/l0-1-1.md#autoevaluación).
+```quiz
+Ya completaste los Módulos 0, 1 y 2. ¿Podés empezar el Módulo 4, que tiene al Módulo 2 como indispensable y al Módulo 3 como recomendado?
+- [x] Sí: tenés el indispensable; el recomendado se puede retomar después
+- [ ] No: falta el Módulo 3
+- [ ] Solo si hacés el Módulo 3 en paralelo
+> Lo que decide es el prerrequisito indispensable (Módulo 2), y lo tenés. El Módulo 3 mejora la experiencia, pero no es obligatorio para empezar.
+```
 
-### Registrá tu avance
+```quiz
+¿Por qué el curso enseña a usar una herramienta (Nivel 1) antes de enseñar a construir una equivalente (Nivel 2)?
+- [ ] Porque construir es más difícil y conviene dejarlo para el final
+- [x] Porque usarla genera preguntas concretas y criterio que después el Nivel 2 responde, y además te sirve antes
+- [ ] Porque el Nivel 2 es opcional
+> Usar primero te da utilidad temprana, preguntas reales ("¿por qué olvidó esto?") y criterio para decidir después entre una herramienta existente y una propia. El Nivel 2 no es opcional: es parte del recorrido.
+```
 
-| Situación | Estado de L0.1.1 | Evidencia |
-|---|---|---|
-| Leíste la lección | 📖 | — |
-| Escribiste tu ruta del Bloque I | 🛠️ | `evidencias/L0.1.1-ruta.md` |
-| Obtuviste 4 de 5 o más en la autoevaluación | ✅ | Tus respuestas y la corrección |
-| Obtuviste menos de 4 | 🔁 | La dificultad, registrada en `REFUERZO.md` |
+```quiz
+Semanas después de completar una lección, descubrís que un concepto de esa lección no te había quedado claro. ¿Qué hacés?
+- [ ] La marcás de nuevo como Por hacer y la empezás de cero
+- [x] Sigue completada; repasás ese tema puntual
+- [ ] No hacés nada, porque ya está completada
+> El estado refleja la comprobación que hiciste en su momento. Lo útil es repasar el tema puntual, sin perder el avance registrado.
+```
+
+```quiz
+Estudiás con un asistente de IA en un chat sin acceso a tus archivos. Al terminar te dice: "Listo, actualicé tu progreso". ¿Qué está pasando?
+- [ ] Está bien: el asistente guarda el progreso por vos
+- [x] No puede haberlo hecho: tu progreso está en tu navegador o en tu cuaderno, y lo actualizás vos
+- [ ] Lo guardó en su memoria, que sirve como registro
+> Un chat sin acceso a tus archivos no puede modificarlos, y su memoria no es un registro confiable. Tu progreso lo controlás vos: en *Mi progreso* o en tu cuaderno.
+```
 
 ## Resumen
 
-- El curso se organiza en bloques, módulos, unidades y lecciones. Cada lección tiene un ID estable (`Lm.u.n`) y un tipo (`C`, `P` o `M`) que define cómo se verifica.
-- Los prerrequisitos duros son indispensables; los recomendados no impiden avanzar. Hay rutas en paralelo.
-- El Nivel 1 (usar) va antes que el Nivel 2 (construir): utilidad temprana, preguntas concretas y criterio.
-- Los estados ⬜ 📖 🛠️ ✅ 🔁 separan "lo estudié", "lo practiqué" y "lo demostré". Cada cambio necesita evidencia.
-- Una dificultad posterior no borra una aprobación: se registra y se trabaja con repasos espaciados.
-- Cada sesión tiene inicio, trabajo y cierre. Tu cuaderno es la única fuente de verdad sobre tu progreso.
+- El curso tiene 5 etapas, 18 módulos y lecciones de 1 a 3 horas. Cada lección tiene un ID estable (`L4.2.3`).
+- Un prerrequisito **indispensable** es necesario para empezar un módulo; uno **recomendado**, no.
+- Cada herramienta se aprende primero a usar (Nivel 1) y después a construir (Nivel 2).
+- Cada lección tiene teoría, práctica paso a paso y una autoevaluación que se corrige al instante.
+- Una lección está **completada** cuando superás su comprobación, no cuando terminás de leerla.
+- Tu avance se guarda en tu navegador y lo ves en *Mi progreso*.
 
 ## Para profundizar
 
-- [El programa](../programa/index.md): principios, mapa de dependencias y horas.
-- [Evaluación y estados](../programa/evaluacion.md): todas las reglas de aprobación.
-- [Cómo empezar](../empezar/index.md) y [Estudiar con un tutor de IA](../empezar/tutor.md).
-- **Términos nuevos en el [glosario](../glosario.md):** programa académico, ID de lección, prerrequisito duro y recomendado, Nivel 1 y Nivel 2, estado de aprendizaje, evidencia, cuaderno, protocolo de sesión, dificultad y repaso espaciado.
+- [Sobre el curso](../sobre/index.md): principios, horas y perfil de egreso.
+- [Cómo se aprueba](../sobre/evaluacion.md): todas las reglas.
+- [Cómo estudiar](../empezar/metodo.md): el cuaderno de estudio opcional.
+- **Términos nuevos en el [glosario](../glosario.md):** ID de lección, prerrequisito indispensable y recomendado, Nivel 1 y Nivel 2, estado de una lección.

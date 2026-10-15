@@ -1,15 +1,15 @@
 ---
 modulo: M8
-titulo: "Embeddings, búsqueda semántica y RAG"
+titulo: "Embeddings y RAG"
 bloque: II
 nivel: general
 horas_teoria: 12
 horas_practica: 22
 ---
 
-# M8 · Embeddings, búsqueda semántica y RAG
+# Módulo 8 · Embeddings y RAG
 
-**Bloque II** · 34 h (12 h de teoría y 22 h de práctica) · 14 lecciones
+**Etapa 2** · 34 h (12 h de teoría y 22 h de práctica) · 14 lecciones
 
 ## Objetivo
 
@@ -21,46 +21,46 @@ Embeddings (texto y multimodales) y métricas de similitud; bases vectoriales e 
 
 ## Antes de empezar
 
-- **Prerrequisitos:** [M6](../m06-apis-modelos/index.md) y [M7](../m07-context-engineering/index.md) (duros).
+- **Prerrequisitos:** [Módulo 6](../m06-apis-modelos/index.md) y [Módulo 7](../m07-context-engineering/index.md) (indispensables).
 - **Herramientas:** PostgreSQL + pgvector (Docker), Chroma, modelos de embeddings (locales con Ollama o vía API), Python; Spring AI `VectorStore` (Java, opcional).
 
 ## Lecciones
 
-Las lecciones con material tienen enlace. Las demás forman parte del programa, pero su material todavía se está escribiendo.
+Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya forman parte del programa y se están escribiendo. Las de la **ruta esencial** son el núcleo del módulo; las marcadas para **profundizar** amplían el tema y se pueden hacer después.
 
-### U8.1 · Embeddings y búsqueda semántica
+### 8.1 · Embeddings y búsqueda semántica
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L8.1.1 | Embeddings en profundidad: qué capturan, dimensiones, modelos, normalización y embeddings multimodales (texto e imagen en un mismo espacio). | M | — |
-| L8.1.2 | Similitud (coseno, producto punto, euclídea) y búsqueda del vecino más cercano: exacta vs. aproximada. | M | — |
-| L8.1.3 | Bases vectoriales: pgvector, Chroma y servicios gestionados. Índices HNSW e IVF; filtros por metadatos. | P | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L8.1.1 | **Embeddings en profundidad**<br>Qué capturan, dimensiones, modelos, normalización y embeddings multimodales (texto e imagen en un mismo espacio). | Mixta | Esencial | Próximamente |
+| L8.1.2 | **Similitud y búsqueda del vecino más cercano**<br>Similitud (coseno, producto punto, euclídea) y búsqueda del vecino más cercano: exacta vs. aproximada. | Mixta | Profundizar | Próximamente |
+| L8.1.3 | **Bases vectoriales**<br>Pgvector, Chroma y servicios gestionados. Índices HNSW e IVF; filtros por metadatos. | Práctica | Esencial | Próximamente |
 
-### U8.2 · Construcción de un pipeline RAG
+### 8.2 · Construcción de un pipeline RAG
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L8.2.1 | Arquitectura RAG: ingesta → indexación → recuperación → generación. Por qué funciona y dónde falla. | C | — |
-| L8.2.2 | Ingesta: extracción de PDF, HTML y código; limpieza; metadatos. | P | — |
-| L8.2.3 | *Chunking*: tamaño, solapamiento, por estructura y semántico. Efectos en la calidad. | M | — |
-| L8.2.4 | Generación con contexto recuperado: prompt de RAG, citas y "no sé" cuando no hay evidencia. | P | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L8.2.1 | **Arquitectura RAG**<br>Ingesta → indexación → recuperación → generación. Por qué funciona y dónde falla. | Conceptual | Esencial | Próximamente |
+| L8.2.2 | **Ingesta de documentos**<br>Ingesta: extracción de PDF, HTML y código; limpieza; metadatos. | Práctica | Esencial | Próximamente |
+| L8.2.3 | **Chunking**<br>*Chunking*: tamaño, solapamiento, por estructura y semántico. Efectos en la calidad. | Mixta | Esencial | Próximamente |
+| L8.2.4 | **Generación con contexto recuperado**<br>Prompt de RAG, citas y "no sé" cuando no hay evidencia. | Práctica | Esencial | Próximamente |
 
-### U8.3 · RAG avanzado
+### 8.3 · RAG avanzado
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L8.3.1 | Búsqueda híbrida y *reranking*. | P | — |
-| L8.3.2 | Reescritura y expansión de consultas, HyDE y consultas multi-paso. | M | — |
-| L8.3.3 | RAG agéntico: la recuperación como herramienta que decide el agente. | M | — |
-| L8.3.4 | Alternativas y complementos: contexto largo, búsqueda tipo `grep` en agentes de código, GraphRAG. 🧭 Cuándo NO usar RAG y cuándo considerar *fine-tuning*. | C | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L8.3.1 | **Búsqueda híbrida y reranking**<br>Búsqueda híbrida y *reranking*. | Práctica | Esencial | Próximamente |
+| L8.3.2 | **Reescritura de consultas y HyDE**<br>Reescritura y expansión de consultas, HyDE y consultas multi-paso. | Mixta | Profundizar | Próximamente |
+| L8.3.3 | **RAG agéntico**<br>La recuperación como herramienta que decide el agente. | Mixta | Profundizar | Próximamente |
+| L8.3.4 | **Alternativas a RAG**<br>Alternativas y complementos: contexto largo, búsqueda tipo `grep` en agentes de código, GraphRAG. Cuándo NO usar RAG y cuándo considerar *fine-tuning*. | Conceptual | Esencial | Próximamente |
 
-### U8.4 · Evaluación y operación
+### 8.4 · Evaluación y operación
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L8.4.1 | 📏 Métricas: *recall* y precisión de recuperación, fidelidad (*faithfulness*) y relevancia de la respuesta. Construcción de un *dataset* de preguntas y respuestas. | M | — |
-| L8.4.2 | Herramientas de evaluación de RAG (por ejemplo Ragas, promptfoo o LLM como juez) y sus límites. | P | — |
-| L8.4.3 | Operación: actualización incremental, versionado del índice y 🔒 control de acceso por documento. | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L8.4.1 | **Métricas de RAG**<br>Métricas: *recall* y precisión de recuperación, fidelidad (*faithfulness*) y relevancia de la respuesta. Construcción de un *dataset* de preguntas y respuestas. | Mixta | Esencial | Próximamente |
+| L8.4.2 | **Herramientas de evaluación de RAG**<br>Herramientas de evaluación de RAG (por ejemplo Ragas, promptfoo o LLM como juez) y sus límites. | Práctica | Profundizar | Próximamente |
+| L8.4.3 | **Operación de un sistema RAG**<br>Operación: actualización incremental, versionado del índice y control de acceso por documento. | Mixta | Profundizar | Próximamente |
 
 ## Práctica del módulo
 
@@ -77,7 +77,7 @@ Las lecciones con material tienen enlace. Las demás forman parte del programa, 
 
 P4 ≥ 80% en la rúbrica, con mejora demostrada respecto de la línea base; evaluación de módulo ≥ 80%.
 
-Las reglas generales están en [Evaluación y estados](../programa/evaluacion.md).
+Las reglas generales están en [Evaluación y estados](../sobre/evaluacion.md).
 
 ## Hilos transversales
 

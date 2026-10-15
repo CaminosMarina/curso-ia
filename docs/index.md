@@ -19,16 +19,16 @@ Para personas que **saben programar** (idealmente backend: API REST, bases de da
 Cada lección se estudia sola, sin profesor:
 
 1. **Teoría:** los conceptos, para qué sirven y cómo funcionan, de forma clara y concisa, con ejemplos.
-2. **Práctica:** cuando la lección lo necesita, paso a paso, con el resultado esperado en cada paso y capturas donde hay que usar una herramienta.
-3. **Autoevaluación:** preguntas para comprobar que entendiste, con las soluciones en una página aparte.
+2. **Práctica:** paso a paso, con el resultado esperado en cada paso y capturas donde hay que usar una herramienta.
+3. **Autoevaluación:** preguntas que se corrigen al instante y explican cada respuesta.
 
-Tu progreso lo llevás en un **cuaderno privado**, fuera del curso. Si querés, podés estudiar con un asistente de IA como tutor, pero no es necesario.
+Al final de cada lección marcás tu avance, y en [Mi progreso](progreso.md) ves cuánto llevás. Se guarda en tu navegador: no hace falta crear una cuenta.
 
 ## Empezá acá
 
-1. Leé [Cómo empezar](empezar/index.md): 20 minutos para armar tu cuaderno.
-2. Hacé la primera lección: [L0.1.1 · Mapa del curso y protocolo de sesión](m00-orientacion/l0-1-1-mapa-del-curso.md).
-3. Seguí el [índice de lecciones](programa/indice.md), respetando los prerrequisitos de cada módulo.
+1. Leé [Cómo empezar](empezar/index.md): 5 minutos.
+2. Mirá la [Ruta](ruta/index.md): el mapa interactivo de etapas y módulos.
+3. Hacé la primera lección: [Cómo funciona este curso](m00-orientacion/l0-1-1-mapa-del-curso.md).
 
 ## Al terminar vas a poder
 
@@ -37,35 +37,35 @@ Tu progreso lo llevás en un **cuaderno privado**, fuera del curso. Si querés, 
 - Construir tus propias soluciones: integraciones por API, RAG evaluado, agentes desde cero y con frameworks, servidores MCP, skills, plugins y workflows de n8n.
 - Llevarlas a producción con seguridad, evaluación, observabilidad y control de costos.
 
-El perfil completo está en [El programa](programa/index.md#perfil-de-egreso).
+El perfil completo está en [Sobre el curso](sobre/index.md#perfil-de-egreso).
 
 ## Módulos
 
 <!-- modulos:inicio -->
-| Módulo | Bloque | Horas | Lecciones | Con material |
-|---|:-:|---:|---:|---:|
-| [M0 · Orientación, entorno y método](m00-orientacion/index.md) | I | 6 | 4 | 1 |
-| [M1 · Fundamentos de IA generativa y LLM](m01-fundamentos-llm/index.md) | I | 24 | 16 | 0 |
-| [M2 · Prompt Engineering](m02-prompt-engineering/index.md) | I | 20 | 15 | 0 |
-| [M3 · Asistentes de IA: uso profesional, contexto y delegación](m03-asistentes/index.md) | I | 36 | 25 | 0 |
-| [M4 · Agentes de programación: uso guiado](m04-agentes-programacion/index.md) | I | 21 | 14 | 0 |
-| [M5 · Automatización con n8n: workflows deterministas](m05-n8n/index.md) | I | 18 | 11 | 0 |
-| [M6 · Desarrollo con APIs de modelos](m06-apis-modelos/index.md) | II | 30 | 14 | 0 |
-| [M7 · Context Engineering](m07-context-engineering/index.md) | II | 20 | 11 | 0 |
-| [M8 · Embeddings, búsqueda semántica y RAG](m08-rag/index.md) | II | 34 | 14 | 0 |
-| [M9 · Agentes desde cero](m09-agentes-desde-cero/index.md) | III | 30 | 13 | 0 |
-| [M10 · Model Context Protocol: desarrollo](m10-mcp/index.md) | III | 32 | 16 | 0 |
-| [M11 · Agentes de programación: arquitectura y configuración avanzada](m11-agentes-programacion-avanzado/index.md) | III | 25 | 14 | 0 |
-| [M12 · Skills y plugins: desarrollo](m12-skills-plugins/index.md) | III | 18 | 10 | 0 |
-| [M13 · n8n con IA y agentes](m13-n8n-ia/index.md) | IV | 24 | 10 | 0 |
-| [M14 · Frameworks y SDK de agentes para producción](m14-frameworks-agentes/index.md) | IV | 36 | 11 | 0 |
-| [M15 · Sistemas multiagente](m15-multiagente/index.md) | IV | 26 | 11 | 0 |
-| [M16 · Seguridad, evaluación, observabilidad y operación](m16-produccion/index.md) | V | 36 | 16 | 0 |
-| [M17 · Proyecto final integrador](m17-proyecto-final/index.md) | V | 50 | 8 | 0 |
-| **Núcleo** | | **486** | **233** | **1** |
+| Módulo | Etapa | Horas | Lecciones | Esenciales | Con material |
+|---|:-:|---:|---:|---:|---:|
+| [Módulo 0 · Orientación y entorno de trabajo](m00-orientacion/index.md) | 1 | 6 | 4 | 4 | 1 |
+| [Módulo 1 · Fundamentos de IA generativa y LLM](m01-fundamentos-llm/index.md) | 1 | 24 | 16 | 13 | 0 |
+| [Módulo 2 · Prompt Engineering](m02-prompt-engineering/index.md) | 1 | 20 | 15 | 12 | 0 |
+| [Módulo 3 · Asistentes de IA en la práctica](m03-asistentes/index.md) | 1 | 36 | 25 | 20 | 0 |
+| [Módulo 4 · Agentes de programación](m04-agentes-programacion/index.md) | 1 | 21 | 14 | 11 | 0 |
+| [Módulo 5 · Automatización con n8n](m05-n8n/index.md) | 1 | 18 | 11 | 9 | 0 |
+| [Módulo 6 · Desarrollo con APIs de modelos](m06-apis-modelos/index.md) | 2 | 30 | 14 | 10 | 0 |
+| [Módulo 7 · Context Engineering](m07-context-engineering/index.md) | 2 | 20 | 11 | 9 | 0 |
+| [Módulo 8 · Embeddings y RAG](m08-rag/index.md) | 2 | 34 | 14 | 9 | 0 |
+| [Módulo 9 · Agentes desde cero](m09-agentes-desde-cero/index.md) | 3 | 30 | 13 | 11 | 0 |
+| [Módulo 10 · Model Context Protocol (MCP)](m10-mcp/index.md) | 3 | 32 | 16 | 12 | 0 |
+| [Módulo 11 · Agentes de programación avanzados](m11-agentes-programacion-avanzado/index.md) | 3 | 25 | 14 | 10 | 0 |
+| [Módulo 12 · Desarrollo de skills y plugins](m12-skills-plugins/index.md) | 3 | 18 | 10 | 7 | 0 |
+| [Módulo 13 · n8n con IA y agentes](m13-n8n-ia/index.md) | 4 | 24 | 10 | 9 | 0 |
+| [Módulo 14 · Frameworks de agentes](m14-frameworks-agentes/index.md) | 4 | 36 | 11 | 8 | 0 |
+| [Módulo 15 · Sistemas multiagente](m15-multiagente/index.md) | 4 | 26 | 11 | 8 | 0 |
+| [Módulo 16 · Seguridad, evaluación y operación](m16-produccion/index.md) | 5 | 36 | 16 | 13 | 0 |
+| [Módulo 17 · Proyecto final integrador](m17-proyecto-final/index.md) | 5 | 50 | 8 | 8 | 0 |
+| **Total** | | **486** | **233** | **183** | **1** |
 <!-- modulos:fin -->
 
-Además hay tres [electivas](electivas.md) y diez [proyectos](programa/proyectos.md) que integran varios módulos.
+Además hay tres [electivas](ruta/electivas.md) y diez [proyectos](ruta/proyectos.md) que integran varios módulos.
 
 ## Licencia
 

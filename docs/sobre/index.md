@@ -1,17 +1,14 @@
-# El programa
+# Sobre el curso
 
 > [!NOTE]
-> **Versión académica 1.2** (12/10/2026) · 18 módulos · 233 lecciones · 10 proyectos · núcleo de 486 h (526 h con electivas).
-> El programa completo es visible, pero no todas las lecciones tienen material todavía: en el [índice de lecciones](indice.md) y en la portada de cada módulo, las que tienen material llevan enlace.
+> **Versión académica 1.3** (15/10/2026) · 5 etapas · 18 módulos · 233 lecciones (183 en la ruta esencial) · 10 proyectos · 486 h, unas 390 h en la ruta esencial (526 h con electivas).
 
-Esta página resume cómo está pensado el curso: sus principios, el recorrido entre módulos, las horas y lo que vas a poder hacer al terminar. El detalle de cada módulo está en su portada.
+Esta sección explica cómo está pensado el curso: sus principios, cuánto tiempo lleva y qué vas a poder hacer al terminar. Para recorrerlo, usá la [Ruta](../ruta/index.md).
 
 | Página | Qué contiene |
 |---|---|
-| [Índice de lecciones](indice.md) | Las 233 lecciones, módulo por módulo |
-| [Proyectos](proyectos.md) | Los 10 proyectos del curso y qué reutiliza cada uno |
-| [Evaluación y estados](evaluacion.md) | Cuándo una lección, un módulo o un proyecto está aprobado |
-| [Versiones y cambios](versiones.md) | Cómo cambia el programa y cómo adaptar tu cuaderno |
+| [Cómo se aprueba](evaluacion.md) | Cuándo una lección, un módulo o un proyecto están completos |
+| [Versiones y cambios](versiones.md) | Cómo cambia el programa y qué hacer con tu avance |
 
 ## Principios de diseño
 
@@ -43,72 +40,7 @@ Esta página resume cómo está pensado el curso: sus principios, el recorrido e
 
 ## Mapa de aprendizaje
 
-**Tipos de prerrequisito:**
-- **Duro** (flecha continua): conocimiento indispensable. Sin él, el módulo no se puede seguir.
-- **Recomendado** (flecha punteada): mejora la experiencia, pero se puede avanzar sin él y retomarlo después.
-
-```mermaid
-flowchart TD
-    M0[M0 Orientación y entorno] --> M1[M1 Fundamentos de IA generativa y LLM]
-    M1 --> M2[M2 Prompt Engineering]
-    M2 --> M3[M3 Asistentes de IA: uso profesional y delegación · N1]
-    M2 --> M4[M4 Agentes de programación · N1]
-    M0 --> M5[M5 Automatización con n8n: workflows deterministas · N1]
-    M3 -.-> M4
-    M2 -.-> M5
-    M2 --> M6[M6 Desarrollo con APIs de modelos]
-    M3 -.-> M6
-    M6 --> M7[M7 Context Engineering]
-    M3 -.-> M7
-    M4 -.-> M7
-    M6 --> M8[M8 Embeddings, búsqueda semántica y RAG]
-    M7 --> M8
-    M6 --> M9[M9 Agentes desde cero]
-    M7 --> M9
-    M8 -.-> M9
-    M9 --> M10[M10 MCP: desarrollo · N2]
-    M3 -.-> M10
-    M4 --> M11[M11 Agentes de programación · N2]
-    M7 --> M11
-    M10 -.-> M11
-    M11 --> M12[M12 Skills y plugins: desarrollo · N2]
-    M3 --> M12
-    M5 --> M13[M13 n8n con IA y agentes · N2]
-    M6 --> M13
-    M9 --> M13
-    M8 -.-> M13
-    M10 -.-> M13
-    M9 --> M14[M14 Frameworks y SDK de agentes]
-    M10 -.-> M14
-    M14 --> M15[M15 Sistemas multiagente]
-    M14 --> M16[M16 Seguridad, evaluación, observabilidad y operación]
-    M13 --> M16
-    M12 -.-> M16
-    M15 -.-> M16
-    M16 --> M17[M17 Proyecto final integrador]
-
-    M3 --> E1[E1 Multimodalidad avanzada y agentes de computadora/navegador]
-    M9 --> E1
-    M1 --> E2[E2 Modelos abiertos, ejecución local y fine-tuning]
-    M8 -.-> E2
-    M3 --> E3[E3 Ética, marco legal y gobernanza]
-```
-
-**Bloques:**
-
-- **Bloque I · Fundamentos y uso profesional (M0 a M5).** Cómo funciona un LLM, cómo darle instrucciones y cómo usar con criterio asistentes, agentes de programación y automatizaciones simples. Al terminar este bloque ya usás la IA profesionalmente todos los días.
-- **Bloque II · Construir con modelos (M6 a M8).** API, gestión del contexto y RAG.
-- **Bloque III · Agentes e interoperabilidad (M9 a M12).** Agentes desde cero, MCP, agentes de programación por dentro y desarrollo de skills y plugins.
-- **Bloque IV · Automatización y sistemas avanzados (M13 a M15).** n8n con agentes, frameworks y multiagente.
-- **Bloque V · Producción e integración (M16 y M17).**
-- **Electivas (E1 a E3).** Se intercalan cuando se cumplen sus prerrequisitos duros.
-
-**Flexibilidad del recorrido:**
-- **M5 (n8n Nivel 1) solo exige M0.** Podés hacerlo en cualquier momento del Bloque I, incluso en paralelo con M1 a M4. Solo su última lección (primer nodo LLM) aprovecha M2.
-- **M3 y M4 pueden cursarse en paralelo** después de M2.
-- **M13 (n8n Nivel 2)** puede adelantarse antes de M10 a M12. Sus lecciones de RAG y MCP (L13.3.1 y L13.3.2) se pueden posponer hasta completar M8 y M10.
-- **M15 (multiagente) y M16 (producción)** pueden cursarse en cualquier orden después de M14.
-- Una dificultad en un módulo **solo bloquea los módulos que dependen de él con prerrequisito duro** (ver [Evaluación y estados](evaluacion.md#cuándo-una-dificultad-bloquea-el-avance)).
+El mapa interactivo de módulos y prerrequisitos está en [Ruta](../ruta/index.md).
 
 ## Módulos y horas
 
@@ -116,28 +48,28 @@ Las horas son estimaciones realistas para estudio autónomo con práctica real (
 
 | # | Módulo | Nivel | Lecciones | Teoría | Práctica | Total |
 |---|---|:-:|---:|---:|---:|---:|
-| M0 | [Orientación, entorno y método](../m00-orientacion/index.md) | — | 4 | 2 | 4 | 6 |
+| M0 | [Orientación y entorno de trabajo](../m00-orientacion/index.md) | — | 4 | 2 | 4 | 6 |
 | M1 | [Fundamentos de IA generativa y LLM](../m01-fundamentos-llm/index.md) | — | 16 | 12 | 12 | 24 |
 | M2 | [Prompt Engineering](../m02-prompt-engineering/index.md) | — | 15 | 8 | 12 | 20 |
-| M3 | [Asistentes de IA: uso profesional, contexto y delegación](../m03-asistentes/index.md) | N1 | 25 | 11 | 25 | 36 |
-| M4 | [Agentes de programación: uso guiado](../m04-agentes-programacion/index.md) | N1 | 14 | 5 | 16 | 21 |
-| M5 | [Automatización con n8n: workflows deterministas](../m05-n8n/index.md) | N1 | 11 | 5 | 13 | 18 |
+| M3 | [Asistentes de IA en la práctica](../m03-asistentes/index.md) | N1 | 25 | 11 | 25 | 36 |
+| M4 | [Agentes de programación](../m04-agentes-programacion/index.md) | N1 | 14 | 5 | 16 | 21 |
+| M5 | [Automatización con n8n](../m05-n8n/index.md) | N1 | 11 | 5 | 13 | 18 |
 | M6 | [Desarrollo con APIs de modelos](../m06-apis-modelos/index.md) | — | 14 | 10 | 20 | 30 |
 | M7 | [Context Engineering](../m07-context-engineering/index.md) | N2 | 11 | 8 | 12 | 20 |
-| M8 | [Embeddings, búsqueda semántica y RAG](../m08-rag/index.md) | — | 14 | 12 | 22 | 34 |
+| M8 | [Embeddings y RAG](../m08-rag/index.md) | — | 14 | 12 | 22 | 34 |
 | M9 | [Agentes desde cero](../m09-agentes-desde-cero/index.md) | — | 13 | 12 | 18 | 30 |
-| M10 | [Model Context Protocol: desarrollo](../m10-mcp/index.md) | N2 | 16 | 11 | 21 | 32 |
-| M11 | [Agentes de programación: arquitectura y configuración avanzada](../m11-agentes-programacion-avanzado/index.md) | N2 | 14 | 7 | 18 | 25 |
-| M12 | [Skills y plugins: desarrollo](../m12-skills-plugins/index.md) | N2 | 10 | 5 | 13 | 18 |
+| M10 | [Model Context Protocol (MCP)](../m10-mcp/index.md) | N2 | 16 | 11 | 21 | 32 |
+| M11 | [Agentes de programación avanzados](../m11-agentes-programacion-avanzado/index.md) | N2 | 14 | 7 | 18 | 25 |
+| M12 | [Desarrollo de skills y plugins](../m12-skills-plugins/index.md) | N2 | 10 | 5 | 13 | 18 |
 | M13 | [n8n con IA y agentes](../m13-n8n-ia/index.md) | N2 | 10 | 7 | 17 | 24 |
-| M14 | [Frameworks y SDK de agentes para producción](../m14-frameworks-agentes/index.md) | — | 11 | 12 | 24 | 36 |
+| M14 | [Frameworks de agentes](../m14-frameworks-agentes/index.md) | — | 11 | 12 | 24 | 36 |
 | M15 | [Sistemas multiagente](../m15-multiagente/index.md) | — | 11 | 10 | 16 | 26 |
-| M16 | [Seguridad, evaluación, observabilidad y operación](../m16-produccion/index.md) | — | 16 | 14 | 22 | 36 |
+| M16 | [Seguridad, evaluación y operación](../m16-produccion/index.md) | — | 16 | 14 | 22 | 36 |
 | M17 | [Proyecto final integrador](../m17-proyecto-final/index.md) | — | 8 | 5 | 45 | 50 |
 | | **Núcleo obligatorio** | | **233** | **156** | **330** | **486** |
-| E1 | [Multimodalidad avanzada y agentes de computadora/navegador](../electivas.md) | N2 | — | 4 | 8 | 12 |
-| E2 | [Modelos abiertos, ejecución local y fine-tuning](../electivas.md) | — | — | 8 | 14 | 22 |
-| E3 | [Ética, marco legal y gobernanza de IA](../electivas.md) | — | — | 5 | 1 | 6 |
+| E1 | [Multimodalidad avanzada y agentes de computadora/navegador](../ruta/electivas.md) | N2 | — | 4 | 8 | 12 |
+| E2 | [Modelos abiertos, ejecución local y fine-tuning](../ruta/electivas.md) | — | — | 8 | 14 | 22 |
+| E3 | [Ética, marco legal y gobernanza de IA](../ruta/electivas.md) | — | — | 5 | 1 | 6 |
 | | **Total con electivas** | | | **173** | **353** | **526** |
 
 Las electivas no tienen lecciones numeradas: su desglose se define al elegirlas.

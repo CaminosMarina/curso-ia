@@ -1,6 +1,6 @@
 # Registro de cambios
 
-Este repositorio maneja dos versiones independientes (ver [Versiones y cambios](docs/programa/versiones.md)):
+Este repositorio maneja dos versiones independientes (ver [Versiones y cambios](docs/sobre/versiones.md)):
 
 - **Versión académica** (por ejemplo, 1.2): cambios del programa. Solo las versiones mayores y menores pueden requerir migrar el progreso, y siempre con una tabla de equivalencias.
 - **Versión de publicación** (`vX.Y.Z`, versionado semántico): qué material está terminado y publicado. **Nunca obliga a migrar el progreso.**
@@ -9,7 +9,17 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 ## [Sin publicar]
 
-**Versión académica:** 1.2 (sin cambios académicos)
+**Versión académica:** 1.3
+
+### Cambiado (15/10/2026): curso más amigable e interactivo · versión académica 1.3
+
+- **Nombres más claros:** los bloques pasan a ser *etapas*; varios módulos tienen nombres más cortos (por ejemplo, "Asistentes de IA en la práctica"); cada lección tiene un título corto con su descripción completa debajo; "prerrequisito duro" pasa a "indispensable". Los IDs, contenidos, horas y prerrequisitos no cambian.
+- **Sitio reorganizado:** pestañas Inicio, Empezar, Ruta, Módulos, Mi progreso, Glosario y Sobre el curso. `docs/programa/` se repartió en `docs/ruta/` (ruta, lecciones, proyectos, electivas) y `docs/sobre/` (principios, cómo se aprueba, versiones).
+- **Seguimiento en tres estados** (Por hacer, En curso, Completada). El cuaderno, las sesiones y los repasos pasan a la guía opcional *Cómo estudiar* (`docs/empezar/metodo.md`). Plantillas del cuaderno simplificadas.
+- **Ruta esencial:** cada lección se marca como *Esencial* (183) o *Profundizar* (50); la ruta esencial suma unas 390 h.
+- **Interactividad** (`docs/assets/curso.js`, `curso.css` y `hooks/curso.py`): autoevaluaciones que se corrigen al instante (bloques ```` ```quiz ````), selector de estado en cada lección, avance por módulo, página *Mi progreso* con copia de seguridad, mapa interactivo de la ruta, glosario al pasar el mouse y listas tildables que se recuerdan. El progreso se guarda solo en el navegador.
+- L0.1.1 reescrita como *Cómo funciona este curso*, con autoevaluación interactiva.
+- Plantilla de lección actualizada (título corto y autoevaluación con ```` ```quiz ````).
 
 ### Cambiado (13/10/2026): identidad visual "Latte"
 

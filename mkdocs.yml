@@ -57,12 +57,18 @@ theme:
     - content.code.copy
     - content.tabs.link
     - content.action.edit
+    - content.tooltips
 
 extra_css:
   - assets/estilo-latte.css
+  - assets/curso.css
+
+extra_javascript:
+  - assets/curso.js
 
 hooks:
   - hooks/callouts.py
+  - hooks/curso.py
 
 plugins:
   - search:
@@ -97,6 +103,7 @@ markdown_extensions:
           case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
+      clickable_checkbox: true
 
 validation:
   nav:
@@ -112,59 +119,63 @@ validation:
 # ── Menú del sitio: generado por scripts/generar.py, no editar a mano ──
 nav:
   - Inicio: index.md
-  - Cómo empezar:
+  - Empezar:
       - empezar/index.md
+      - Cómo estudiar: empezar/metodo.md
       - Estudiar con un tutor de IA: empezar/tutor.md
-  - Programa:
-      - programa/index.md
-      - Índice de lecciones: programa/indice.md
-      - Proyectos: programa/proyectos.md
-      - Evaluación y estados: programa/evaluacion.md
-      - Versiones y cambios: programa/versiones.md
+  - Ruta:
+      - ruta/index.md
+      - Todas las lecciones: ruta/lecciones.md
+      - Proyectos: ruta/proyectos.md
+      - Electivas: ruta/electivas.md
   - Módulos:
-      - "Bloque I · Fundamentos y uso profesional":
-          - "M0 · Orientación, entorno y método":
+      - "Etapa 1 · Fundamentos y uso profesional":
+          - "0 · Orientación y entorno de trabajo":
               - m00-orientacion/index.md
-              - "L0.1.1 · Mapa del curso y protocolo de sesión": m00-orientacion/l0-1-1-mapa-del-curso.md
+              - "Cómo funciona este curso": m00-orientacion/l0-1-1-mapa-del-curso.md
               - Soluciones:
-                  - "L0.1.1": m00-orientacion/soluciones/l0-1-1.md
-          - "M1 · Fundamentos de IA generativa y LLM":
+                  - "Cómo funciona este curso": m00-orientacion/soluciones/l0-1-1.md
+          - "1 · Fundamentos de IA generativa y LLM":
               - m01-fundamentos-llm/index.md
-          - "M2 · Prompt Engineering":
+          - "2 · Prompt Engineering":
               - m02-prompt-engineering/index.md
-          - "M3 · Asistentes de IA: uso profesional, contexto y delegación":
+          - "3 · Asistentes de IA en la práctica":
               - m03-asistentes/index.md
-          - "M4 · Agentes de programación: uso guiado":
+          - "4 · Agentes de programación":
               - m04-agentes-programacion/index.md
-          - "M5 · Automatización con n8n: workflows deterministas":
+          - "5 · Automatización con n8n":
               - m05-n8n/index.md
-      - "Bloque II · Construir con modelos":
-          - "M6 · Desarrollo con APIs de modelos":
+      - "Etapa 2 · Construir con modelos":
+          - "6 · Desarrollo con APIs de modelos":
               - m06-apis-modelos/index.md
-          - "M7 · Context Engineering":
+          - "7 · Context Engineering":
               - m07-context-engineering/index.md
-          - "M8 · Embeddings, búsqueda semántica y RAG":
+          - "8 · Embeddings y RAG":
               - m08-rag/index.md
-      - "Bloque III · Agentes e interoperabilidad":
-          - "M9 · Agentes desde cero":
+      - "Etapa 3 · Agentes e interoperabilidad":
+          - "9 · Agentes desde cero":
               - m09-agentes-desde-cero/index.md
-          - "M10 · Model Context Protocol: desarrollo":
+          - "10 · Model Context Protocol (MCP)":
               - m10-mcp/index.md
-          - "M11 · Agentes de programación: arquitectura y configuración avanzada":
+          - "11 · Agentes de programación avanzados":
               - m11-agentes-programacion-avanzado/index.md
-          - "M12 · Skills y plugins: desarrollo":
+          - "12 · Desarrollo de skills y plugins":
               - m12-skills-plugins/index.md
-      - "Bloque IV · Automatización y sistemas avanzados":
-          - "M13 · n8n con IA y agentes":
+      - "Etapa 4 · Automatización y sistemas avanzados":
+          - "13 · n8n con IA y agentes":
               - m13-n8n-ia/index.md
-          - "M14 · Frameworks y SDK de agentes para producción":
+          - "14 · Frameworks de agentes":
               - m14-frameworks-agentes/index.md
-          - "M15 · Sistemas multiagente":
+          - "15 · Sistemas multiagente":
               - m15-multiagente/index.md
-      - "Bloque V · Producción e integración":
-          - "M16 · Seguridad, evaluación, observabilidad y operación":
+      - "Etapa 5 · Producción e integración":
+          - "16 · Seguridad, evaluación y operación":
               - m16-produccion/index.md
-          - "M17 · Proyecto final integrador":
+          - "17 · Proyecto final integrador":
               - m17-proyecto-final/index.md
-  - Electivas: electivas.md
+  - Mi progreso: progreso.md
   - Glosario: glosario.md
+  - Sobre el curso:
+      - sobre/index.md
+      - Cómo se aprueba: sobre/evaluacion.md
+      - Versiones y cambios: sobre/versiones.md

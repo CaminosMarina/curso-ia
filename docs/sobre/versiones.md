@@ -30,4 +30,21 @@ Versión académica 1.2 del programa, publicada el 12/10/2026. Las versiones de 
 
 | Versión | Fecha | Cambio | ¿Requiere migración? |
 |---|---|---|---|
+| 1.3 | 15/10/2026 | Nombres más claros para etapas, módulos y lecciones; seguimiento simplificado a tres estados; ruta esencial | Solo si registraste estados con el sistema anterior (ver abajo) |
 | 1.2 | 12/10/2026 | Primera versión pública del programa (18 módulos, 233 lecciones, 10 proyectos, núcleo de 486 h) | No (versión inicial) |
+
+### Cambios de la versión 1.3
+
+**No cambiaron** los contenidos, los IDs de lecciones (`L0.1.1`, `L3.5.2`…), los tipos, las horas, los prerrequisitos ni los proyectos.
+
+**Nombres.** Los bloques pasan a llamarse *etapas* (Bloque I → Etapa 1, y así sucesivamente). Varios módulos tienen nombres más cortos; por ejemplo, "Asistentes de IA: uso profesional, contexto y delegación" pasa a "Asistentes de IA en la práctica". Cada lección tiene un título corto y su descripción completa debajo. "Prerrequisito duro" pasa a "prerrequisito indispensable".
+
+**Ruta esencial.** Cada lección se marca como *Esencial* (183) o *Para profundizar* (50). Todas siguen en el programa; la marca solo indica qué hacer primero.
+
+**Estados de una lección.** Si llevabas tu progreso con los cinco estados anteriores, convertilos así:
+
+| Estado anterior | Estado nuevo |
+|---|---|
+| ⬜ Pendiente | Por hacer |
+| 📖 Estudiada, 🛠️ Practicada o 🔁 Necesita refuerzo | En curso |
+| ✅ Aprobada | Completada |

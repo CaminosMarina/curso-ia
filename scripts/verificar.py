@@ -36,17 +36,18 @@ RAIZ = generar.RAIZ
 DOCS = generar.DOCS
 OBLIGATORIOS = [
     "README.md", "CHANGELOG.md", "LICENSE", "LICENSE-CODE", ".gitignore", "mkdocs.yml", "requirements.txt",
-    "hooks/callouts.py", ".github/workflows/sitio.yml",
-    "docs/index.md", "docs/empezar/index.md", "docs/empezar/tutor.md", "docs/glosario.md", "docs/electivas.md",
-    "docs/programa/index.md", "docs/programa/indice.md", "docs/programa/proyectos.md",
-    "docs/programa/evaluacion.md", "docs/programa/versiones.md",
+    "hooks/callouts.py", "hooks/curso.py", ".github/workflows/sitio.yml",
+    "docs/index.md", "docs/empezar/index.md", "docs/empezar/metodo.md", "docs/empezar/tutor.md",
+    "docs/glosario.md", "docs/progreso.md", "docs/assets/curso.js", "docs/assets/curso.css",
+    "docs/ruta/index.md", "docs/ruta/lecciones.md", "docs/ruta/proyectos.md", "docs/ruta/electivas.md",
+    "docs/sobre/index.md", "docs/sobre/evaluacion.md", "docs/sobre/versiones.md",
     "plantillas/leccion.md", "plantillas/evaluacion.md",
     "plantillas/cuaderno-estudiante/README.md", "plantillas/cuaderno-estudiante/PROGRESO.md",
     "plantillas/cuaderno-estudiante/REFUERZO.md", "plantillas/cuaderno-estudiante/PUNTO-DE-PARTIDA.md",
     "plantillas/cuaderno-estudiante/.gitignore",
 ]
 SECCIONES_LECCION = ["Teoría", "Práctica", "Autoevaluación", "Resumen", "Para profundizar"]
-CLAVES_LECCION = ["id", "titulo", "titulo_corto", "modulo", "unidad", "tipo", "horas_estimadas", "costo",
+CLAVES_LECCION = ["id", "titulo", "modulo", "unidad", "tipo", "horas_estimadas", "costo",
                   "estado", "ultima_revision", "version_academica", "soluciones"]
 FRASES_DEPENDIENTES = [
     "como hablamos", "como charlamos", "como vimos en la conversación", "en nuestra conversación",
@@ -137,9 +138,9 @@ def verificar_programa() -> dict[str, generar.Leccion]:
             if lec.unidad != f"U{m.group(1)}.{m.group(2)}" or lec.unidad not in unidades:
                 error(f"{rel(mod.carpeta / 'index.md')}: {lec.id} está bajo la unidad {lec.unidad or '(ninguna)'}")
 
-    texto = leer(DOCS / "programa" / "index.md")
+    texto = leer(DOCS / "sobre" / "index.md")
     if not re.search(r"\*\*Versión académica 1\.\d+", texto):
-        error("docs/programa/index.md: no se encontró la versión académica en el encabezado")
+        error("docs/sobre/index.md: no se encontró la versión académica en el encabezado")
     tabla = {}
     for m in re.finditer(r"^\| M(\d+) \| [^|]+\| [^|]*\| +(\d+) \| +(\d+) \| +(\d+) \| +(\d+) \|$", texto, re.M):
         tabla[int(m.group(1))] = tuple(map(int, m.groups()[1:]))
@@ -147,7 +148,7 @@ def verificar_programa() -> dict[str, generar.Leccion]:
     for mod in modulos:
         fila = tabla.get(mod.n)
         if not fila:
-            error(f"docs/programa/index.md: falta {mod.id} en la tabla de módulos y horas")
+            error(f"docs/sobre/index.md: falta {mod.id} en la tabla de módulos y horas")
             continue
         n, teo, pra, tot = fila
         if n != len(mod.lecciones):
@@ -158,17 +159,17 @@ def verificar_programa() -> dict[str, generar.Leccion]:
             error(f"{mod.id}: teoría + práctica ({teo}+{pra}) ≠ total ({tot}) en la tabla del programa")
         suma = [a + b for a, b in zip(suma, fila)]
     if set(tabla) - {m.n for m in modulos}:
-        error(f"docs/programa/index.md: la tabla tiene módulos sin portada: {sorted(set(tabla) - {m.n for m in modulos})}")
+        error(f"docs/sobre/index.md: la tabla tiene módulos sin portada: {sorted(set(tabla) - {m.n for m in modulos})}")
     m = re.search(r"\*\*Núcleo obligatorio\*\* \| +\| \*\*(\d+)\*\* \| \*\*(\d+)\*\* \| \*\*(\d+)\*\* \| \*\*(\d+)\*\*", texto)
     if not m:
-        error("docs/programa/index.md: no se encontró la fila 'Núcleo obligatorio'")
+        error("docs/sobre/index.md: no se encontró la fila 'Núcleo obligatorio'")
     elif list(map(int, m.groups())) != suma:
-        error(f"docs/programa/index.md: totales del núcleo {list(map(int, m.groups()))} ≠ suma de módulos {suma}")
+        error(f"docs/sobre/index.md: totales del núcleo {list(map(int, m.groups()))} ≠ suma de módulos {suma}")
 
-    proyectos = set(re.findall(r"^\| (P\d+) \|", leer(DOCS / "programa" / "proyectos.md"), re.M))
+    proyectos = set(re.findall(r"^\| (P\d+) \|", leer(DOCS / "ruta" / "proyectos.md"), re.M))
     faltan = {f"P{i}" for i in range(1, 11)} - proyectos
     if faltan:
-        error(f"docs/programa/proyectos.md: faltan proyectos: {sorted(faltan)}")
+        error(f"docs/ruta/proyectos.md: faltan proyectos: {sorted(faltan)}")
     print(f"  Programa: {len(lecciones)} lecciones, {len(modulos)} módulos, "
           f"{suma[3]} h de núcleo, {len(proyectos)} proyectos")
     return lecciones
@@ -217,7 +218,7 @@ def verificar_lecciones(programa: dict[str, generar.Leccion], publicar: bool) ->
         if fm.get("tipo") != lec.tipo:
             error(f"{rel(p)}: tipo '{fm.get('tipo')}' distinto de la portada ('{lec.tipo}')")
         if fm.get("titulo") != lec.titulo:
-            error(f"{rel(p)}: 'titulo' no coincide con el de la portada del módulo")
+            error(f"{rel(p)}: 'titulo' no coincide con el de la portada del módulo ('{lec.titulo}')")
         estado = fm.get("estado")
         if estado not in generar.ESTADOS:
             error(f"{rel(p)}: estado '{estado}' inválido (borrador, revisada o publicada)")
@@ -234,10 +235,25 @@ def verificar_lecciones(programa: dict[str, generar.Leccion], publicar: bool) ->
         for h in encabezados(texto, 2) + encabezados(texto, 3):
             if re.match(r"(solución|soluciones|respuestas)\b", h, re.I):
                 error(f"{rel(p)}: la lección contiene una sección de soluciones ('{h}'); van en soluciones/")
+        verificar_quizzes(p, texto)
         verificar_comunes(p, texto, hoy)
     for p in sorted(DOCS.glob("m[0-9][0-9]-*/soluciones/*.md")):
         verificar_comunes(p, leer(p), hoy)
     print(f"  Lecciones con material: {len(archivos)}")
+
+
+def verificar_quizzes(p: Path, texto: str) -> None:
+    """Cada bloque ```quiz: una pregunta, al menos dos opciones, exactamente una correcta y una explicación."""
+    for i, m in enumerate(re.finditer(r"^```quiz[ \t]*\n(.*?)^```", texto, re.S | re.M), 1):
+        lineas = [l for l in m.group(1).splitlines() if l.strip()]
+        opciones = [l for l in lineas if re.match(r"^- \[( |x|X)\] ", l)]
+        correctas = [l for l in opciones if re.match(r"^- \[[xX]\] ", l)]
+        if not lineas or re.match(r"^- \[", lineas[0]):
+            error(f"{rel(p)}: la pregunta {i} no tiene enunciado")
+        if len(opciones) < 2 or len(correctas) != 1:
+            error(f"{rel(p)}: la pregunta {i} necesita al menos dos opciones y exactamente una correcta ([x])")
+        if not any(l.startswith(">") for l in lineas):
+            error(f"{rel(p)}: la pregunta {i} no tiene explicación (línea que empieza con '>')")
 
 
 # ── 5. Enlaces internos ─────────────────────────────────────────────────────

@@ -7,9 +7,9 @@ horas_teoria: 10
 horas_practica: 20
 ---
 
-# M6 · Desarrollo con APIs de modelos
+# Módulo 6 · Desarrollo con APIs de modelos
 
-**Bloque II** · 30 h (10 h de teoría y 20 h de práctica) · 14 lecciones
+**Etapa 2** · 30 h (10 h de teoría y 20 h de práctica) · 14 lecciones
 
 ## Objetivo
 
@@ -21,46 +21,46 @@ Messages/Responses API; SDK de Python y Java; *streaming*; salidas estructuradas
 
 ## Antes de empezar
 
-- **Prerrequisitos:** [M2](../m02-prompt-engineering/index.md) (duro), [M3](../m03-asistentes/index.md) (recomendado).
+- **Prerrequisitos:** [Módulo 2](../m02-prompt-engineering/index.md) (indispensable), [Módulo 3](../m03-asistentes/index.md) (recomendado).
 - **Herramientas:** Anthropic SDK, OpenAI SDK, Google GenAI SDK, Ollama (API compatible con OpenAI), Pydantic, Spring AI 2.0; crédito mínimo de API opcional `[Pago]` con límite de gasto (alternativas gratuitas: Ollama y nivel gratuito de Gemini).
 
 ## Lecciones
 
-Las lecciones con material tienen enlace. Las demás forman parte del programa, pero su material todavía se está escribiendo.
+Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya forman parte del programa y se están escribiendo. Las de la **ruta esencial** son el núcleo del módulo; las marcadas para **profundizar** amplían el tema y se pueden hacer después.
 
-### U6.1 · La API por dentro
+### 6.1 · La API por dentro
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L6.1.1 | Anatomía de una llamada: endpoint, autenticación, modelo, mensajes, parámetros y respuesta. Lo que hace el SDK por vos (con `curl` primero). | P | — |
-| L6.1.2 | Conversaciones sin estado: por qué el cliente reenvía el historial y qué implica en costo y diseño. Variantes con estado del lado del proveedor. | C | — |
-| L6.1.3 | *Streaming* (SSE): cuándo usarlo y cómo procesarlo. | P | — |
-| L6.1.4 | Comparativa de API: Anthropic Messages, OpenAI Responses y Gemini. Conceptos equivalentes y diferencias. | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L6.1.1 | **Anatomía de una llamada**<br>Endpoint, autenticación, modelo, mensajes, parámetros y respuesta. Lo que hace el SDK por vos (con `curl` primero). | Práctica | Esencial | Próximamente |
+| L6.1.2 | **Conversaciones sin estado**<br>Por qué el cliente reenvía el historial y qué implica en costo y diseño. Variantes con estado del lado del proveedor. | Conceptual | Esencial | Próximamente |
+| L6.1.3 | **Streaming (SSE)**<br>*Streaming* (SSE): cuándo usarlo y cómo procesarlo. | Práctica | Profundizar | Próximamente |
+| L6.1.4 | **Comparativa de API**<br>Anthropic Messages, OpenAI Responses y Gemini. Conceptos equivalentes y diferencias. | Mixta | Profundizar | Próximamente |
 
-### U6.2 · Salidas confiables
+### 6.2 · Salidas confiables
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L6.2.1 | Salidas estructuradas: JSON Schema, modo estricto, validación con Pydantic o Bean Validation. | P | — |
-| L6.2.2 | Manejo de errores: límites de tasa, *timeouts*, reintentos con *backoff*, errores de contenido y respuestas truncadas. | P | — |
-| L6.2.3 | Pruebas de código que llama a un LLM: *mocks*, *fixtures* grabadas y tests de contrato vs. evals. | P | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L6.2.1 | **Salidas estructuradas**<br>JSON Schema, modo estricto, validación con Pydantic o Bean Validation. | Práctica | Esencial | Próximamente |
+| L6.2.2 | **Manejo de errores**<br>Límites de tasa, *timeouts*, reintentos con *backoff*, errores de contenido y respuestas truncadas. | Práctica | Esencial | Próximamente |
+| L6.2.3 | **Pruebas de código que llama a un LLM**<br>*mocks*, *fixtures* grabadas y tests de contrato vs. evals. | Práctica | Esencial | Próximamente |
 
-### U6.3 · Tool calling: el puente hacia los agentes
+### 6.3 · Tool calling: el puente hacia los agentes
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L6.3.1 | Qué es tool calling: el modelo no ejecuta tu función, propone una llamada y tu código la ejecuta. El ciclo completo. | M | — |
-| L6.3.2 | Diseño de herramientas: nombres, descripciones, esquemas y errores devueltos al modelo. | P | — |
-| L6.3.3 | Llamadas paralelas, elección forzada de herramienta y herramientas ejecutadas por el proveedor (búsqueda web, ejecución de código): quién ejecuta qué y dónde. | M | — |
-| L6.3.4 | 🔒 Riesgos de tool calling: validar argumentos, permisos mínimos y confirmación humana para acciones destructivas. | M | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L6.3.1 | **Qué es tool calling**<br>El modelo no ejecuta tu función, propone una llamada y tu código la ejecuta. El ciclo completo. | Mixta | Esencial | Próximamente |
+| L6.3.2 | **Diseño de herramientas**<br>Nombres, descripciones, esquemas y errores devueltos al modelo. | Práctica | Esencial | Próximamente |
+| L6.3.3 | **Llamadas paralelas y herramientas del proveedor**<br>Llamadas paralelas, elección forzada de herramienta y herramientas ejecutadas por el proveedor (búsqueda web, ejecución de código): quién ejecuta qué y dónde. | Mixta | Esencial | Próximamente |
+| L6.3.4 | **Riesgos de tool calling**<br>Validar argumentos, permisos mínimos y confirmación humana para acciones destructivas. | Mixta | Esencial | Próximamente |
 
-### U6.4 · Costos, rendimiento y portabilidad
+### 6.4 · Costos, rendimiento y portabilidad
 
-| ID | Lección | Tipo | Material |
-|---|---|:-:|---|
-| L6.4.1 | 💰 Caché de prompts, procesamiento por lotes (*batch*) y selección de modelo por tarea. | P | — |
-| L6.4.2 | Portabilidad: API compatibles con OpenAI, Ollama, routers (por ejemplo LiteLLM u OpenRouter) y el costo de la abstracción. | M | — |
-| L6.4.3 | LLM en Java con Spring AI 2.0: `ChatClient`, *advisors*, salidas estructuradas y herramientas. | P | — |
+| ID | Lección | Tipo | Ruta | Material |
+|---|---|---|---|---|
+| L6.4.1 | **Caché de prompts, batch y elección de modelo**<br>Caché de prompts, procesamiento por lotes (*batch*) y selección de modelo por tarea. | Práctica | Esencial | Próximamente |
+| L6.4.2 | **Portabilidad entre proveedores**<br>Portabilidad: API compatibles con OpenAI, Ollama, routers (por ejemplo LiteLLM u OpenRouter) y el costo de la abstracción. | Mixta | Profundizar | Próximamente |
+| L6.4.3 | **LLM en Java con Spring AI 2.0**<br>`ChatClient`, *advisors*, salidas estructuradas y herramientas. | Práctica | Profundizar | Próximamente |
 
 ## Práctica del módulo
 
@@ -77,7 +77,7 @@ Las lecciones con material tienen enlace. Las demás forman parte del programa, 
 
 P3 (versión base) ≥ 80% en la rúbrica; evaluación de módulo ≥ 80% incluyendo explicar el ciclo de tool calling.
 
-Las reglas generales están en [Evaluación y estados](../programa/evaluacion.md).
+Las reglas generales están en [Evaluación y estados](../sobre/evaluacion.md).
 
 ## Hilos transversales
 
