@@ -11,6 +11,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 **Versión académica:** 1.3
 
+### Agregado (24/10/2026): lección L0.2.2
+
+- L0.2.2 *Claves de API y primer modelo local*: claves en `.env` con `.env.example`, qué hacer si una clave se filtra, límites de gasto, nivel gratuito de la API de Gemini y sus condiciones de privacidad, modelo local con Ollama y revisión de secretos con Gitleaks. Con ejercicio, soluciones y autoevaluación.
+- Glosario: clave de API, variable de entorno y modelo local.
+
 ### Agregado (24/10/2026): lección L0.2.1
 
 - L0.2.1 *Repositorio y entorno de trabajo*: repositorio de trabajo privado con `.gitignore`, proyectos de Python aislados con `uv`, prueba de Docker y Java opcional. Con ejercicio, soluciones (incluye problemas frecuentes) y autoevaluación.

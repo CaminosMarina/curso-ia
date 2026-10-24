@@ -2,7 +2,7 @@
 
 # Todas las lecciones
 
-Las 233 lecciones del curso, etapa por etapa. **3 tienen material**: son las que llevan enlace. Las demás ya forman parte del programa y se están escribiendo.
+Las 233 lecciones del curso, etapa por etapa. **4 tienen material**: son las que llevan enlace. Las demás ya forman parte del programa y se están escribiendo.
 
 **Tipo de lección:** *Conceptual* (se comprueba con preguntas), *Práctica* (con un ejercicio) o *Mixta* (las dos cosas). **Ruta:** las lecciones *esenciales* son el núcleo de cada módulo; las marcadas para *profundizar* amplían el tema y se pueden hacer después.
 
@@ -17,7 +17,7 @@ Las 233 lecciones del curso, etapa por etapa. **3 tienen material**: son las que
 | L0.1.1 | **[Cómo funciona este curso](../m00-orientacion/l0-1-1-mapa-del-curso.md)**<br>Etapas, módulos y lecciones; prerrequisitos; Nivel 1 y Nivel 2; estados de una lección y cómo llevar tu avance. | Conceptual | Esencial | 📝 Borrador |
 | L0.1.2 | **[Aprender en un campo que cambia cada mes](../m00-orientacion/l0-1-2-aprender-en-un-campo-que-cambia.md)**<br>Cómo aprender en un campo que cambia cada mes: fuentes oficiales, *changelogs* y cómo verificar lo que dice un modelo (incluido un tutor de IA). | Conceptual | Esencial | 📝 Borrador |
 | L0.2.1 | **[Repositorio y entorno de trabajo](../m00-orientacion/l0-2-1-repositorio-y-entorno.md)**<br>Repositorio Git del curso (registros, apuntes y proyectos), estructura de carpetas, entornos de Python y Java, Docker. | Práctica | Esencial | 📝 Borrador |
-| L0.2.2 | **Claves de API y primer modelo local**<br>Claves de API: creación, almacenamiento seguro (`.env`, gestor de secretos, nunca en Git), límites de gasto y alertas. Instalación de Ollama y primer modelo local. | Práctica | Esencial | Próximamente |
+| L0.2.2 | **[Claves de API y primer modelo local](../m00-orientacion/l0-2-2-claves-y-modelo-local.md)**<br>Claves de API: creación, almacenamiento seguro (`.env`, gestor de secretos, nunca en Git), límites de gasto y alertas. Instalación de Ollama y primer modelo local. | Práctica | Esencial | 📝 Borrador |
 
 ### [Módulo 1 · Fundamentos de IA generativa y LLM](../m01-fundamentos-llm/index.md)
 
