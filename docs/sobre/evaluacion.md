@@ -28,7 +28,7 @@ Un módulo está **completado** cuando:
 2. la evaluación del módulo, si tiene, alcanza el 80% o más;
 3. su proyecto o entregable, si tiene, alcanza el 80% o más en la rúbrica.
 
-Si no superás una autoevaluación, repasá antes de empezar los módulos que tienen a ese módulo como prerrequisito **indispensable**. Los módulos que no dependen de él los podés seguir sin problema: por ejemplo, una duda sobre RAG no te impide avanzar con n8n.
+Si un tema de un módulo no te quedó claro, resolvelo antes de empezar los módulos que tienen a ese módulo como prerrequisito **indispensable**. Los demás los podés seguir: por ejemplo, una duda sobre RAG no te impide avanzar con n8n.
 
 ## Evaluaciones de módulo, proyectos y teach-back
 

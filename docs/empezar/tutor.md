@@ -19,10 +19,10 @@ Esta guía explica cómo usar un asistente de IA (Claude, ChatGPT, Gemini, un mo
 1. Las **instrucciones de tutor** (ver [Instrucciones de tutor](#4-instrucciones-de-tutor-para-copiar)).
 2. **El programa:** `ruta/lecciones.md` (orden, tipos y prerrequisitos de cada módulo) y `sobre/evaluacion.md` (criterios de aprobación).
 3. **La lección actual** (su archivo `.md`).
-
-Estos archivos están en la carpeta `docs/` del curso: descargá el ZIP del repositorio ([Cómo empezar](index.md), paso 2).
 4. **Tu cuaderno:** `PROGRESO.md` y `REFUERZO.md`. Si no querés compartir algo, quitalo de una copia antes de subirla.
 5. Las **soluciones** de la lección solo cuando vayas a corregir. Si se las das desde el principio, pedile que no las use hasta que respondas.
+
+Los archivos del curso están en su carpeta `docs/`: descargá el ZIP del [repositorio](https://github.com/CaminosMarina/curso-ia) (**Code → Download ZIP**).
 
 ## 3. Qué puede hacer según la plataforma
 
@@ -125,52 +125,40 @@ REFUERZO.md: sin cambios.
 
 Después de pegarlo, guardá el archivo. Si trabajás en el modo B, volvé a subir la versión actualizada.
 
-## 5. Uso con Claude
+## 5. Uso con Claude o ChatGPT
 
 > [!NOTE]
-> Específico de herramienta · verificado el 2026-10-12 · fuente: [Claude Help Center: proyectos](https://support.claude.com/en/articles/9519177). Las funciones y los límites por plan pueden cambiar.
+> Específico de herramienta · verificado el 2026-10-12 · fuentes: [Claude Help Center: proyectos](https://support.claude.com/en/articles/9519177) · [OpenAI Help Center: proyectos en ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt). Las funciones y los límites por plan pueden cambiar.
 
-**Modo B, con un proyecto de Claude:**
+**Modo B, con un proyecto** (los pasos son iguales en las dos plataformas):
 
-1. En claude.ai, creá un proyecto, por ejemplo "Curso de IA".
-2. En las instrucciones del proyecto, pegá el bloque de [instrucciones de tutor](#4-instrucciones-de-tutor-para-copiar).
-3. En el conocimiento del proyecto, subí `lecciones.md`, `evaluacion.md`, la lección actual, tu `PROGRESO.md` y tu `REFUERZO.md`.
+1. Creá un proyecto, por ejemplo "Curso de IA".
+2. En las instrucciones del proyecto, pegá las [instrucciones de tutor](#4-instrucciones-de-tutor-para-copiar).
+3. Subí `lecciones.md`, `evaluacion.md`, la lección actual, tu `PROGRESO.md` y tu `REFUERZO.md`.
 4. Abrí una conversación dentro del proyecto y pedí: "Iniciemos la sesión según el protocolo".
 5. Al cerrar, aplicá el bloque de actualización en tu cuaderno y reemplazá en el proyecto el `PROGRESO.md` viejo por el nuevo.
 
-Según su centro de ayuda, los proyectos están disponibles también para cuentas gratuitas, con un máximo de cinco proyectos. Las conversaciones de un mismo proyecto no comparten contexto entre sí, salvo lo que esté en su conocimiento. Por eso tu cuaderno, subido al proyecto, es la memoria que importa.
+| | Claude | ChatGPT |
+|---|---|---|
+| **Plan gratuito** | Hasta cinco proyectos | Hasta 5 archivos por proyecto: los cinco de arriba entran justo |
+| **Memoria** | Las conversaciones de un proyecto no comparten contexto entre sí, salvo lo que esté en su conocimiento: tu cuaderno subido es la memoria que importa | Si podés elegir, usá la memoria **solo del proyecto**, para que no mezcle otras conversaciones. Las instrucciones del proyecto tienen prioridad sobre tus instrucciones personalizadas |
 
-**Modo A:** un agente como Claude Code, abierto en la carpeta de tu cuaderno, puede leer y editar tus archivos con tu autorización. Su uso, configuración y permisos se estudian en el Módulo 4. Puede requerir un plan pago o una API: verificá las condiciones vigentes en su documentación oficial.
+**Modo A:** un agente de programación como Claude Code o Codex, abierto en la carpeta de tu cuaderno, puede leer y editar tus archivos con los permisos que le des. Se estudian en el Módulo 4. Pueden requerir un plan pago o una API: verificá las condiciones vigentes en su documentación oficial.
 
-## 6. Uso con ChatGPT
-
-> [!NOTE]
-> Específico de herramienta · verificado el 2026-10-12 · fuente: [OpenAI Help Center: proyectos en ChatGPT](https://help.openai.com/en/articles/10169521-projects-in-chatgpt). Las funciones y los límites por plan pueden cambiar.
-
-**Modo B, con un proyecto de ChatGPT:**
-
-1. Creá un proyecto, por ejemplo "Curso de IA".
-2. En la configuración del proyecto, pegá el bloque de [instrucciones de tutor](#4-instrucciones-de-tutor-para-copiar) como instrucciones. Según su centro de ayuda, las instrucciones del proyecto tienen prioridad sobre tus instrucciones personalizadas globales.
-3. Subí `lecciones.md`, `evaluacion.md`, la lección actual, tu `PROGRESO.md` y tu `REFUERZO.md`. Según su centro de ayuda, el plan Free admite hasta 5 archivos por proyecto: estos cinco entran justo.
-4. Si podés elegir, usá la **memoria solo del proyecto**: así el tutor no mezcla tus otras conversaciones con el curso.
-5. Al cerrar, aplicá el bloque de actualización y reemplazá el `PROGRESO.md` del proyecto.
-
-**Modo A:** un agente como Codex, abierto en la carpeta de tu cuaderno, puede leer y editar tus archivos con los permisos que configures. Su uso y sus modos de aislamiento se estudian en el Módulo 4. Verificá las condiciones vigentes en su documentación oficial.
-
-## 7. Otras plataformas
+## 6. Otras plataformas
 
 Cualquier asistente que acepte instrucciones y archivos (o texto pegado) sirve, por ejemplo Gemini o un modelo local con una interfaz de chat. Si la plataforma no tiene instrucciones persistentes, pegá el bloque de instrucciones de tutor al comienzo de cada conversación.
 
 Un modelo local te da privacidad y costo cero, pero puede explicar con menos precisión: verificá más sus respuestas con el material de la lección.
 
-## 8. Privacidad y seguridad
+## 7. Privacidad y seguridad
 
 - Tu cuaderno puede tener información personal. Antes de subirlo, revisá qué contiene.
 - Revisá la configuración de privacidad de la plataforma, por ejemplo si tus conversaciones se usan para entrenar modelos. El tema se estudia en L3.8.1.
 - Nunca subas claves de API, contraseñas ni archivos `.env`.
 - En el modo A, dale al agente acceso solo a la carpeta del cuaderno, no a toda tu computadora.
 
-## 9. Señales de que el tutor no está funcionando bien
+## 8. Señales de que el tutor no está funcionando bien
 
 - Dice que guardó o actualizó un archivo en los modos B o C.
 - Da por aprobada una lección sin preguntas ni ejercicio.

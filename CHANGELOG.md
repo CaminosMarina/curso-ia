@@ -11,6 +11,12 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 **Versión académica:** 1.3
 
+### Agregado (24/10/2026): lección L0.1.2
+
+- L0.1.2 *Aprender en un campo que cambia cada mes*: conocimiento estable y volátil, jerarquía de fuentes, cómo leer un *changelog*, fecha de corte y alucinaciones, cómo verificar una afirmación y una tabla de notas de versión oficiales. Con práctica, soluciones y autoevaluación.
+- Glosario: fecha de corte de conocimiento, alucinación, *changelog*, deprecación, y conocimiento estable y volátil.
+- Revisión de claridad: *Estudiar con un tutor de IA* unifica los pasos de Claude y ChatGPT y corrige una lista cortada; *Cómo estudiar* usa los mismos intervalos de repaso que la plantilla; correcciones en *Cómo se aprueba* y *Versiones y cambios*.
+
 ### Agregado (15/10/2026): modo de lectura "Lofi"
 
 - Cuarto modo de lectura, después de Espresso: *café de medianoche*, inspirado en la estética lofi para estudiar. Fondo índigo, títulos durazno, luz de lámpara en los granos de café, cielo con estrellas en el encabezado y grano de cinta muy suave. Contraste del texto 13:1.

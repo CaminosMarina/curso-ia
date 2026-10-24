@@ -33,7 +33,7 @@ Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya f
 | ID | Lección | Tipo | Ruta | Material |
 |---|---|---|---|---|
 | L0.1.1 | **[Cómo funciona este curso](l0-1-1-mapa-del-curso.md)**<br>Etapas, módulos y lecciones; prerrequisitos; Nivel 1 y Nivel 2; estados de una lección y cómo llevar tu avance. | Conceptual | Esencial | 📝 Borrador |
-| L0.1.2 | **Aprender en un campo que cambia cada mes**<br>Cómo aprender en un campo que cambia cada mes: fuentes oficiales, *changelogs* y cómo verificar lo que dice un modelo (incluido un tutor de IA). | Conceptual | Esencial | Próximamente |
+| L0.1.2 | **[Aprender en un campo que cambia cada mes](l0-1-2-aprender-en-un-campo-que-cambia.md)**<br>Cómo aprender en un campo que cambia cada mes: fuentes oficiales, *changelogs* y cómo verificar lo que dice un modelo (incluido un tutor de IA). | Conceptual | Esencial | 📝 Borrador |
 
 ### 0.2 · Entorno de trabajo
 

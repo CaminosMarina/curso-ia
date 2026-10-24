@@ -50,7 +50,7 @@ flowchart LR
 
 ## Repasar lo que costó
 
-Cuando una autoevaluación no sale bien, anotá el tema en `REFUERZO.md`, repasalo con otra fuente o con ejercicios distintos y volvé a evaluarte. Después programá repasos cortos, cada vez más espaciados: por ejemplo a la sesión siguiente, a las tres sesiones y a las diez. Repasar así consolida lo aprendido mucho mejor que releer todo de una vez.
+Cuando una autoevaluación no sale bien, anotá el tema en `REFUERZO.md`, repasalo con otra fuente o con ejercicios distintos y volvé a evaluarte. Después programá repasos cortos, cada vez más espaciados: por ejemplo en la sesión siguiente, 3 sesiones después y 6 sesiones después. Repasar así consolida lo aprendido mucho mejor que releer todo de una vez.
 
 ## Evidencia
 
