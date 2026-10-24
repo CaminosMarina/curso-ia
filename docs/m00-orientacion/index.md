@@ -39,7 +39,7 @@ Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya f
 
 | ID | Lección | Tipo | Ruta | Material |
 |---|---|---|---|---|
-| L0.2.1 | **Repositorio y entorno de trabajo**<br>Repositorio Git del curso (registros, apuntes y proyectos), estructura de carpetas, entornos de Python y Java, Docker. | Práctica | Esencial | Próximamente |
+| L0.2.1 | **[Repositorio y entorno de trabajo](l0-2-1-repositorio-y-entorno.md)**<br>Repositorio Git del curso (registros, apuntes y proyectos), estructura de carpetas, entornos de Python y Java, Docker. | Práctica | Esencial | 📝 Borrador |
 | L0.2.2 | **Claves de API y primer modelo local**<br>Claves de API: creación, almacenamiento seguro (`.env`, gestor de secretos, nunca en Git), límites de gasto y alertas. Instalación de Ollama y primer modelo local. | Práctica | Esencial | Próximamente |
 
 ## Práctica del módulo

@@ -11,6 +11,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 **Versión académica:** 1.3
 
+### Agregado (24/10/2026): lección L0.2.1
+
+- L0.2.1 *Repositorio y entorno de trabajo*: repositorio de trabajo privado con `.gitignore`, proyectos de Python aislados con `uv`, prueba de Docker y Java opcional. Con ejercicio, soluciones (incluye problemas frecuentes) y autoevaluación.
+- Glosario: entorno virtual, *lockfile* y contenedor.
+
 ### Agregado (24/10/2026): lección L0.1.2
 
 - L0.1.2 *Aprender en un campo que cambia cada mes*: conocimiento estable y volátil, jerarquía de fuentes, cómo leer un *changelog*, fecha de corte y alucinaciones, cómo verificar una afirmación y una tabla de notas de versión oficiales. Con práctica, soluciones y autoevaluación.

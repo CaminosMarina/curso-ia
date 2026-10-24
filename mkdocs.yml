@@ -140,9 +140,11 @@ nav:
               - m00-orientacion/index.md
               - "Cómo funciona este curso": m00-orientacion/l0-1-1-mapa-del-curso.md
               - "Aprender en un campo que cambia cada mes": m00-orientacion/l0-1-2-aprender-en-un-campo-que-cambia.md
+              - "Repositorio y entorno de trabajo": m00-orientacion/l0-2-1-repositorio-y-entorno.md
               - Soluciones:
                   - "Cómo funciona este curso": m00-orientacion/soluciones/l0-1-1.md
                   - "Aprender en un campo que cambia cada mes": m00-orientacion/soluciones/l0-1-2.md
+                  - "Repositorio y entorno de trabajo": m00-orientacion/soluciones/l0-2-1.md
           - "1 · Fundamentos de IA generativa y LLM":
               - m01-fundamentos-llm/index.md
           - "2 · Prompt Engineering":
