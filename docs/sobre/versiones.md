@@ -26,6 +26,7 @@
 
 | Versión | Fecha | Cambio | ¿Requiere migración? |
 |---|---|---|---|
+| 1.3.1 | 24/10/2026 | Correcciones de redacción: se quitan nombres de productos no verificados de la tabla Nivel 1 / Nivel 2, se resumen los principios de diseño y se quita del Módulo 0 un criterio que quedó de la versión 1.2 (protocolo de sesión) | No |
 | 1.3 | 15/10/2026 | Nombres más claros para etapas, módulos y lecciones; seguimiento simplificado a tres estados; ruta esencial | Solo si registraste estados con el sistema anterior (ver abajo) |
 | 1.2 | 12/10/2026 | Primera versión pública del programa (18 módulos, 233 lecciones, 10 proyectos, núcleo de 486 h). Las versiones de diseño 1.0 y 1.1 no tuvieron estudiantes | No (versión inicial) |
 

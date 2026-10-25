@@ -48,6 +48,6 @@ Repositorio creado con `.gitignore` correcto y primer *commit* de los registros;
 
 ## Cómo se aprueba
 
-Entorno funcionando; ninguna clave en el repositorio (verificado con un escáner de secretos como `gitleaks`); protocolo de sesión probado de punta a punta.
+Entorno funcionando y ninguna clave en el repositorio (verificado con un escáner de secretos como `gitleaks`).
 
-Las reglas generales están en [Evaluación y estados](../sobre/evaluacion.md).
+Comprobalo con la [evaluación del módulo](evaluacion.md). Las reglas generales están en [Cómo se aprueba](../sobre/evaluacion.md).

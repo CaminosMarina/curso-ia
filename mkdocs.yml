@@ -142,7 +142,9 @@ nav:
               - "Aprender en un campo que cambia cada mes": m00-orientacion/l0-1-2-aprender-en-un-campo-que-cambia.md
               - "Repositorio y entorno de trabajo": m00-orientacion/l0-2-1-repositorio-y-entorno.md
               - "Claves de API y primer modelo local": m00-orientacion/l0-2-2-claves-y-modelo-local.md
+              - Evaluación del módulo: m00-orientacion/evaluacion.md
               - Soluciones:
+                  - "Evaluacion": m00-orientacion/soluciones/evaluacion.md
                   - "Cómo funciona este curso": m00-orientacion/soluciones/l0-1-1.md
                   - "Aprender en un campo que cambia cada mes": m00-orientacion/soluciones/l0-1-2.md
                   - "Repositorio y entorno de trabajo": m00-orientacion/soluciones/l0-2-1.md

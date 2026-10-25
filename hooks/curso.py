@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import html
 import json
+import markdown
 import re
 import sys
 from pathlib import Path
@@ -77,6 +78,12 @@ def on_files(files, config, **kwargs):
     return files
 
 
+def _en_linea(texto: str) -> str:
+    """Convierte Markdown en línea (código, negrita, cursiva) a HTML, sin el párrafo que lo envuelve."""
+    html_ = markdown.markdown(texto)
+    return re.sub(r"^<p>(.*)</p>$", r"\1", html_.strip(), flags=re.S)
+
+
 _QUIZ = re.compile(r"^```quiz[ \t]*\n(.*?)^```[ \t]*$", re.S | re.M)
 
 
@@ -97,7 +104,8 @@ def _quiz(m: re.Match) -> str:
               f'<p class="cu-quiz-pregunta" markdown="span">{" ".join(pregunta)}</p>',
               '<div class="cu-quiz-opciones">']
     for correcta, texto in opciones:
-        partes.append(f'<button type="button" class="cu-quiz-opcion" data-ok="{1 if correcta else 0}" markdown="span">{texto}</button>')
+        # md_in_html no procesa el contenido de <button>: el formato en línea se convierte acá.
+        partes.append(f'<button type="button" class="cu-quiz-opcion" data-ok="{1 if correcta else 0}">{_en_linea(texto)}</button>')
     partes.append("</div>")
     partes.append(f'<div class="cu-quiz-explicacion" hidden markdown="span">{" ".join(explicacion)}</div>')
     partes.append("</div>")
@@ -113,6 +121,8 @@ def on_page_markdown(markdown, page, config, files, **kwargs):
 
 def on_page_content(html_text, page, config, files, **kwargs):
     meta = page.meta or {}
+    if meta.get("tipo") == "evaluacion":
+        return html_text  # las evaluaciones de módulo no llevan marcador de lección
     if meta.get("id") and meta.get("modulo"):
         marca = (f'<div class="cu-leccion" data-id="{html.escape(str(meta["id"]))}" '
                  f'data-modulo="{html.escape(str(meta["modulo"]))}" data-tipo="{html.escape(str(meta.get("tipo", "")))}"></div>')

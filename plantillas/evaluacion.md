@@ -1,9 +1,10 @@
 ---
 id: EVAL-Mm
 modulo: Mm
-titulo: "Evaluación del módulo Mm · <nombre del módulo>"
+tipo: evaluacion       # no cambiar: evita el marcador de lección
+titulo: "Evaluación del Módulo m · <nombre del módulo>"
 umbral_aprobacion: 80
-tiempo_estimado: 90 min
+tiempo_estimado: 45 min
 estado: borrador      # borrador · revisada · publicada
 ultima_revision: AAAA-MM-DD
 version_academica: "1.3"
@@ -12,51 +13,54 @@ soluciones: soluciones/evaluacion.md
 
 <!--
 CÓMO USAR ESTA PLANTILLA
-- Copiala a docs/mNN-<slug>/evaluacion.md. Las respuestas van en docs/mNN-<slug>/soluciones/evaluacion.md.
+- Copiala a docs/mNN-<slug>/evaluacion.md y ejecutá python scripts/generar.py: aparece en el menú del módulo.
 - Cubrí todos los objetivos del módulo (su portada, index.md) con al menos un ítem cada uno.
-- Incluí preguntas conceptuales, de criterio y de diagnóstico de casos (docs/sobre/evaluacion.md).
-- La guía de corrección y las respuestas van en la carpeta soluciones/ del módulo, nunca acá.
-- Borrá este comentario al terminar.
+- Partes A a C: preguntas con bloques ```quiz (se corrigen solas). Usá preguntas nuevas, no las de las lecciones.
+- Parte D: lista de verificación de la práctica del módulo, con criterios comprobables.
+- La guía de comprobación de la Parte D va en soluciones/evaluacion.md.
+- En la tabla final, nombrá las preguntas por su número (1 a N), como las muestra la página.
+- Ejemplo completo: docs/m00-orientacion/evaluacion.md. Borrá este comentario al terminar.
 -->
 
-# Evaluación del módulo Mm · Nombre
+# Evaluación del Módulo m
 
-## Instrucciones
+> [!NOTE]
+> **Antes de empezar**
+>
+> - **Cuándo hacerla:** después de completar las lecciones del módulo.
+> - **Tiempo:** <minutos>.
+> - **Cómo se aprueba:** 80% o más de las preguntas correctas **y** todos los puntos de la Parte D cumplidos.
 
-- Respondé por escrito en tu cuaderno, sin consultar las soluciones.
-- Podés consultar el material del curso, salvo que un ítem diga lo contrario.
-- **Aprobación:** 80% o más del puntaje total, y ningún ítem marcado como *indispensable* con 0 puntos.
+Respondé sin mirar las lecciones. Si no llegás al 80%, repasá las lecciones indicadas al final y volvé a intentarlo otro día.
 
-## Parte A · Conceptos (… puntos)
+## Parte A · Conceptos
 
-1. <Pregunta> (… puntos)
+```quiz
+¿Pregunta?
+- [ ] Opción incorrecta, pero creíble
+- [x] Opción correcta
+- [ ] Otra opción incorrecta
+> Por qué la correcta es correcta y por qué las otras no.
+```
 
-## Parte B · Criterio (… puntos)
+## Parte B · Criterio
 
-<Elegir entre alternativas y justificar: costo, riesgo, beneficio.>
+<Elegir entre alternativas según costo, riesgo y beneficio.>
 
-## Parte C · Diagnóstico de casos (… puntos)
+## Parte C · Diagnóstico de casos
 
-<Un caso con un comportamiento observado; explicar la causa y proponer una corrección.>
+<Un comportamiento observado: elegir la causa más probable.>
 
-## Parte D · Práctica (… puntos)
+## Parte D · Práctica
 
-<Tarea práctica con pasos, criterios de aceptación comprobables y cómo verificar, como en la sección Práctica de plantillas/leccion.md.>
+Comprobá tu trabajo y tildá cada punto (las marcas se guardan en este navegador):
 
-## Rúbrica
+- [ ] <criterio comprobable>
 
-| Criterio | Excelente | Suficiente | Insuficiente | Puntos |
-|---|---|---|---|---:|
-| <criterio> | <descripción> | <descripción> | <descripción> | … |
+Si un punto no se cumple, la [guía de comprobación](soluciones/evaluacion.md) dice qué revisar.
 
-## Si no alcanzaste el 80%
+## Si no aprobaste
 
-| Ítem con dificultades | Lección para repasar |
+| Preguntas o puntos que fallaste | Lección para repasar |
 |---|---|
-| A.1 | Lm.u.n |
-
-Registrá cada dificultad en el `REFUERZO.md` de tu cuaderno y repetí la evaluación con ítems distintos (la guía de corrección incluye variantes): ver [soluciones](soluciones/evaluacion.md).
-
-## Registrar en tu cuaderno
-
-Anotá la fecha, el puntaje por parte y el total en la tabla "Evaluaciones de módulo" de tu `PROGRESO.md`.
+| Pregunta 1 | Lm.u.n |

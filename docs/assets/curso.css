@@ -150,6 +150,8 @@
   margin-top: 0.7rem; padding: 0.6rem 0.8rem; border-radius: 8px; background: var(--la-crema); font-size: 0.78rem;
 }
 .md-typeset .cu-quiz-explicacion[hidden] { display: none; }
+/* El atributo hidden siempre gana, también sobre los botones de Material (display: inline-block). */
+.md-typeset [hidden] { display: none !important; }
 .cu-quiz-resumen .cu-quiz-resumen-texto { font-weight: 600; }
 
 /* ── Glosario al pasar el mouse ──────────────────────────────────────────── */

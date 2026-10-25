@@ -237,6 +237,10 @@ def verificar_lecciones(programa: dict[str, generar.Leccion], publicar: bool) ->
                 error(f"{rel(p)}: la lección contiene una sección de soluciones ('{h}'); van en soluciones/")
         verificar_quizzes(p, texto)
         verificar_comunes(p, texto, hoy)
+    for p in sorted(DOCS.glob("m[0-9][0-9]-*/evaluacion.md")):
+        texto = leer(p)
+        verificar_quizzes(p, texto)
+        verificar_comunes(p, texto, hoy)
     for p in sorted(DOCS.glob("m[0-9][0-9]-*/soluciones/*.md")):
         verificar_comunes(p, leer(p), hoy)
     print(f"  Lecciones con material: {len(archivos)}")

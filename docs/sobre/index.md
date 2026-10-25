@@ -1,7 +1,7 @@
 # Sobre el curso
 
 > [!NOTE]
-> **Versión académica 1.3** (15/10/2026) · 5 etapas · 18 módulos · 233 lecciones (183 en la ruta esencial) · 10 proyectos · 486 h, unas 390 h en la ruta esencial (526 h con electivas).
+> **Versión académica 1.3.1** (24/10/2026) · 5 etapas · 18 módulos · 233 lecciones (183 en la ruta esencial) · 10 proyectos · 486 h, unas 390 h en la ruta esencial (526 h con electivas).
 
 Esta sección explica cómo está pensado el curso: sus principios, cuánto tiempo lleva y qué vas a poder hacer al terminar. Para recorrerlo, usá la [Ruta](../ruta/index.md).
 
@@ -13,21 +13,19 @@ Esta sección explica cómo está pensado el curso: sus principios, cuánto tiem
 ## Principios de diseño
 
 1. **Usar con criterio antes de construir.** Cada herramienta importante se aprende primero a usar y configurar (Nivel 1) y después a desarrollar (Nivel 2). Ver [Nivel 1 y Nivel 2](#usar-antes-de-construir-nivel-1-y-nivel-2).
-2. **Modelo mental antes que receta.** Incluso en Nivel 1 se explica qué resuelve cada herramienta, cómo funciona por dentro a nivel conceptual y cuándo no conviene. Así podés evaluar herramientas nuevas sin depender de tutoriales.
-3. **Concepto general → implementación específica.** Cada tema separa lo transferible (por ejemplo, "tool calling") de cómo lo implementa cada plataforma (Claude, OpenAI, Gemini, Spring AI).
-4. **Construir desde cero antes de usar frameworks.** En Nivel 2 construís un agente con un bucle propio antes de usar un SDK de agentes, y un servidor MCP con el SDK antes de usar abstracciones de alto nivel.
-5. **Multiplataforma.** El curso no depende de ninguna plataforma: un tutor de IA es opcional y el contenido es independiente de él. Las herramientas principales de práctica son Claude y ChatGPT (asistentes), Claude Code y Codex (agentes de programación), con Gemini y modelos locales (Ollama) donde aportan valor. Se priorizan los estándares abiertos (MCP, Agent Skills, AGENTS.md, A2A, OpenTelemetry). Ninguna herramienta entra al temario solo por ser popular: cada una tiene una justificación pedagógica.
-    - **Regla de ejercicios multiplataforma:** una actividad se repite en otra plataforma **solo** cuando la comparación enseña una diferencia técnica relevante (permisos, contexto, formato de configuración, costos). En los demás casos, las plataformas se **alternan** entre ejercicios y proyectos para no duplicar trabajo.
-    - **Común vs. específico:** cada lección de herramientas separa lo común a todos los agentes o asistentes de lo propio de cada implementación. No se atribuye a una herramienta una función de otra sin verificarla en su documentación.
-6. **Seguridad, evaluación y costos desde el inicio**, como hilos en todos los módulos.
-7. **Python como lenguaje principal de laboratorio y Java como segundo lenguaje** en los módulos de integración (M6, M8 opcional, M10 y M14), por su presencia habitual en entornos empresariales.
+2. **Modelo mental antes que receta.** Se explica qué resuelve cada herramienta, cómo funciona por dentro y cuándo no conviene, para que puedas evaluar herramientas nuevas sin depender de tutoriales.
+3. **Concepto general, después implementación.** Se separa lo transferible (por ejemplo, *tool calling*) de cómo lo implementa cada plataforma. No se atribuye a una herramienta una función sin verificarla en su documentación.
+4. **Desde cero antes que frameworks.** Primero un agente con un bucle propio y un servidor MCP con el SDK; después, los frameworks y las abstracciones de alto nivel.
+5. **Multiplataforma y estándares abiertos.** Las prácticas usan Claude y ChatGPT (asistentes) y Claude Code y Codex (agentes de programación), con Gemini y modelos locales donde aportan. Se priorizan los estándares abiertos (MCP, Agent Skills, AGENTS.md, A2A, OpenTelemetry). Una actividad se repite en otra plataforma solo si la comparación enseña una diferencia técnica; si no, las plataformas se alternan. Ninguna herramienta entra solo por ser popular, y el tutor de IA es opcional.
+6. **Seguridad, evaluación y costos desde el inicio**, en todos los módulos.
+7. **Python como lenguaje principal y Java como segundo lenguaje** en los módulos de integración (M6, M8 opcional, M10 y M14).
 8. **Gratis o barato por defecto.** Ollama, niveles gratuitos de API, n8n y pgvector autohospedados. Lo pago se avisa siempre.
 
 ## Usar antes de construir: Nivel 1 y Nivel 2
 
 | Herramienta o capacidad | Nivel 1: utilización y configuración | Nivel 2: desarrollo y profundización |
 |---|---|---|
-| Asistentes (Claude con capacidades de Cowork, ChatGPT con Work, Gemini) | **M3** | Base conceptual en M6, M7 y M9 |
+| Asistentes (Claude, ChatGPT, Gemini) | **M3** | Base conceptual en M6, M7 y M9 |
 | Proyectos, instrucciones, memoria y contexto | **M3** (como persona usuaria) | **M7** Context Engineering |
 | Connectors y servidores MCP | **M3** (conectar y configurar existentes) | **M10** (construir servidores y clientes) |
 | Skills y plugins | **M3** y **M4** (instalar, usar, evaluar, revisar) | **M11** (primera skill propia en el agente de programación) y **M12** (crear, empaquetar, distribuir) |

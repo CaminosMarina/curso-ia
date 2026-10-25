@@ -47,7 +47,7 @@ Además: tres [electivas](docs/ruta/electivas.md) y diez [proyectos](docs/ruta/p
 
 ## Estado de publicación
 
-**Versión académica del programa:** 1.3 · **Versión de publicación:** sin publicar. La primera, `v0.1.0`, sale cuando M0 esté completo y revisado. Estados editoriales de una lección: 📝 borrador · 🔍 revisada · 📗 publicada. Cambios en [`CHANGELOG.md`](CHANGELOG.md).
+**Versión académica del programa:** 1.3.1 · **Versión de publicación:** sin publicar. La primera, `v0.1.0`, sale cuando M0 esté completo y revisado. Estados editoriales de una lección: 📝 borrador · 🔍 revisada · 📗 publicada. Cambios en [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Cómo está organizado el repositorio
 

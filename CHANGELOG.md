@@ -9,7 +9,21 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 ## [Sin publicar]
 
-**Versión académica:** 1.3
+**Versión académica:** 1.3.1
+
+### Cambiado (24/10/2026): versión académica 1.3.1
+
+- Correcciones de redacción del programa, sin cambios en lecciones ni en el progreso: la tabla Nivel 1 / Nivel 2 deja de nombrar "Cowork" y "ChatGPT con Work"; los principios de diseño se resumen sin quitar ninguna regla; la portada del Módulo 0 deja de pedir el "protocolo de sesión", que quedó de la versión 1.2.
+
+### Agregado (24/10/2026): evaluación del Módulo 0
+
+- Evaluación del Módulo 0: 10 preguntas que se corrigen al instante (conceptos, criterio y diagnóstico) y una lista tildable de la práctica, con guía de comprobación. La plantilla de evaluación pasa a este formato.
+
+### Corregido (24/10/2026)
+
+- El botón "Marcar la lección como completada" aparecía aunque la autoevaluación no estuviera superada.
+- Las opciones de las autoevaluaciones mostraban el código entre comillas invertidas en lugar de con formato.
+- `scripts/verificar.py` también revisa las preguntas de las evaluaciones de módulo.
 
 ### Agregado (24/10/2026): lección L0.2.2
 

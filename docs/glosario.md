@@ -1,6 +1,6 @@
 # Glosario
 
-> **Corresponde a:** versión académica 1.3 · **Última revisión:** 2026-10-24
+> **Corresponde a:** versión académica 1.3.1 · **Última revisión:** 2026-10-24
 > El glosario crece con las lecciones publicadas: no se completa de antemano. Las definiciones son breves a propósito; la explicación completa está en el módulo indicado. Los términos se mantienen en inglés cuando ese es el uso habitual.
 
 ## Términos de IA
