@@ -11,6 +11,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 **Versión académica:** 1.3.1
 
+### Agregado (24/10/2026): lección L1.2.1
+
+- L1.2.1 *Tokens y tokenización*: por qué tokens, BPE, efecto del idioma, tokenizadores por proveedor, imágenes como tokens e impacto en costo, límites y velocidad. Con práctica en código (`tiktoken` y el contador de Gemini), ejercicio, soluciones y autoevaluación.
+- Glosario: tokenizador y BPE.
+
 ### Agregado (24/10/2026): lección L1.1.3
 
 - L1.1.3 *Qué es un modelo de lenguaje*: predicción del próximo token, generación token a token, cómo aprende, por qué produce comportamientos complejos y diferencia entre modelo base y asistente. Con práctica en Ollama, soluciones y autoevaluación.
