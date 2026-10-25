@@ -151,6 +151,9 @@ nav:
                   - "Claves de API y primer modelo local": m00-orientacion/soluciones/l0-2-2.md
           - "1 · Fundamentos de IA generativa y LLM":
               - m01-fundamentos-llm/index.md
+              - "IA, ML, deep learning e IA generativa": m01-fundamentos-llm/l1-1-1-ia-ml-deep-learning.md
+              - Soluciones:
+                  - "IA, ML, deep learning e IA generativa": m01-fundamentos-llm/soluciones/l1-1-1.md
           - "2 · Prompt Engineering":
               - m02-prompt-engineering/index.md
           - "3 · Asistentes de IA en la práctica":

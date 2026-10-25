@@ -11,6 +11,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 **Versión académica:** 1.3.1
 
+### Agregado (24/10/2026): lección L1.1.1
+
+- L1.1.1 *IA, ML, deep learning e IA generativa*: definiciones, cómo se relacionan y cómo elegir el enfoque para un problema. Con práctica, soluciones y autoevaluación.
+- Glosario: inteligencia artificial, aprendizaje automático, deep learning e IA generativa.
+
 ### Cambiado (24/10/2026): versión académica 1.3.1
 
 - Correcciones de redacción del programa, sin cambios en lecciones ni en el progreso: la tabla Nivel 1 / Nivel 2 deja de nombrar "Cowork" y "ChatGPT con Work"; los principios de diseño se resumen sin quitar ninguna regla; la portada del Módulo 0 deja de pedir el "protocolo de sesión", que quedó de la versión 1.2.
