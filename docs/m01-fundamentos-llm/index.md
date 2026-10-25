@@ -34,7 +34,7 @@ Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya f
 |---|---|---|---|---|
 | L1.1.1 | **[IA, ML, deep learning e IA generativa](l1-1-1-ia-ml-deep-learning.md)**<br>Definiciones precisas y qué problema resuelve cada uno. | Conceptual | Esencial | 📝 Borrador |
 | L1.1.2 | **Redes neuronales en 90 minutos**<br>Parámetros, entrenamiento y generalización (lo justo para entender LLM, sin matemática innecesaria). | Conceptual | Profundizar | Próximamente |
-| L1.1.3 | **Qué es un modelo de lenguaje**<br>Predecir el próximo token. Por qué algo tan simple produce comportamientos complejos. | Conceptual | Esencial | Próximamente |
+| L1.1.3 | **[Qué es un modelo de lenguaje](l1-1-3-que-es-un-modelo-de-lenguaje.md)**<br>Predecir el próximo token. Por qué algo tan simple produce comportamientos complejos. | Conceptual | Esencial | 📝 Borrador |
 
 ### 1.2 · Cómo "ve" la información un modelo
 

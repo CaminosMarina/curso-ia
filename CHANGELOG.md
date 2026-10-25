@@ -11,6 +11,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 **Versión académica:** 1.3.1
 
+### Agregado (24/10/2026): lección L1.1.3
+
+- L1.1.3 *Qué es un modelo de lenguaje*: predicción del próximo token, generación token a token, cómo aprende, por qué produce comportamientos complejos y diferencia entre modelo base y asistente. Con práctica en Ollama, soluciones y autoevaluación.
+- Glosario: modelo base.
+
 ### Agregado (24/10/2026): lección L1.1.1
 
 - L1.1.1 *IA, ML, deep learning e IA generativa*: definiciones, cómo se relacionan y cómo elegir el enfoque para un problema. Con práctica, soluciones y autoevaluación.
