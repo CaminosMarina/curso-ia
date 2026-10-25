@@ -11,6 +11,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 **Versión académica:** 1.3.1
 
+### Agregado (24/10/2026): lección L1.2.2
+
+- L1.2.2 *Embeddings*: qué es un embedding, similitud coseno, usos (búsqueda semántica, agrupar, duplicados, recomendaciones), diferencia con un modelo de lenguaje y reglas de uso. Con práctica local en Ollama (`embeddinggemma`), ejercicio, soluciones y autoevaluación.
+- Glosario: similitud coseno y búsqueda semántica.
+
 ### Agregado (24/10/2026): lección L1.2.1
 
 - L1.2.1 *Tokens y tokenización*: por qué tokens, BPE, efecto del idioma, tokenizadores por proveedor, imágenes como tokens e impacto en costo, límites y velocidad. Con práctica en código (`tiktoken` y el contador de Gemini), ejercicio, soluciones y autoevaluación.

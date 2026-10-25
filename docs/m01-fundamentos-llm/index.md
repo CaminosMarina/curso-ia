@@ -41,7 +41,7 @@ Las lecciones con material tienen enlace. Las marcadas como *Próximamente* ya f
 | ID | Lección | Tipo | Ruta | Material |
 |---|---|---|---|---|
 | L1.2.1 | **[Tokens y tokenización](l1-2-1-tokens-y-tokenizacion.md)**<br>BPE, por qué el español "cuesta" más tokens, cómo se tokenizan imágenes y otros formatos, impacto en costo y límites. | Mixta | Esencial | 📝 Borrador |
-| L1.2.2 | **Embeddings**<br>El contenido como vectores, similitud semántica (intro práctica; se profundiza en M8). | Mixta | Esencial | Próximamente |
+| L1.2.2 | **[Embeddings](l1-2-2-embeddings.md)**<br>El contenido como vectores, similitud semántica (intro práctica; se profundiza en M8). | Mixta | Esencial | 📝 Borrador |
 | L1.2.3 | **Transformers y atención**<br>Intuición del mecanismo, por qué permite contexto largo y qué significa "ventana de contexto". | Conceptual | Esencial | Próximamente |
 
 ### 1.3 · Cómo se construye un LLM
