@@ -23,7 +23,7 @@ Es **autodidacta** e **interactivo**: cada lección tiene teoría clara y concis
 | Módulo | Etapa | Horas | Lecciones | Esenciales | Con material |
 |---|:-:|---:|---:|---:|---:|
 | [Módulo 0 · Orientación y entorno de trabajo](docs/m00-orientacion/index.md) | 1 | 6 | 4 | 4 | 4 |
-| [Módulo 1 · Fundamentos de IA generativa y LLM](docs/m01-fundamentos-llm/index.md) | 1 | 24 | 16 | 13 | 4 |
+| [Módulo 1 · Fundamentos de IA generativa y LLM](docs/m01-fundamentos-llm/index.md) | 1 | 24 | 16 | 13 | 5 |
 | [Módulo 2 · Prompt Engineering](docs/m02-prompt-engineering/index.md) | 1 | 20 | 15 | 12 | 0 |
 | [Módulo 3 · Asistentes de IA en la práctica](docs/m03-asistentes/index.md) | 1 | 36 | 25 | 20 | 0 |
 | [Módulo 4 · Agentes de programación](docs/m04-agentes-programacion/index.md) | 1 | 21 | 14 | 11 | 0 |
@@ -40,7 +40,7 @@ Es **autodidacta** e **interactivo**: cada lección tiene teoría clara y concis
 | [Módulo 15 · Sistemas multiagente](docs/m15-multiagente/index.md) | 4 | 26 | 11 | 8 | 0 |
 | [Módulo 16 · Seguridad, evaluación y operación](docs/m16-produccion/index.md) | 5 | 36 | 16 | 13 | 0 |
 | [Módulo 17 · Proyecto final integrador](docs/m17-proyecto-final/index.md) | 5 | 50 | 8 | 8 | 0 |
-| **Total** | | **486** | **233** | **183** | **8** |
+| **Total** | | **486** | **233** | **183** | **9** |
 <!-- modulos:fin -->
 
 Además: tres [electivas](docs/ruta/electivas.md) y diez [proyectos](docs/ruta/proyectos.md).

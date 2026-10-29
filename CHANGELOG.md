@@ -11,6 +11,11 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/).
 
 **Versión académica:** 1.3.1
 
+### Agregado (25/10/2026): lección L1.2.3
+
+- L1.2.3 *Transformers y atención*: el problema de relacionar palabras lejanas, la atención (mirando los tokens anteriores), por qué el transformer permitió modelos grandes y la ventana de contexto. Con práctica (incluye `ollama ps`), soluciones y autoevaluación.
+- Glosario: transformer y atención.
+
 ### Agregado (24/10/2026): lección L1.2.2
 
 - L1.2.2 *Embeddings*: qué es un embedding, similitud coseno, usos (búsqueda semántica, agrupar, duplicados, recomendaciones), diferencia con un modelo de lenguaje y reglas de uso. Con práctica local en Ollama (`embeddinggemma`), ejercicio, soluciones y autoevaluación.

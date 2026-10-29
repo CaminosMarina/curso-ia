@@ -2,7 +2,7 @@
 
 # Todas las lecciones
 
-Las 233 lecciones del curso, etapa por etapa. **8 tienen material**: son las que llevan enlace. Las demás ya forman parte del programa y se están escribiendo.
+Las 233 lecciones del curso, etapa por etapa. **9 tienen material**: son las que llevan enlace. Las demás ya forman parte del programa y se están escribiendo.
 
 **Tipo de lección:** *Conceptual* (se comprueba con preguntas), *Práctica* (con un ejercicio) o *Mixta* (las dos cosas). **Ruta:** las lecciones *esenciales* son el núcleo de cada módulo; las marcadas para *profundizar* amplían el tema y se pueden hacer después.
 
@@ -30,7 +30,7 @@ Las 233 lecciones del curso, etapa por etapa. **8 tienen material**: son las que
 | L1.1.3 | **[Qué es un modelo de lenguaje](../m01-fundamentos-llm/l1-1-3-que-es-un-modelo-de-lenguaje.md)**<br>Predecir el próximo token. Por qué algo tan simple produce comportamientos complejos. | Conceptual | Esencial | 📝 Borrador |
 | L1.2.1 | **[Tokens y tokenización](../m01-fundamentos-llm/l1-2-1-tokens-y-tokenizacion.md)**<br>BPE, por qué el español "cuesta" más tokens, cómo se tokenizan imágenes y otros formatos, impacto en costo y límites. | Mixta | Esencial | 📝 Borrador |
 | L1.2.2 | **[Embeddings](../m01-fundamentos-llm/l1-2-2-embeddings.md)**<br>El contenido como vectores, similitud semántica (intro práctica; se profundiza en M8). | Mixta | Esencial | 📝 Borrador |
-| L1.2.3 | **Transformers y atención**<br>Intuición del mecanismo, por qué permite contexto largo y qué significa "ventana de contexto". | Conceptual | Esencial | Próximamente |
+| L1.2.3 | **[Transformers y atención](../m01-fundamentos-llm/l1-2-3-transformers-y-atencion.md)**<br>Intuición del mecanismo, por qué permite contexto largo y qué significa "ventana de contexto". | Conceptual | Esencial | 📝 Borrador |
 | L1.3.1 | **Preentrenamiento**<br>Datos, escala y fecha de corte de conocimiento. | Conceptual | Profundizar | Próximamente |
 | L1.3.2 | **Post-entrenamiento**<br>Ajuste por instrucciones, RLHF y técnicas afines, *system prompts*. Por qué un modelo "asistente" se comporta distinto que un modelo base. | Conceptual | Esencial | Próximamente |
 | L1.3.3 | **Modelos de razonamiento**<br>Modelos de razonamiento (*thinking*): qué cambia, cuándo convienen y su costo. | Conceptual | Esencial | Próximamente |

@@ -45,7 +45,7 @@ El perfil completo está en [Sobre el curso](sobre/index.md#perfil-de-egreso).
 | Módulo | Etapa | Horas | Lecciones | Esenciales | Con material |
 |---|:-:|---:|---:|---:|---:|
 | [Módulo 0 · Orientación y entorno de trabajo](m00-orientacion/index.md) | 1 | 6 | 4 | 4 | 4 |
-| [Módulo 1 · Fundamentos de IA generativa y LLM](m01-fundamentos-llm/index.md) | 1 | 24 | 16 | 13 | 4 |
+| [Módulo 1 · Fundamentos de IA generativa y LLM](m01-fundamentos-llm/index.md) | 1 | 24 | 16 | 13 | 5 |
 | [Módulo 2 · Prompt Engineering](m02-prompt-engineering/index.md) | 1 | 20 | 15 | 12 | 0 |
 | [Módulo 3 · Asistentes de IA en la práctica](m03-asistentes/index.md) | 1 | 36 | 25 | 20 | 0 |
 | [Módulo 4 · Agentes de programación](m04-agentes-programacion/index.md) | 1 | 21 | 14 | 11 | 0 |
@@ -62,7 +62,7 @@ El perfil completo está en [Sobre el curso](sobre/index.md#perfil-de-egreso).
 | [Módulo 15 · Sistemas multiagente](m15-multiagente/index.md) | 4 | 26 | 11 | 8 | 0 |
 | [Módulo 16 · Seguridad, evaluación y operación](m16-produccion/index.md) | 5 | 36 | 16 | 13 | 0 |
 | [Módulo 17 · Proyecto final integrador](m17-proyecto-final/index.md) | 5 | 50 | 8 | 8 | 0 |
-| **Total** | | **486** | **233** | **183** | **8** |
+| **Total** | | **486** | **233** | **183** | **9** |
 <!-- modulos:fin -->
 
 Además hay tres [electivas](ruta/electivas.md) y diez [proyectos](ruta/proyectos.md) que integran varios módulos.
